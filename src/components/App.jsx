@@ -4,6 +4,8 @@ import RegisterPage from 'pages/RegisterPage';
 import LoginPage from 'pages/LoginPage';
 import AboutPage from 'pages/AboutPage';
 import ContactsPage from 'pages/ContactsPage';
+import ContactInfo from 'components/Contact';
+import ContactDetails from './ContactDetails/ContactDetails';
 
 export const App = () => {
   return (
@@ -14,7 +16,12 @@ export const App = () => {
           <Route path="login" element={<LoginPage />} />
           <Route path="register" element={<RegisterPage />} />
           <Route path="about" element={<AboutPage />} />
-          <Route path="contacts" element={<ContactsPage />} />
+          <Route path="contacts" element={<ContactsPage />}>
+            <Route path="contact-details/:id" element={<ContactDetails />}>
+              <Route path="contact" element={<ContactInfo />}></Route>
+              <Route path="about" element={<div>about</div>}></Route>
+            </Route>
+          </Route>
         </Route>
       </Routes>
     </>

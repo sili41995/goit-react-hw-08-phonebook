@@ -66,8 +66,8 @@ const LoginForm = () => {
                 : 'Password minimum length is 7 characters'
             )}
           <Message>
-            <SignUpLink to="/register">Sign up</SignUpLink>
-            &nbsp;if you don't have an account yet
+            <SignUpLink to="/register">Sign up</SignUpLink> if you don't have an
+            account yet
           </Message>
           <Button value="Log in" type="submit" />
         </Form>

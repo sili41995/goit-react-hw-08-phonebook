@@ -1,20 +1,20 @@
-// import { useLocation } from 'react-router-dom';
-// import { GrAddCircle } from 'react-icons/gr';
+import { useLocation } from 'react-router-dom';
+import { GrAddCircle } from 'react-icons/gr';
 import {
   Container,
   LinkContainer,
-  // IconContainer,
+  IconContainer,
   Link,
-  // AddContactLink,
+  AddContactLink,
 } from './Navigation.styled';
-// import Filter from 'components/Filter';
+import Filter from 'components/Filter';
 
 const contactsPath = 'contacts';
 
 const Navigation = () => {
-  // const { pathname } = useLocation();
+  const { pathname } = useLocation();
 
-  // const isContactsPage = pathname.includes(contactsPath);
+  const isContactsPage = pathname.includes(contactsPath);
 
   return (
     <Container>
@@ -22,7 +22,7 @@ const Navigation = () => {
         <Link to={`/${contactsPath}`}>Contacts</Link>
         <Link to="/about">About</Link>
       </LinkContainer>
-      {/* <LinkContainer>
+      <LinkContainer>
         {isContactsPage && <Filter />}
         <AddContactLink to="/..........">
           <IconContainer>
@@ -30,11 +30,11 @@ const Navigation = () => {
           </IconContainer>
           New Contact
         </AddContactLink>
-      </LinkContainer> */}
-      <LinkContainer>
+      </LinkContainer>
+      {/* <LinkContainer>
         <Link to="/register">Sign up</Link>
         <Link to="/login">Log in</Link>
-      </LinkContainer>
+      </LinkContainer> */}
     </Container>
   );
 };

@@ -5,21 +5,13 @@ import TextField from '@mui/material/TextField';
 import {
   FormContainer,
   Form,
-  Overlay,
   Button,
   Message,
   Title,
+  textFieldStyle,
+  LogInLink,
 } from './RegisterForm.styled';
 import Toast from 'components/Toast';
-import { Link } from 'react-router-dom';
-
-const textFieldStyle = {
-  fontFamily: 'Inter',
-  fontSize: '20px',
-  fontStyle: 'normal',
-  fontWeight: '500',
-  lineHeight: 'normal',
-};
 
 const errorNotify = (message) => {
   toast.error(message);
@@ -34,7 +26,7 @@ const RegisterForm = () => {
   const onSubmit = (data) => console.log(data);
 
   return (
-    <Overlay>
+    <>
       <FormContainer>
         <Title>sign up</Title>
         <Message>Welcome to Phonebook!</Message>
@@ -84,13 +76,13 @@ const RegisterForm = () => {
                 : 'Password minimum length is 7 characters'
             )}
           <Message>
-            <Link to="/login">Sign in</Link> if you have an account
+            <LogInLink to="/login">Log in</LogInLink> if you have an account
           </Message>
           <Button value="Enlist" type="submit" />
         </Form>
       </FormContainer>
       <Toast />
-    </Overlay>
+    </>
   );
 };
 

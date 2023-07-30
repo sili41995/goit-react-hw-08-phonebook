@@ -38,8 +38,8 @@ export const Link = styled(NavLink)`
 
 export const AddContactLink = styled(NavLink)`
   display: flex;
+  gap: 10px;
   justify-content: space-between;
-  width: 100px;
   align-items: center;
   border-radius: 5px;
   background: #55c875;
