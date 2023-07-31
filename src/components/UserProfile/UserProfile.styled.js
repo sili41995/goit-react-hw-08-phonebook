@@ -1,3 +1,6 @@
+import { AiOutlineCalendar } from 'react-icons/ai';
+import { HiOutlinePhone } from 'react-icons/hi';
+import { SlLocationPin } from 'react-icons/sl';
 import styled from '@emotion/styled';
 
 export const Container = styled.div`
@@ -66,3 +69,18 @@ export const BornDate = styled.p`
 
 export const Phone = BornDate;
 export const Location = BornDate;
+
+const iconStyle =
+  'display: flex; align-items: center; width: 22px; height: 22px;';
+
+export const CalendarIcon = styled(AiOutlineCalendar)`
+  ${iconStyle}
+`;
+
+export const PhoneIcon = styled(HiOutlinePhone)`
+  ${iconStyle}
+`;
+
+export const LocationIcon = styled(SlLocationPin)`
+  ${iconStyle}
+`;

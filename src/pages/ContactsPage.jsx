@@ -1,6 +1,6 @@
+import { Outlet } from 'react-router-dom';
 import ContactsList from 'components/ContactsList';
 import UserProfile from 'components/UserProfile';
-import { Outlet } from 'react-router-dom';
 
 const ContactsPage = () => {
   return (

@@ -1,21 +1,14 @@
+import { useSearchParams } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
-import { FiFilter } from 'react-icons/fi';
-import styled from '@emotion/styled';
 import {
   Button,
   FilterContainer,
   Input,
   DescIcon,
   AscIcon,
+  FilterIcon,
 } from './Filter.styled';
-import { useSearchParams } from 'react-router-dom';
 import SEARCH_PARAMS_KEY from 'service/searh-params-key';
-
-const FilterIcon = styled(FiFilter)`
-  width: 100%;
-  height: 100%;
-  stroke: #555555;
-`;
 
 const Filter = () => {
   const [ascSort, setAscSort] = useState(true);
@@ -45,6 +38,7 @@ const Filter = () => {
 
   const handleFilterBtnClick = () => {
     setShowFilter((showFilter) => !showFilter);
+    setSearchParams({});
   };
 
   const handleSortBtnClick = (e) => {

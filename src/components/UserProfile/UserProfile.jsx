@@ -1,7 +1,3 @@
-import { AiOutlineCalendar } from 'react-icons/ai';
-import { HiOutlinePhone } from 'react-icons/hi';
-import { SlLocationPin } from 'react-icons/sl';
-import styled from '@emotion/styled';
 import defaultAvatar from '../default-user-avatar.jpg';
 import {
   BornDate,
@@ -14,22 +10,10 @@ import {
   Location,
   ContactInfo,
   UserInfo,
+  CalendarIcon,
+  PhoneIcon,
+  LocationIcon,
 } from './UserProfile.styled';
-
-const iconStyle =
-  'display: flex; align-items: center; width: 22px; height: 22px;';
-
-const CalendarIcon = styled(AiOutlineCalendar)`
-  ${iconStyle}
-`;
-
-const PhoneIcon = styled(HiOutlinePhone)`
-  ${iconStyle}
-`;
-
-const LocationIcon = styled(SlLocationPin)`
-  ${iconStyle}
-`;
 
 const UserProfile = ({ avatar }) => {
   const userAvatar = avatar ? avatar : defaultAvatar;

@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import { BsSortAlphaDown } from 'react-icons/bs';
 import { BsSortAlphaDownAlt } from 'react-icons/bs';
+import { FiFilter } from 'react-icons/fi';
 
 export const FilterContainer = styled.div`
   display: flex;
@@ -48,6 +49,12 @@ export const DescIcon = styled(BsSortAlphaDownAlt)`
 `;
 
 export const AscIcon = styled(BsSortAlphaDown)`
+  width: 100%;
+  height: 100%;
+  stroke: #555555;
+`;
+
+export const FilterIcon = styled(FiFilter)`
   width: 100%;
   height: 100%;
   stroke: #555555;

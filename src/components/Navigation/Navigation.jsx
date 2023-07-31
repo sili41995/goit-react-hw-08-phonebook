@@ -35,10 +35,10 @@ const Navigation = () => {
           New Contact
         </AddContactLink>
       </LinkContainer>
-      {/* <LinkContainer>
+      <LinkContainer>
         <Link to="/register">Sign up</Link>
         <Link to="/login">Log in</Link>
-      </LinkContainer> */}
+      </LinkContainer>
     </Container>
   );
 };

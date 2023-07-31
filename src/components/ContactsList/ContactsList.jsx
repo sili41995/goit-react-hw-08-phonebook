@@ -1,7 +1,7 @@
+import { useSearchParams } from 'react-router-dom';
 import ContactsListItem from 'components/ContactsListItem';
 import { List } from './ContactsList.styled';
 import SEARCH_PARAMS_KEY from 'service/searh-params-key';
-import { useSearchParams } from 'react-router-dom';
 
 const contacts = [
   { id: '1', name: 'Rocket', number: '0123456789' },

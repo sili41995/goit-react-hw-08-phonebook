@@ -1,7 +1,7 @@
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import { useForm } from 'react-hook-form';
 import TextField from '@mui/material/TextField';
+import { toast } from 'react-toastify';
+import { useForm } from 'react-hook-form';
+import 'react-toastify/dist/ReactToastify.css';
 import {
   FormContainer,
   Form,
@@ -34,7 +34,6 @@ const RegisterForm = () => {
           <TextField
             {...register('name', { required: true })}
             type="text"
-            id="outlined-basic"
             label="Username"
             variant="outlined"
             sx={{
@@ -47,7 +46,6 @@ const RegisterForm = () => {
           <TextField
             {...register('email', { required: true })}
             type="email"
-            id="outlined-basic"
             label="Email"
             variant="outlined"
             sx={{
@@ -60,7 +58,6 @@ const RegisterForm = () => {
           <TextField
             {...register('password', { required: true, minLength: 7 })}
             type="password"
-            id="outlined-basic"
             label="Password"
             variant="outlined"
             sx={{

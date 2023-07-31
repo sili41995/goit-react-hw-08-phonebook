@@ -1,9 +1,8 @@
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import styled from '@emotion/styled';
-import { useForm } from 'react-hook-form';
-import { GiCheckMark } from 'react-icons/gi';
 import TextField from '@mui/material/TextField';
+import { useLocation } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import { useForm } from 'react-hook-form';
+import 'react-toastify/dist/ReactToastify.css';
 import {
   Container,
   EditButton,
@@ -11,31 +10,16 @@ import {
   Buttons,
   Form,
   Title,
+  textFieldStyle,
+  EditIcon,
 } from './AddContactForm.styled';
 import Toast from 'components/Toast';
-import { useLocation } from 'react-router-dom';
-
-const textFieldStyle = {
-  fontFamily: 'Inter',
-  fontSize: '18px',
-  fontStyle: 'normal',
-  fontWeight: '500',
-  lineHeight: 'normal',
-};
-
-const EditIcon = styled(GiCheckMark)`
-  width: 100%;
-  height: 100%;
-  fill: #00c938;
-  stroke: inherit;
-`;
 
 const errorNotify = (message) => {
   toast.error(message);
 };
 
 const AddContactForm = () => {
-  //кнопка кенсел ведет на предыдущую страницу
   //после создания контакта тоже должна выскакивать нотификашка
   const {
     register,
@@ -55,7 +39,6 @@ const AddContactForm = () => {
           <TextField
             {...register('name', { required: true, minLength: 1 })}
             type="text"
-            id="outlined-basic"
             label="Name"
             variant="outlined"
             sx={{
@@ -68,7 +51,6 @@ const AddContactForm = () => {
           <TextField
             {...register('number', { required: true })}
             type="tel"
-            id="outlined-basic"
             label="Phone"
             variant="outlined"
             sx={{

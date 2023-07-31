@@ -1,3 +1,5 @@
+import { GiCheckMark } from 'react-icons/gi';
+import { GoX } from 'react-icons/go';
 import styled from '@emotion/styled';
 
 export const Container = styled.div`
@@ -58,4 +60,26 @@ export const CancelButton = styled.button`
   &:focus {
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   }
+`;
+
+export const textFieldStyle = {
+  fontFamily: 'Inter',
+  fontSize: '18px',
+  fontStyle: 'normal',
+  fontWeight: '500',
+  lineHeight: 'normal',
+};
+
+export const EditIcon = styled(GiCheckMark)`
+  width: 100%;
+  height: 100%;
+  fill: #00c938;
+  stroke: inherit;
+`;
+
+export const CancelIcon = styled(GoX)`
+  width: 100%;
+  height: 100%;
+  fill: #d3232f;
+  stroke: inherit;
 `;
