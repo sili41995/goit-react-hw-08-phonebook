@@ -12,9 +12,9 @@ import Filter from 'components/Filter';
 const contactsPath = 'contacts';
 
 const Navigation = () => {
-  const { pathname } = useLocation();
+  const location = useLocation();
 
-  const isContactsPage = pathname.includes(contactsPath);
+  const isContactsPage = location.pathname.includes(contactsPath);
 
   return (
     <Container>
@@ -24,7 +24,7 @@ const Navigation = () => {
       </LinkContainer>
       <LinkContainer>
         {isContactsPage && <Filter />}
-        <AddContactLink to="/..........">
+        <AddContactLink to="/contacts/new-contact" state={{ from: location }}>
           <IconContainer>
             <GrAddCircle />
           </IconContainer>

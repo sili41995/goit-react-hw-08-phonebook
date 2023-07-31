@@ -19,7 +19,7 @@ const Contact = () => {
           <InfoDesc>Phone number</InfoDesc>
           <InfoValue>0902362954</InfoValue>
         </div>
-        <PhoneButton href="tel:+110001111111">
+        <PhoneButton href="tel:0664804354">
           <PhoneIcon />
         </PhoneButton>
       </Field>
