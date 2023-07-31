@@ -27,7 +27,9 @@ const Navigation = () => {
         <AddContactLink
           to="/contacts/new-contact"
           state={{ from: location }}
-          onClick={(e) => e.currentTarget.blur()}
+          onClick={(e) => {
+            e.currentTarget.blur();
+          }}
         >
           <IconContainer>
             <GrAddCircle />

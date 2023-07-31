@@ -53,23 +53,13 @@ const Filter = () => {
           ref={inputRef}
           type="text"
           value={filter}
-          onChange={(e) => {
-            updateQueryString(e);
-          }}
+          onChange={updateQueryString}
         />
       )}
-      <Button
-        onClick={() => {
-          handleFilterBtnClick();
-        }}
-      >
+      <Button onClick={handleFilterBtnClick}>
         <FilterIcon />
       </Button>
-      <Button
-        onClick={(e) => {
-          handleSortBtnClick(e);
-        }}
-      >
+      <Button onClick={handleSortBtnClick}>
         {ascSort ? <DescIcon /> : <AscIcon />}
       </Button>
     </FilterContainer>

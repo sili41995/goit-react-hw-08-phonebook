@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { CiEdit } from 'react-icons/ci';
+import { AiOutlineDelete } from 'react-icons/ai';
 import { NavLink } from 'react-router-dom';
 
 export const Container = styled.div`
@@ -7,12 +8,33 @@ export const Container = styled.div`
   flex-grow: 1;
 `;
 
-export const EditButton = styled.button`
+export const ButtonContainer = styled.div`
   display: flex;
+  gap: 20px;
+  justify-content: flex-end;
   margin-bottom: 110px;
+`;
+
+export const DeleteButton = styled.button`
+  display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: auto;
+  width: 44px;
+  height: 35px;
+  padding: 4px;
+  background-color: #ff9192;
+  border-radius: 8px;
+  border-color: transparent;
+  &:hover,
+  &:focus {
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  }
+`;
+
+export const EditButton = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 44px;
   height: 35px;
   padding: 4px;
@@ -79,6 +101,12 @@ export const Link = styled(NavLink)`
   &.active {
     background: #44de6f;
   }
+`;
+
+export const DeleteIcon = styled(AiOutlineDelete)`
+  width: 100%;
+  height: 100%;
+  fill: #d3232f;
 `;
 
 export const EditIcon = styled(CiEdit)`
