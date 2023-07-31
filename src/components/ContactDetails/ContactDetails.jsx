@@ -1,20 +1,25 @@
 import { useState } from 'react';
 import { EditButton, Container, EditIcon } from './ContactDetails.styled';
 import Contact from 'components/ContactInfo';
+import EditForm from 'components/EditForm';
 
 const ContactDetails = () => {
   const [editContact, setEditContact] = useState(false);
+
+  const setEditState = () => {
+    setEditContact((editContact) => !editContact);
+  };
 
   return (
     <Container>
       <EditButton
         onClick={() => {
-          setEditContact((editContact) => !editContact);
+          setEditState();
         }}
       >
         <EditIcon />
       </EditButton>
-      {editContact ? false : <Contact />}
+      {editContact ? <EditForm setEditContact={setEditContact} /> : <Contact />}
     </Container>
   );
 };
