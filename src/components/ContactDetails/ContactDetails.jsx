@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { EditButton, Container, EditIcon } from './ContactDetails.styled';
-import Contact from 'components/ContactInfo';
+import ContactInfo from 'components/ContactInfo';
 import EditForm from 'components/EditForm';
 
 const ContactDetails = () => {
@@ -19,7 +19,11 @@ const ContactDetails = () => {
       >
         <EditIcon />
       </EditButton>
-      {editContact ? <EditForm setEditContact={setEditContact} /> : <Contact />}
+      {editContact ? (
+        <EditForm setEditContact={setEditContact} />
+      ) : (
+        <ContactInfo />
+      )}
     </Container>
   );
 };

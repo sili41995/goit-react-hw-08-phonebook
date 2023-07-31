@@ -1,10 +1,9 @@
 import styled from '@emotion/styled';
 
 export const Container = styled.div`
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* padding: 20px; */
-  /* gap: 20px; */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 `;
 
 export const Title = styled.p`
@@ -18,45 +17,45 @@ export const Title = styled.p`
 `;
 
 export const Form = styled.form`
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* gap: 20px; */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 `;
 
 export const Buttons = styled.div`
-  /* display: flex; */
-  /* gap: 40px; */
-  /* align-self: center; */
+  display: flex;
+  gap: 40px;
+  align-self: center;
 `;
 
 export const EditButton = styled.button`
-  /* display: flex; */
-  /* justify-content: center; */
-  /* align-items: center; */
-  /* width: 44px; */
-  /* height: 35px; */
-  /* padding: 4px; */
-  /* background-color: #89f2a6; */
-  /* border-radius: 8px; */
-  /* border-color: transparent; */
-  /* &:hover, */
-  /* &:focus { */
-  /* box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25); */
-  /* } */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 35px;
+  padding: 4px;
+  background-color: #89f2a6;
+  border-radius: 8px;
+  border-color: transparent;
+  &:hover,
+  &:focus {
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  }
 `;
 
 export const CancelButton = styled.button`
-  /* display: flex; */
-  /* justify-content: center; */
-  /* align-items: center; */
-  /* width: 44px; */
-  /* height: 35px; */
-  /* padding: 4px; */
-  /* background-color: #ff9192; */
-  /* border-radius: 8px; */
-  /* border-color: transparent; */
-  /* &:hover, */
-  /* &:focus { */
-  /* box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25); */
-  /* } */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 35px;
+  padding: 4px;
+  background-color: #ff9192;
+  border-radius: 8px;
+  border-color: transparent;
+  &:hover,
+  &:focus {
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  }
 `;

@@ -9,7 +9,6 @@ export const Container = styled.div`
 
 export const EditButton = styled.button`
   display: flex;
-
   justify-content: center;
   align-items: center;
   margin-left: auto;
@@ -27,7 +26,7 @@ export const EditButton = styled.button`
 
 export const Image = styled.img`
   width: 112px;
-  margin: 110px auto 6px;
+  margin: 0 auto 6px;
 `;
 
 export const ContactTitle = styled.div`

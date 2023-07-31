@@ -19,7 +19,7 @@ const Contact = () => {
           <InfoDesc>Phone number</InfoDesc>
           <InfoValue>0902362954</InfoValue>
         </div>
-        <PhoneButton>
+        <PhoneButton href="tel:+110001111111">
           <PhoneIcon />
         </PhoneButton>
       </Field>
@@ -28,7 +28,7 @@ const Contact = () => {
           <InfoDesc>Email Address</InfoDesc>
           <InfoValue>onichan@gmail.com</InfoValue>
         </div>
-        <MessageButton>
+        <MessageButton href="mailto:example@mail.ru">
           <MessageIcon />
         </MessageButton>
       </Field>

@@ -31,7 +31,7 @@ export const Field = styled.div`
   display: flex;
 `;
 
-export const PhoneButton = styled.button`
+export const PhoneButton = styled.a`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -48,7 +48,7 @@ export const PhoneButton = styled.button`
   }
 `;
 
-export const MessageButton = styled.button`
+export const MessageButton = styled.a`
   display: flex;
   justify-content: center;
   align-items: center;

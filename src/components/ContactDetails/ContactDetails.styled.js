@@ -9,7 +9,7 @@ export const Container = styled.div`
 
 export const EditButton = styled.button`
   display: flex;
-
+  margin-bottom: 110px;
   justify-content: center;
   align-items: center;
   margin-left: auto;
