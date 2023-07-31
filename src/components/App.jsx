@@ -7,7 +7,8 @@ import ContactsPage from 'pages/ContactsPage';
 import Contact from 'components/Contact';
 import ContactDetails from 'components/ContactDetails';
 import ContactDescription from 'components/ContactDescription';
-import AddContactForm from './AddContactForm/AddContactForm';
+import AddContactForm from 'components/AddContactForm';
+import NotFoundPage from 'pages/NotFoundPage';
 
 export const App = () => {
   return (
@@ -25,6 +26,7 @@ export const App = () => {
             </Route>
             <Route path="new-contact" element={<AddContactForm />} />
           </Route>
+          <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
     </>

@@ -24,7 +24,11 @@ const Navigation = () => {
       </LinkContainer>
       <LinkContainer>
         {isContactsPage && <Filter />}
-        <AddContactLink to="/contacts/new-contact" state={{ from: location }}>
+        <AddContactLink
+          to="/contacts/new-contact"
+          state={{ from: location }}
+          onClick={(e) => e.currentTarget.blur()}
+        >
           <IconContainer>
             <GrAddCircle />
           </IconContainer>

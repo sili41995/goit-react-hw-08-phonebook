@@ -1,4 +1,6 @@
 import styled from '@emotion/styled';
+import { BsSortAlphaDown } from 'react-icons/bs';
+import { BsSortAlphaDownAlt } from 'react-icons/bs';
 
 export const FilterContainer = styled.div`
   display: flex;
@@ -37,4 +39,16 @@ export const Button = styled.button`
   &:focus {
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   }
+`;
+
+export const DescIcon = styled(BsSortAlphaDownAlt)`
+  width: 100%;
+  height: 100%;
+  stroke: #555555;
+`;
+
+export const AscIcon = styled(BsSortAlphaDown)`
+  width: 100%;
+  height: 100%;
+  stroke: #555555;
 `;
