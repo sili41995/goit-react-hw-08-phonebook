@@ -24,7 +24,6 @@ const EditForm = ({ setEditContact }) => {
     register,
     formState: { errors },
     handleSubmit,
-    reset,
   } = useForm();
   const onSubmit = (data) => {
     console.log(data);
@@ -64,7 +63,7 @@ const EditForm = ({ setEditContact }) => {
             <EditButton type="submit">
               <EditIcon />
             </EditButton>
-            <CancelButton type="button" onClick={() => reset()}>
+            <CancelButton type="button" onClick={setEditContact}>
               <CancelIcon />
             </CancelButton>
           </Buttons>

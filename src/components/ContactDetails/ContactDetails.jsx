@@ -35,7 +35,7 @@ const ContactDetails = () => {
         </EditButton>
       </ButtonContainer>
       {editContact ? (
-        <EditForm setEditContact={setEditContact} />
+        <EditForm setEditContact={handleEditBtnClick} />
       ) : (
         <ContactInfo />
       )}
