@@ -1,21 +1,19 @@
 import styled from '@emotion/styled';
 import { NavLink } from 'react-router-dom';
 
-const GAP_DEFAULT = '20px';
-
 export const Container = styled.nav`
-  display: flex;
+  /* display: flex;
   justify-content: space-between;
-  gap: ${GAP_DEFAULT};
+  gap: 000; */
 `;
 
 export const LinkContainer = styled.div`
-  display: flex;
-  gap: ${GAP_DEFAULT};
+  /* display: flex;
+  gap: 000; */
 `;
 
 export const Link = styled(NavLink)`
-  display: block;
+  /* display: block;
   width: 100px;
   padding: 12px;
   border-radius: 5px;
@@ -33,11 +31,11 @@ export const Link = styled(NavLink)`
   &.active {
     color: #38b6ff;
     background-color: #fff;
-  }
+  } */
 `;
 
 export const AddContactLink = styled(NavLink)`
-  display: flex;
+  /* display: flex;
   gap: 10px;
   justify-content: space-between;
   align-items: center;
@@ -54,10 +52,10 @@ export const AddContactLink = styled(NavLink)`
   &:hover,
   &:focus {
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  }
+  } */
 `;
 
 export const IconContainer = styled.span`
-  display: flex;
-  align-items: center;
+  /* display: flex;
+  align-items: center; */
 `;

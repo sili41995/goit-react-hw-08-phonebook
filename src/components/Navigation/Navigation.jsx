@@ -7,14 +7,13 @@ import {
   Link,
   AddContactLink,
 } from './Navigation.styled';
-import Filter from 'components/Filter';
-
-const contactsPath = 'contacts';
+// import Filter from 'components/Filter';
+import contactsPath from 'constants/contactsPath';
+import isContactsPage from 'utils/isContactsPage';
+import makeBlur from 'utils/makeBlur';
 
 const Navigation = () => {
   const location = useLocation();
-
-  const isContactsPage = location.pathname.includes(contactsPath);
 
   return (
     <Container>
@@ -23,13 +22,11 @@ const Navigation = () => {
         <Link to="/about">About</Link>
       </LinkContainer>
       <LinkContainer>
-        {isContactsPage && <Filter />}
+        {/* {isContactsPage(location.pathname) && <Filter />} */}
         <AddContactLink
           to="/contacts/new-contact"
           state={{ from: location }}
-          onClick={(e) => {
-            e.currentTarget.blur();
-          }}
+          onClick={makeBlur}
         >
           <IconContainer>
             <GrAddCircle />

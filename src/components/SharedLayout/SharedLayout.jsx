@@ -1,14 +1,13 @@
 import { Outlet, useLocation } from 'react-router-dom';
-import { Container, Header, Main } from './SharedLayout.styled';
+import { Container, Header, Main, Section } from './SharedLayout.styled';
+import isAuthPage from 'utils/isAuthPage';
 import Navigation from 'components/Navigation';
-
-const authPge = ['/', '/register', '/login'];
+import isContactsPage from 'utils/isContactsPage';
 
 const SharedLayout = () => {
   const { pathname } = useLocation();
-  const isAuthPage = authPge.includes(pathname);
 
-  document.body.style.backgroundColor = isAuthPage
+  document.body.style.backgroundColor = isAuthPage(pathname)
     ? 'rgba(46, 47, 66, 0.2)'
     : 'white';
 
@@ -20,9 +19,11 @@ const SharedLayout = () => {
         </Container>
       </Header>
       <Main>
-        <Container>
-          <Outlet />
-        </Container>
+        <Section>
+          <Container isContactsPage={isContactsPage(pathname)}>
+            <Outlet />
+          </Container>
+        </Section>
       </Main>
     </>
   );

@@ -4,10 +4,10 @@ import RegisterPage from 'pages/RegisterPage';
 import LoginPage from 'pages/LoginPage';
 import AboutPage from 'pages/AboutPage';
 import ContactsPage from 'pages/ContactsPage';
-import Contact from 'components/Contact';
-import ContactDetails from 'components/ContactDetails';
-import ContactDescription from 'components/ContactDescription';
-import AddContactForm from 'components/AddContactForm';
+// import Contact from 'components/Contact';
+// import ContactDetails from 'components/ContactDetails';
+// import ContactDescription from 'components/ContactDescription';
+// import AddContactForm from 'components/AddContactForm';
 import NotFoundPage from 'pages/NotFoundPage';
 
 export const App = () => {
@@ -20,11 +20,11 @@ export const App = () => {
           <Route path="register" element={<RegisterPage />} />
           <Route path="about" element={<AboutPage />} />
           <Route path="contacts" element={<ContactsPage />}>
-            <Route path="contact-details/:id" element={<ContactDetails />}>
-              <Route path="contact" element={<Contact />}></Route>
-              <Route path="about" element={<ContactDescription />}></Route>
-            </Route>
-            <Route path="new-contact" element={<AddContactForm />} />
+            {/* <Route path="contact-details/:id" element={<ContactDetails />}> */}
+            {/* <Route path="contact" element={<Contact />}></Route> */}
+            {/* <Route path="about" element={<ContactDescription />}></Route> */}
+            {/* </Route> */}
+            {/* <Route path="new-contact" element={<AddContactForm />} /> */}
           </Route>
           <Route path="*" element={<NotFoundPage />} />
         </Route>

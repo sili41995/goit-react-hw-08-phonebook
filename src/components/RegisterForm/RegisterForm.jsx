@@ -1,9 +1,7 @@
 import TextField from '@mui/material/TextField';
-import { toast } from 'react-toastify';
 import { useForm } from 'react-hook-form';
 import 'react-toastify/dist/ReactToastify.css';
 import {
-  FormContainer,
   Form,
   Button,
   Message,
@@ -12,10 +10,7 @@ import {
   LogInLink,
 } from './RegisterForm.styled';
 import Toast from 'components/Toast';
-
-const errorNotify = (message) => {
-  toast.error(message);
-};
+import { errorNotify } from 'utils/toasts';
 
 const RegisterForm = () => {
   const {
@@ -23,61 +18,60 @@ const RegisterForm = () => {
     formState: { errors },
     handleSubmit,
   } = useForm();
+
   const onSubmit = (data) => console.log(data);
 
   return (
     <>
-      <FormContainer>
-        <Title>sign up</Title>
-        <Message>Welcome to Phonebook!</Message>
-        <Form onSubmit={handleSubmit(onSubmit)}>
-          <TextField
-            {...register('name', { required: true })}
-            type="text"
-            label="Username"
-            variant="outlined"
-            sx={{
-              '& > :not(style)': {
-                ...textFieldStyle,
-              },
-            }}
-          />
-          {errors.name && errorNotify('Username is required')}
-          <TextField
-            {...register('email', { required: true })}
-            type="email"
-            label="Email"
-            variant="outlined"
-            sx={{
-              '& > :not(style)': {
-                ...textFieldStyle,
-              },
-            }}
-          />
-          {errors.email && errorNotify('Email is required')}
-          <TextField
-            {...register('password', { required: true, minLength: 7 })}
-            type="password"
-            label="Password"
-            variant="outlined"
-            sx={{
-              '& > :not(style)': {
-                ...textFieldStyle,
-              },
-            }}
-          />
-          {errors.password &&
-            errorNotify(
-              errors.password.type === 'required'
-                ? 'Password is required'
-                : 'Password minimum length is 7 characters'
-            )}
-          <Message>
-            <LogInLink to="/login">Log in</LogInLink> if you have an account
-          </Message>
-          <Button value="Enlist" type="submit" />
-        </Form>
-      </FormContainer>
+      <Title>sign up</Title>
+      <Message>Welcome to Phonebook!</Message>
+      <Form onSubmit={handleSubmit(onSubmit)}>
+        <TextField
+          {...register('name', { required: true })}
+          type="text"
+          label="Username"
+          variant="outlined"
+          sx={{
+            '& > :not(style)': {
+              ...textFieldStyle,
+            },
+          }}
+        />
+        {errors.name && errorNotify('Username is required')}
+        <TextField
+          {...register('email', { required: true })}
+          type="email"
+          label="Email"
+          variant="outlined"
+          sx={{
+            '& > :not(style)': {
+              ...textFieldStyle,
+            },
+          }}
+        />
+        {errors.email && errorNotify('Email is required')}
+        <TextField
+          {...register('password', { required: true, minLength: 7 })}
+          type="password"
+          label="Password"
+          variant="outlined"
+          sx={{
+            '& > :not(style)': {
+              ...textFieldStyle,
+            },
+          }}
+        />
+        {errors.password &&
+          errorNotify(
+            errors.password.type === 'required'
+              ? 'Password is required'
+              : 'Password minimum length is 7 characters'
+          )}
+        <Message>
+          <LogInLink to="/login">Log in</LogInLink> if you have an account
+        </Message>
+        <Button value="Enlist" type="submit" />
+      </Form>
       <Toast />
     </>
   );
