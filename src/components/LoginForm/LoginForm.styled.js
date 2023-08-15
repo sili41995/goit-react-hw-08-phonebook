@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import { Link } from 'react-router-dom';
 
 export const Title = styled.h2`
   /* text-transform: uppercase;
@@ -11,12 +10,6 @@ export const Title = styled.h2`
   line-height: normal; */
 `;
 
-export const Form = styled.form`
-  /* display: flex;
-  flex-direction: column;
-  gap: 20px; */
-`;
-
 export const Message = styled.p`
   /* color: #000000;
   font-family: Inter;
@@ -24,6 +17,12 @@ export const Message = styled.p`
   font-style: normal;
   font-weight: 500;
   line-height: normal; */
+`;
+
+export const Form = styled.form`
+  /* display: flex;
+  flex-direction: column;
+  gap: 20px; */
 `;
 
 export const Image = styled.img`
@@ -54,14 +53,12 @@ export const Button = styled.input`
   } */
 `;
 
-export const SignUpLink = styled(Link)`
-  /* color: #4d5ae5; */
+export const Input = styled.input`
+  & ::placeholder {
+    // fontFamily: 'Inter',
+    // fontSize: '20px',
+    // fontStyle: 'normal',
+    // fontWeight: '500',
+    // lineHeight: 'normal',
+  }
 `;
-
-export const textFieldStyle = {
-  // fontFamily: 'Inter',
-  // fontSize: '20px',
-  // fontStyle: 'normal',
-  // fontWeight: '500',
-  // lineHeight: 'normal',
-};

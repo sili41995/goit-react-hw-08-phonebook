@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import { Link } from 'react-router-dom';
 
 export const Title = styled.h2`
   /* text-transform: uppercase;
@@ -49,14 +48,12 @@ export const Button = styled.input`
   } */
 `;
 
-export const LogInLink = styled(Link)`
-  /* color: #4d5ae5; */
+export const Input = styled.input`
+  & ::placeholder {
+    // fontFamily: 'Inter',
+    // fontSize: '20px',
+    // fontStyle: 'normal',
+    // fontWeight: '500',
+    // lineHeight: 'normal',
+  }
 `;
-
-export const textFieldStyle = {
-  // fontFamily: 'Inter',
-  // fontSize: '20px',
-  // fontStyle: 'normal',
-  // fontWeight: '500',
-  // lineHeight: 'normal',
-};

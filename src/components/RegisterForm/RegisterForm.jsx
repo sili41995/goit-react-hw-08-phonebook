@@ -1,16 +1,10 @@
-import TextField from '@mui/material/TextField';
 import { useForm } from 'react-hook-form';
 import 'react-toastify/dist/ReactToastify.css';
-import {
-  Form,
-  Button,
-  Message,
-  Title,
-  textFieldStyle,
-  LogInLink,
-} from './RegisterForm.styled';
+import { Form, Button, Message, Title } from './RegisterForm.styled';
 import Toast from 'components/Toast';
 import { errorNotify } from 'utils/toasts';
+import AuthFormMessage from 'components/AuthFormMessage';
+import { loginPageLink } from 'constants/authPagesLinks';
 
 const RegisterForm = () => {
   const {
@@ -26,40 +20,22 @@ const RegisterForm = () => {
       <Title>sign up</Title>
       <Message>Welcome to Phonebook!</Message>
       <Form onSubmit={handleSubmit(onSubmit)}>
-        <TextField
+        <input
           {...register('name', { required: true })}
           type="text"
-          label="Username"
-          variant="outlined"
-          sx={{
-            '& > :not(style)': {
-              ...textFieldStyle,
-            },
-          }}
+          placeholder="Username"
         />
         {errors.name && errorNotify('Username is required')}
-        <TextField
+        <input
           {...register('email', { required: true })}
           type="email"
-          label="Email"
-          variant="outlined"
-          sx={{
-            '& > :not(style)': {
-              ...textFieldStyle,
-            },
-          }}
+          placeholder="Email"
         />
         {errors.email && errorNotify('Email is required')}
-        <TextField
+        <input
           {...register('password', { required: true, minLength: 7 })}
           type="password"
-          label="Password"
-          variant="outlined"
-          sx={{
-            '& > :not(style)': {
-              ...textFieldStyle,
-            },
-          }}
+          placeholder="Password"
         />
         {errors.password &&
           errorNotify(
@@ -67,9 +43,11 @@ const RegisterForm = () => {
               ? 'Password is required'
               : 'Password minimum length is 7 characters'
           )}
-        <Message>
-          <LogInLink to="/login">Log in</LogInLink> if you have an account
-        </Message>
+        <AuthFormMessage
+          action={'Log in'}
+          pageLink={loginPageLink}
+          message={'if you have an account'}
+        />
         <Button value="Enlist" type="submit" />
       </Form>
       <Toast />

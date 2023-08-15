@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export const Item = styled.li`
   /* align-items: center; */
-  /* padding: 10px; */
+  /* padding: ${({ theme }) => theme.spacing * 3}px; */
   /* border-radius: 10px; */
   /* border: 0.5px solid rgba(137, 137, 137, 0.43); */
   /* &:hover, */
@@ -14,7 +14,7 @@ export const Item = styled.li`
 
 export const ContactLink = styled(Link)`
   /* display: flex; */
-  /* gap: 20px; */
+  /* gap: ${({ theme }) => theme.primaryGap}px; */
   /* text-decoration: none; */
 `;
 
@@ -27,7 +27,7 @@ export const ContactInfo = styled.div`
   /* flex-wrap: wrap; */
   /* width: 100%; */
   /* justify-content: space-between; */
-  /* gap: 20px; */
+  /* gap: ${({ theme }) => theme.primaryGap}px; */
   /* align-items: center; */
 `;
 
@@ -37,32 +37,26 @@ export const Person = styled.div`
 `;
 
 export const Name = styled.p`
-  /* color: #000; */
+  /* color: ${({ theme }) => theme.primaryFontColor}; */
   /* font-family: Inter; */
   /* font-size: 20px; */
-  /* font-style: normal; */
-  /* font-weight: 600; */
-  /* line-height: normal; */
+  /* font-weight: ${({ theme }) => theme.secondaryFontWeight}; */
   /* text-align: center; */
 `;
 
 export const JobTitle = styled.p`
   /* color: #636363; */
   /* font-family: Inter; */
-  /* font-size: 15px; */
-  /* font-style: normal; */
-  /* font-weight: 500; */
-  /* line-height: normal; */
+  /* font-size: ${({ theme }) => theme.primaryFontSize}px; */
+  /* font-weight: ${({ theme }) => theme.primaryFontWeight}; */
   /* text-align: center; */
 `;
 
 export const Phone = styled.p`
-  /* color: #000; */
+  /* color: ${({ theme }) => theme.primaryFontColor}; */
   /* font-family: Inter; */
-  /* font-size: 18px; */
-  /* font-style: normal; */
-  /* font-weight: 500; */
-  /* line-height: normal; */
+  /* font-size: ${({ theme }) => theme.secondaryFontSize}px; */
+  /* font-weight: ${({ theme }) => theme.primaryFontWeight}; */
   /* margin-left: auto; */
   /* margin-right: auto; */
 `;
@@ -70,10 +64,8 @@ export const Phone = styled.p`
 export const Email = styled.p`
   /* color: #696969; */
   /* font-family: Inter; */
-  /* font-size: 18px; */
-  /* font-style: normal; */
-  /* font-weight: 600; */
-  /* line-height: normal; */
+  /* font-size: ${({ theme }) => theme.secondaryFontSize}px; */
+  /* font-weight: ${({ theme }) => theme.secondaryFontWeight}; */
   /* margin-left: auto; */
   /* margin-right: auto; */
 `;

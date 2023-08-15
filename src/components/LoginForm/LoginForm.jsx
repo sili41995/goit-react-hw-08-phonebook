@@ -1,18 +1,11 @@
-import TextField from '@mui/material/TextField';
 import { useForm } from 'react-hook-form';
 import 'react-toastify/dist/ReactToastify.css';
-import {
-  Form,
-  Button,
-  Message,
-  Title,
-  Image,
-  textFieldStyle,
-  SignUpLink,
-} from './LoginForm.styled';
+import { Form, Button, Message, Title, Image } from './LoginForm.styled';
 import Toast from 'components/Toast';
 import defaultAvatar from '../default-signin-avatar.png';
 import { errorNotify } from 'utils/toasts';
+import AuthFormMessage from 'components/AuthFormMessage';
+import { registerPageLink } from 'constants/authPagesLinks';
 
 const LoginForm = () => {
   const {
@@ -29,28 +22,16 @@ const LoginForm = () => {
       <Message>Welcome to Phonebook!</Message>
       <Image src={defaultAvatar} alt="user avatar" />
       <Form onSubmit={handleSubmit(onSubmit)}>
-        <TextField
+        <input
           {...register('email', { required: true })}
           type="email"
-          label="Email"
-          variant="outlined"
-          sx={{
-            '& > :not(style)': {
-              ...textFieldStyle,
-            },
-          }}
+          placeholder="Email"
         />
         {errors.email && errorNotify('Email is required')}
-        <TextField
+        <input
           {...register('password', { required: true, minLength: 7 })}
           type="password"
-          label="Password"
-          variant="outlined"
-          sx={{
-            '& > :not(style)': {
-              ...textFieldStyle,
-            },
-          }}
+          placeholder="Password"
         />
         {errors.password &&
           errorNotify(
@@ -58,10 +39,11 @@ const LoginForm = () => {
               ? 'Password is required'
               : 'Password minimum length is 7 characters'
           )}
-        <Message>
-          <SignUpLink to="/register">Sign up</SignUpLink> if you don't have an
-          account yet
-        </Message>
+        <AuthFormMessage
+          action={'Sign up'}
+          pageLink={registerPageLink}
+          message={"if you don't have an account yet"}
+        />
         <Button value="Log in" type="submit" />
       </Form>
       <Toast />
