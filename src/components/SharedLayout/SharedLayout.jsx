@@ -1,15 +1,13 @@
 import { Outlet, useLocation } from 'react-router-dom';
 import { Container, Header, Main, Section } from './SharedLayout.styled';
-import isAuthPage from 'utils/isAuthPage';
 import Navigation from 'components/Navigation';
 import isContactsPage from 'utils/isContactsPage';
+import setAuthPageBackgroundColor from 'utils/setAuthPageBackgroundColor';
 
 const SharedLayout = () => {
   const { pathname } = useLocation();
 
-  document.body.style.backgroundColor = isAuthPage(pathname)
-    ? 'rgba(46, 47, 66, 0.2)'
-    : 'white';
+  setAuthPageBackgroundColor(pathname);
 
   return (
     <>

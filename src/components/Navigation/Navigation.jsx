@@ -9,7 +9,7 @@ import {
 } from './Navigation.styled';
 // import Filter from 'components/Filter';
 import contactsPath from 'constants/contactsPath';
-import isContactsPage from 'utils/isContactsPage';
+// import isContactsPage from 'utils/isContactsPage';
 import makeBlur from 'utils/makeBlur';
 
 const Navigation = () => {

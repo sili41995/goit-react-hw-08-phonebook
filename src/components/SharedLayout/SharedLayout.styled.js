@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import isContactsPage from 'utils/isContactsPage';
 
 export const Header = styled.header`
   /* padding: 20px 0;
