@@ -1,4 +1,4 @@
-import defaultAvatar from '../default-contact-avatar.jpg';
+import { getContactAvatar } from 'utils/getAvatar';
 import {
   Email,
   Image,
@@ -13,7 +13,7 @@ import {
 
 const ContactsListItem = ({ contact }) => {
   const { id, name, number, avatar, jobTitle = 'my friend' } = contact;
-  const userAvatar = avatar ? avatar : defaultAvatar;
+  const userAvatar = getContactAvatar(avatar);
 
   return (
     <Item>
