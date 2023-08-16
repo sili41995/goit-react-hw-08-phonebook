@@ -10,14 +10,17 @@ import {
 } from './Filter.styled';
 import { FILTER_SP_KEY, SORT_SP_KEY } from 'constants/searhParamsKey';
 import makeFocus from 'utils/makeFoces';
-import { ASC_SORT_TYPE, DESC_SORT_TYPE } from 'constants/sortType';
+import { DESC_SORT_TYPE } from 'constants/sortType';
+import updateSortSearchParams from 'utils/updateSortSearchParams';
+import updateFilterSearchParams from 'utils/updateFilterSearchParams';
+import handleFilterBtnClick from 'utils/handleFilterBtnClick';
 
 const Filter = () => {
   const [showFilter, setShowFilter] = useState(false);
   const [searchParams, setSearchParams] = useSearchParams();
   const inputRef = useRef();
-
   const filter = searchParams.get(FILTER_SP_KEY) ?? '';
+  const deskSortType = searchParams.get(SORT_SP_KEY) === DESC_SORT_TYPE;
 
   useEffect(() => {
     if (showFilter) {
@@ -31,44 +34,19 @@ const Filter = () => {
     }
   }, [filter]);
 
-  const updateFilterSearchParams = (e) => {
-    const updateSearchParams = {};
+  const onSortBtnClick = () => {
+    updateSortSearchParams(searchParams, setSearchParams);
+  };
+
+  const onFilterChange = (e) => {
     const { value } = e.target;
-    const sortSearchParam = searchParams.get(SORT_SP_KEY);
-    if (sortSearchParam) {
-      updateSearchParams[SORT_SP_KEY] = sortSearchParam;
-    }
-    if (value) {
-      updateSearchParams[FILTER_SP_KEY] = value;
-    }
-    setSearchParams(updateSearchParams);
+    console.log(value);
+    updateFilterSearchParams(value, searchParams, setSearchParams);
   };
 
-  const handleFilterBtnClick = () => {
-    const updateSearchParams = {};
-    const sortSearchParam = searchParams.get(SORT_SP_KEY);
-    if (sortSearchParam) {
-      updateSearchParams[SORT_SP_KEY] = sortSearchParam;
-    }
-    setShowFilter((showFilter) => !showFilter);
-    setSearchParams(updateSearchParams);
+  const onFilterBtnClick = () => {
+    handleFilterBtnClick(searchParams, setShowFilter, setSearchParams);
   };
-
-  const updateSortSearchParams = () => {
-    const updateSearchParams = {};
-    const filterSearchParam = searchParams.get(FILTER_SP_KEY);
-    if (filterSearchParam) {
-      updateSearchParams[FILTER_SP_KEY] = filterSearchParam;
-    }
-    const sortSearchParam = searchParams.get(SORT_SP_KEY);
-    const deskSortType = sortSearchParam === DESC_SORT_TYPE;
-    updateSearchParams[SORT_SP_KEY] = deskSortType
-      ? ASC_SORT_TYPE
-      : DESC_SORT_TYPE;
-    setSearchParams(updateSearchParams);
-  };
-
-  const deskSortType = searchParams.get(SORT_SP_KEY) === DESC_SORT_TYPE;
 
   return (
     <FilterContainer>
@@ -77,13 +55,13 @@ const Filter = () => {
           ref={inputRef}
           type="text"
           value={filter}
-          onChange={updateFilterSearchParams}
+          onChange={onFilterChange}
         />
       )}
-      <Button onClick={handleFilterBtnClick}>
+      <Button onClick={onFilterBtnClick}>
         <FilterIcon />
       </Button>
-      <Button onClick={updateSortSearchParams}>
+      <Button onClick={onSortBtnClick}>
         {deskSortType ? <AscIcon /> : <DescIcon />}
       </Button>
     </FilterContainer>
