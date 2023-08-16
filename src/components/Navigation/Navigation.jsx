@@ -7,9 +7,9 @@ import {
   Link,
   AddContactLink,
 } from './Navigation.styled';
-// import Filter from 'components/Filter';
+import Filter from 'components/Filter';
 import contactsPath from 'constants/contactsPath';
-// import isContactsPage from 'utils/isContactsPage';
+import isContactsPage from 'utils/isContactsPage';
 import makeBlur from 'utils/makeBlur';
 
 const Navigation = () => {
@@ -22,7 +22,7 @@ const Navigation = () => {
         <Link to="/about">About</Link>
       </LinkContainer>
       <LinkContainer>
-        {/* {isContactsPage(location.pathname) && <Filter />} */}
+        {isContactsPage(location.pathname) && <Filter />}
         <AddContactLink
           to="/contacts/new-contact"
           state={{ from: location }}
