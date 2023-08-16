@@ -4,7 +4,7 @@ import RegisterPage from 'pages/RegisterPage';
 import LoginPage from 'pages/LoginPage';
 import AboutPage from 'pages/AboutPage';
 import ContactsPage from 'pages/ContactsPage';
-// import Contact from 'components/Contact';
+import ContactData from 'components/ContactData';
 // import ContactDetails from 'components/ContactDetails';
 // import ContactDescription from 'components/ContactDescription';
 // import AddContactForm from 'components/AddContactForm';
@@ -21,7 +21,7 @@ export const App = () => {
           <Route path="about" element={<AboutPage />} />
           <Route path="contacts" element={<ContactsPage />}>
             {/* <Route path="contact-details/:id" element={<ContactDetails />}> */}
-            {/* <Route path="contact" element={<Contact />}></Route> */}
+            <Route path="contact" element={<ContactData />}></Route>
             {/* <Route path="about" element={<ContactDescription />}></Route> */}
             {/* </Route> */}
             {/* <Route path="new-contact" element={<AddContactForm />} /> */}
