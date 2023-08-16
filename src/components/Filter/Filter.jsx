@@ -10,7 +10,7 @@ import {
 } from './Filter.styled';
 import { FILTER_SP_KEY, SORT_SP_KEY } from 'constants/searhParamsKey';
 import makeFocus from 'utils/makeFoces';
-import { ASC, DESC } from 'constants/sortType';
+import { ASC_SORT_TYPE, DESC_SORT_TYPE } from 'constants/sortType';
 
 const Filter = () => {
   const [showFilter, setShowFilter] = useState(false);
@@ -61,14 +61,14 @@ const Filter = () => {
       updateSearchParams[FILTER_SP_KEY] = filterSearchParam;
     }
     const sortSearchParam = searchParams.get(SORT_SP_KEY);
-    if (sortSearchParam === ASC) {
-      updateSearchParams[SORT_SP_KEY] = DESC;
-    }
-    updateSearchParams[SORT_SP_KEY] = ASC;
+    const deskSortType = sortSearchParam === DESC_SORT_TYPE;
+    updateSearchParams[SORT_SP_KEY] = deskSortType
+      ? ASC_SORT_TYPE
+      : DESC_SORT_TYPE;
     setSearchParams(updateSearchParams);
   };
 
-  const ascSort = Boolean(searchParams.get(SORT_SP_KEY));
+  const deskSortType = searchParams.get(SORT_SP_KEY) === DESC_SORT_TYPE;
 
   return (
     <FilterContainer>
@@ -84,7 +84,7 @@ const Filter = () => {
         <FilterIcon />
       </Button>
       <Button onClick={updateSortSearchParams}>
-        {ascSort ? <DescIcon /> : <AscIcon />}
+        {deskSortType ? <AscIcon /> : <DescIcon />}
       </Button>
     </FilterContainer>
   );
