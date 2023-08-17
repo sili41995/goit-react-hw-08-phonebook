@@ -49,11 +49,11 @@ export const Button = styled.input`
 `;
 
 export const Input = styled.input`
-  & ::placeholder {
-    // fontFamily: 'Inter',
-    // fontSize: '20px',
-    // fontStyle: 'normal',
-    // fontWeight: '500',
-    // lineHeight: 'normal',
-  }
+  /* & ::placeholder { */
+  // fontFamily: 'Inter',
+  // fontSize: '20px',
+  // fontStyle: 'normal',
+  // fontWeight: '500',
+  // lineHeight: 'normal',
+  /* } */
 `;

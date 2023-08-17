@@ -10,6 +10,7 @@ import {
 import ContactInfo from 'components/ContactInfo';
 import EditForm from 'components/EditForm';
 import makeBlur from 'utils/makeBlur';
+import ContactModalForm from 'components/ContactModalForm';
 
 const ContactDetails = () => {
   const [editContact, setEditContact] = useState(false);
@@ -36,7 +37,9 @@ const ContactDetails = () => {
         </EditButton>
       </ButtonContainer>
       {editContact ? (
-        <EditForm setEditContact={handleEditBtnClick} />
+        <ContactModalForm>
+          <EditForm setEditContact={handleEditBtnClick} />
+        </ContactModalForm>
       ) : (
         <ContactInfo />
       )}
