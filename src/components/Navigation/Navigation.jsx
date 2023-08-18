@@ -1,30 +1,40 @@
-import { useLocation } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { GrAddCircle } from 'react-icons/gr';
 import {
-  Container,
+  NavContainer,
   LinkContainer,
   IconContainer,
-  Link,
-  AddContactLink,
+  List,
+  ListItem,
 } from './Navigation.styled';
 import Filter from 'components/Filter';
-import contactsPath from 'constants/contactsPath';
 import isContactsPage from 'utils/isContactsPage';
 import makeBlur from 'utils/makeBlur';
+import {
+  aboutPath,
+  addNewContactPath,
+  contactsPath,
+  loginPath,
+  registerPath,
+} from 'constants/pathNames';
 
 const Navigation = () => {
   const location = useLocation();
 
   return (
-    <Container>
-      <LinkContainer>
-        <Link to={`/${contactsPath}`}>Contacts</Link>
-        <Link to="/about">About</Link>
-      </LinkContainer>
+    <NavContainer>
+      <List>
+        <ListItem>
+          <NavLink to={`/${contactsPath}`}>Contacts</NavLink>
+        </ListItem>
+        <ListItem>
+          <NavLink to={`/${aboutPath}`}>About</NavLink>
+        </ListItem>
+      </List>
       <LinkContainer>
         {isContactsPage(location.pathname) && <Filter />}
-        <AddContactLink
-          to="/contacts/new-contact"
+        <NavLink
+          to={`${addNewContactPath}`}
           state={{ from: location }}
           onClick={makeBlur}
         >
@@ -32,13 +42,17 @@ const Navigation = () => {
             <GrAddCircle />
           </IconContainer>
           New Contact
-        </AddContactLink>
+        </NavLink>
       </LinkContainer>
-      <LinkContainer>
-        <Link to="/register">Sign up</Link>
-        <Link to="/login">Log in</Link>
-      </LinkContainer>
-    </Container>
+      <List>
+        <ListItem>
+          <NavLink to={`/${registerPath}`}>Sign up</NavLink>
+        </ListItem>
+        <ListItem>
+          <NavLink to={`/${loginPath}`}>Log in</NavLink>
+        </ListItem>
+      </List>
+    </NavContainer>
   );
 };
 

@@ -1,12 +1,20 @@
 import { Global, css } from '@emotion/react';
+import 'modern-normalize';
 
 const GlobalStyles = () => (
   <Global
     styles={css`
-      @import '/node_modules/modern-normalize/modern-normalize.css';
-
       body {
-        font-family: sans-serif;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+          'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+          'Helvetica Neue', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      code {
+        font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+          monospace;
       }
 
       h1,
@@ -23,12 +31,13 @@ const GlobalStyles = () => (
       ol {
         margin: 0;
         padding: 0;
+        list-style: none;
       }
 
       img {
         display: block;
         max-width: 100%;
-        height: auto;
+        object-fit: cover;
       }
 
       button {

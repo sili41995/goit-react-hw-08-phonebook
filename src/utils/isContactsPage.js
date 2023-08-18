@@ -1,4 +1,4 @@
-import contactsPath from 'constants/contactsPath';
+import { contactsPath } from 'constants/pathNames';
 
 const isContactsPage = (path) => path.includes(contactsPath);
 

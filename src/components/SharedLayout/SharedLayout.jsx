@@ -1,8 +1,9 @@
 import { Outlet, useLocation } from 'react-router-dom';
 import { Container, Header, Main, Section } from './SharedLayout.styled';
 import Navigation from 'components/Navigation';
-import isContactsPage from 'utils/isContactsPage';
+// import isContactsPage from 'utils/isContactsPage';
 import setAuthPageBackgroundColor from 'utils/setAuthPageBackgroundColor';
+import isContactsPage from 'utils/isContactsPage';
 
 const SharedLayout = () => {
   const { pathname } = useLocation();

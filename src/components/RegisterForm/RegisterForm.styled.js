@@ -1,39 +1,38 @@
 import styled from '@emotion/styled';
 
 export const Title = styled.h2`
-  /* text-transform: uppercase;
+  text-transform: uppercase;
   color: #000000;
   font-family: Inter;
   font-size: 35px;
   font-style: normal;
   font-weight: 500;
-  line-height: normal; */
+  line-height: normal;
 `;
 
 export const Form = styled.form`
-  /* display: flex;
+  display: flex;
   flex-direction: column;
-  gap: 20px; */
+  gap: 20px;
 `;
 
 export const Message = styled.p`
-  /* color: #000000;
+  color: #000000;
   font-family: Inter;
   font-size: 18px;
   font-style: normal;
   font-weight: 500;
-  line-height: normal; */
+  line-height: normal;
 `;
 
-export const Button = styled.input`
-  /* display: block;
+export const Button = styled.button`
+  display: block;
   min-width: 170px;
   padding: 16px 32px;
   align-self: center;
   background-color: #4d5ae5;
   border-color: transparent;
   border-radius: 4px;
-  cursor: pointer;
   color: #fff;
   text-align: center;
   font-family: Inter;
@@ -45,15 +44,18 @@ export const Button = styled.input`
   &:hover,
   &:focus {
     background-color: #404bbf;
-  } */
+  }
 `;
 
 export const Input = styled.input`
-  /* & ::placeholder { */
-  // fontFamily: 'Inter',
-  // fontSize: '20px',
-  // fontStyle: 'normal',
-  // fontWeight: '500',
-  // lineHeight: 'normal',
-  /* } */
+  width: 100%;
+  height: 60px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 8px;
+  padding: 8px 38px;
+  font-family: Inter;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
 `;

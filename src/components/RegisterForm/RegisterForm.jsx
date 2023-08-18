@@ -1,10 +1,9 @@
 import { useForm } from 'react-hook-form';
 import 'react-toastify/dist/ReactToastify.css';
-import { Form, Button, Message, Title } from './RegisterForm.styled';
-import Toast from 'components/Toast';
+import { Form, Button, Message, Title, Input } from './RegisterForm.styled';
 import { errorNotify } from 'utils/toasts';
 import AuthFormMessage from 'components/AuthFormMessage';
-import { loginPageLink } from 'constants/authPagesLinks';
+import { loginPath } from 'constants/pathNames';
 
 const RegisterForm = () => {
   const {
@@ -13,26 +12,28 @@ const RegisterForm = () => {
     handleSubmit,
   } = useForm();
 
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    console.log(data);
+  };
 
   return (
     <>
       <Title>sign up</Title>
       <Message>Welcome to Phonebook!</Message>
       <Form onSubmit={handleSubmit(onSubmit)}>
-        <input
+        <Input
           {...register('name', { required: true })}
           type="text"
           placeholder="Username"
         />
         {errors.name && errorNotify('Username is required')}
-        <input
+        <Input
           {...register('email', { required: true })}
           type="email"
           placeholder="Email"
         />
         {errors.email && errorNotify('Email is required')}
-        <input
+        <Input
           {...register('password', { required: true, minLength: 7 })}
           type="password"
           placeholder="Password"
@@ -45,12 +46,11 @@ const RegisterForm = () => {
           )}
         <AuthFormMessage
           action={'Log in'}
-          pageLink={loginPageLink}
+          pageLink={`/${loginPath}`}
           message={'if you have an account'}
         />
-        <Button value="Enlist" type="submit" />
+        <Button type="submit">Enlist</Button>
       </Form>
-      <Toast />
     </>
   );
 };

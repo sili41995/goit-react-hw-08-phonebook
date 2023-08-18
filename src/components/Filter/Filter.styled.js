@@ -4,8 +4,8 @@ import { BsSortAlphaDownAlt } from 'react-icons/bs';
 import { FiFilter } from 'react-icons/fi';
 
 export const FilterContainer = styled.div`
-  /* display: flex; */
-  /* gap: 20px; */
+  display: flex;
+  gap: ${({ theme }) => theme.primaryGap}px;
 `;
 
 export const Input = styled.input`
