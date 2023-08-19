@@ -43,6 +43,7 @@ export const LinkContainer = styled.div`
     gap: 10px;
     justify-content: space-between;
     align-items: center;
+    white-space: nowrap;
     border-radius: 5px;
     background: #55c875;
     padding: 12px;

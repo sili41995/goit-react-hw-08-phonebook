@@ -1,44 +1,41 @@
 import { useForm } from 'react-hook-form';
 import 'react-toastify/dist/ReactToastify.css';
-import { Form, Button, Message, Title, Input } from './RegisterForm.styled';
+import { Form, Button, Message, Title, Image, Input } from './LoginForm.styled';
+import Toast from 'components/Toast';
+import defaultAvatar from '../default-signin-avatar.png';
 import { errorNotify } from 'utils/toasts';
 import AuthFormMessage from 'components/AuthFormMessage';
-import { loginPath } from 'constants/pathNames';
+import { registerPath } from 'constants/pathNames';
 import { useEffect, useRef } from 'react';
 import makeFocus from 'utils/makeFocus';
 
-const RegisterForm = () => {
-  const userNameRef = useRef();
+const LoginForm = () => {
+  const emailRef = useRef();
   const {
     register,
     formState: { errors },
     handleSubmit,
   } = useForm();
 
+  useEffect(() => {
+    makeFocus(emailRef.current);
+  }, []);
+
   const onSubmit = (data) => {
     console.log(data);
   };
 
-  useEffect(() => {
-    makeFocus(userNameRef.current);
-  }, []);
-
   return (
     <>
-      <Title>sign up</Title>
+      <Title>log in</Title>
       <Message>Welcome to Phonebook!</Message>
+      <Image src={defaultAvatar} alt="user avatar" />
       <Form onSubmit={handleSubmit(onSubmit)}>
-        <Input
-          {...register('name', { required: true })}
-          type="text"
-          placeholder="Username"
-          ref={userNameRef}
-        />
-        {errors.name && errorNotify('Username is required')}
         <Input
           {...register('email', { required: true })}
           type="email"
           placeholder="Email"
+          ref={emailRef}
         />
         {errors.email && errorNotify('Email is required')}
         <Input
@@ -53,14 +50,15 @@ const RegisterForm = () => {
               : 'Password minimum length is 7 characters'
           )}
         <AuthFormMessage
-          action={'Log in'}
-          pageLink={`/${loginPath}`}
-          message={'if you have an account'}
+          action={'Sign up'}
+          pageLink={`/${registerPath}`}
+          message={"if you don't have an account yet"}
         />
-        <Button type="submit">Enlist</Button>
+        <Button type="submit">Log in</Button>
       </Form>
+      <Toast />
     </>
   );
 };
 
-export default RegisterForm;
+export default LoginForm;

@@ -1,5 +1,5 @@
-const makeBlur = (e) => {
-  e.currentTarget.blur();
+const makeBlur = (element) => {
+  element.blur();
 };
 
 export default makeBlur;

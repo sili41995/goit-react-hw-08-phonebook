@@ -7,7 +7,7 @@ export const Header = styled.header`
 `;
 
 export const Container = styled.div`
-  /* display: ${({ isContactsPage }) => (isContactsPage ? 'flex' : 'block')}; */
+  display: ${({ isContactsPage }) => (isContactsPage ? 'flex' : 'block')};
   width: 1200px;
   padding-left: ${({ theme }) => theme.paddingContainer}px;
   padding-right: ${({ theme }) => theme.paddingContainer}px;
