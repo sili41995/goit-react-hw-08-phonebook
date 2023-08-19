@@ -1,4 +1,4 @@
-import { SORT_SP_KEY } from 'constants/searhParamsKey';
+import { SORT_SP_KEY } from 'constants/searchParamsKey';
 
 const handleFilterBtnClick = (searchParams, setShowFilter, setSearchParams) => {
   const updateSearchParams = {};

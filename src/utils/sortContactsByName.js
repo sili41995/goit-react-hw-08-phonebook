@@ -1,8 +1,10 @@
-const sortContactsByName = (contacts, ascSort) =>
+import { DESC_SORT_TYPE } from 'constants/sortType';
+
+const sortContactsByName = (contacts, sortType) =>
   [...contacts].sort(({ name: prevContact }, { name: nextContact }) =>
-    ascSort
-      ? prevContact.localeCompare(nextContact)
-      : nextContact.localeCompare(prevContact)
+    sortType === DESC_SORT_TYPE
+      ? nextContact.localeCompare(prevContact)
+      : prevContact.localeCompare(nextContact)
   );
 
 export default sortContactsByName;

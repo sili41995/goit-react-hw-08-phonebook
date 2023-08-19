@@ -1,4 +1,4 @@
-const { FILTER_SP_KEY, SORT_SP_KEY } = require('constants/searhParamsKey');
+const { FILTER_SP_KEY, SORT_SP_KEY } = require('constants/searchParamsKey');
 const { DESC_SORT_TYPE, ASC_SORT_TYPE } = require('constants/sortType');
 
 const updateSortSearchParams = (searchParams, setSearchParams) => {

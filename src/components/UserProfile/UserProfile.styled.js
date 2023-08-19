@@ -1,9 +1,6 @@
 import styled from '@emotion/styled';
 
-export const UserProfileContainer = styled.div`
-  padding-left: ${({ theme }) => theme.paddingContainer}px;
-  padding-right: ${({ theme }) => theme.paddingContainer}px;
-`;
+export const UserProfileContainer = styled.div``;
 
 export const Image = styled.img`
   width: 150px;

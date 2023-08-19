@@ -5,7 +5,7 @@ import { FiFilter } from 'react-icons/fi';
 
 import { useEffect, useRef, useState } from 'react';
 import { Button, FilterContainer, Input } from './Filter.styled';
-import { FILTER_SP_KEY, SORT_SP_KEY } from 'constants/searhParamsKey';
+import { FILTER_SP_KEY, SORT_SP_KEY } from 'constants/searchParamsKey';
 import makeFocus from 'utils/makeFocus';
 import { DESC_SORT_TYPE } from 'constants/sortType';
 import updateSortSearchParams from 'utils/updateSortSearchParams';

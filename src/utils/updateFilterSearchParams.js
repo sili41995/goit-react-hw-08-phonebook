@@ -1,4 +1,4 @@
-import { FILTER_SP_KEY, SORT_SP_KEY } from 'constants/searhParamsKey';
+import { FILTER_SP_KEY, SORT_SP_KEY } from 'constants/searchParamsKey';
 
 const updateFilterSearchParams = (value, searchParams, setSearchParams) => {
   const updateSearchParams = {};
