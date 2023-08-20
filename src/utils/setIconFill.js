@@ -18,6 +18,9 @@ function setIconFill({ type }) {
     case 'filter':
       return '#555555';
 
+    case 'logout':
+      return '#d3232f';
+
     default:
       return 'none';
   }

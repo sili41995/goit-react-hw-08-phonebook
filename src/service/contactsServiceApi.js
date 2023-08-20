@@ -1,8 +1,17 @@
-import initialState from 'redux/initialState';
+// import initialState from 'redux/initialState';
 
 class ContactsServiceApi {
   #BASE_URL = 'https://connections-api.herokuapp.com';
-  #TOKEN = initialState.auth.token;
+  // #TOKEN = initialState.auth.token;
+  #TOKEN = 'dddddddddddddddddddddddddddddd';
+
+  get token() {
+    return this.#TOKEN;
+  }
+
+  set token(newToken) {
+    this.#TOKEN = newToken;
+  }
 
   registerUser(data) {
     const options = {
@@ -28,6 +37,20 @@ class ContactsServiceApi {
     };
 
     return fetch(`${this.#BASE_URL}/users/login`, options).then((response) =>
+      response.json()
+    );
+  }
+
+  logoutUser() {
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json; charset=UTF-8',
+        Authorization: `Bearer ${this.#TOKEN}`,
+      },
+    };
+
+    return fetch(`${this.#BASE_URL}/users/logout`, options).then((response) =>
       response.json()
     );
   }

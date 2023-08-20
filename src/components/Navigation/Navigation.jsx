@@ -16,9 +16,20 @@ import {
   loginPath,
   registerPath,
 } from 'constants/pathNames';
+import { useDispatch } from 'react-redux';
+import { logoutUser } from 'redux/auth/operations';
+import IconButton from 'components/IconButton/IconButton';
+import { SlLogout } from 'react-icons/sl';
+import makeBlur from 'utils/makeBlur';
 
 const Navigation = () => {
+  const dispatch = useDispatch();
   const location = useLocation();
+
+  const onLogoutBtnClick = ({ currentTarget }) => {
+    makeBlur(currentTarget);
+    dispatch(logoutUser());
+  };
 
   return (
     <NavContainer>
@@ -38,6 +49,14 @@ const Navigation = () => {
           </IconContainer>
           New Contact
         </Link>
+        <IconButton
+          type="logout"
+          iconSize={28}
+          width={44}
+          onBtnClick={onLogoutBtnClick}
+        >
+          <SlLogout />
+        </IconButton>
       </LinkContainer>
       <List>
         <ListItem>

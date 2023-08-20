@@ -18,6 +18,9 @@ function setButtonColor({ type }) {
     case 'filter':
       return '#d9d9d9';
 
+    case 'logout':
+      return '#ff9192';
+
     default:
       return 'grey';
   }

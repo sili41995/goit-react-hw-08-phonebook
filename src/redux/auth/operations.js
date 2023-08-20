@@ -33,3 +33,20 @@ export const loginUser = createAsyncThunk(
     }
   }
 );
+
+export const logoutUser = createAsyncThunk(
+  'auth/logoutUser',
+  async (_, { rejectWithValue }) => {
+    try {
+      const response = await contactsServiceApi.logoutUser();
+      // if (!response.token) {
+      //   throw new Error('Wrong username or password');
+      // }
+      console.log(response);
+      return response;
+    } catch (error) {
+      console.log(error.message);
+      return rejectWithValue();
+    }
+  }
+);
