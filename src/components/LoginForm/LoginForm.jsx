@@ -5,23 +5,25 @@ import defaultAvatar from '../default-signin-avatar.png';
 import { errorNotify } from 'utils/toasts';
 import AuthFormMessage from 'components/AuthFormMessage';
 import { registerPath } from 'constants/pathNames';
-import { useEffect, useRef } from 'react';
-import makeFocus from 'utils/makeFocus';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { loginUser } from 'redux/auth/operations';
 
 const LoginForm = () => {
-  const emailRef = useRef();
+  const dispatch = useDispatch();
   const {
     register,
     formState: { errors },
     handleSubmit,
+    setFocus,
   } = useForm();
 
   useEffect(() => {
-    makeFocus(emailRef.current);
-  }, []);
+    setFocus('email');
+  }, [setFocus]);
 
   const onSubmit = (data) => {
-    console.log(data);
+    dispatch(loginUser(data));
   };
 
   return (
@@ -34,7 +36,6 @@ const LoginForm = () => {
           {...register('email', { required: true })}
           type="email"
           placeholder="Email"
-          ref={emailRef}
         />
         {errors.email && errorNotify('Email is required')}
         <Input

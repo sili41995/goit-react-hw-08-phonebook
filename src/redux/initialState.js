@@ -4,7 +4,13 @@ const initialState = {
     isLoading: false,
     error: null,
   },
-  filter: '',
+  auth: {
+    user: { name: null, email: null },
+    token: null,
+    isLoggedIn: false,
+    isRefreshing: false,
+    isLoading: false,
+  },
 };
 
 export default initialState;

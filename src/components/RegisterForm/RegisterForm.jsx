@@ -4,24 +4,27 @@ import { Form, Button, Message, Title, Input } from './RegisterForm.styled';
 import { errorNotify } from 'utils/toasts';
 import AuthFormMessage from 'components/AuthFormMessage';
 import { loginPath } from 'constants/pathNames';
-import { useEffect, useRef } from 'react';
-import makeFocus from 'utils/makeFocus';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { registerUser } from 'redux/auth/operations';
 
 const RegisterForm = () => {
-  const userNameRef = useRef();
+  const dispatch = useDispatch();
   const {
     register,
     formState: { errors },
     handleSubmit,
+    setFocus,
   } = useForm();
 
   const onSubmit = (data) => {
+    dispatch(registerUser(data));
     console.log(data);
   };
 
   useEffect(() => {
-    makeFocus(userNameRef.current);
-  }, []);
+    setFocus('name');
+  }, [setFocus]);
 
   return (
     <>
@@ -32,7 +35,6 @@ const RegisterForm = () => {
           {...register('name', { required: true })}
           type="text"
           placeholder="Username"
-          ref={userNameRef}
         />
         {errors.name && errorNotify('Username is required')}
         <Input
