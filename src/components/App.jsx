@@ -4,10 +4,9 @@ import RegisterPage from 'pages/RegisterPage';
 import LoginPage from 'pages/LoginPage';
 import AboutPage from 'pages/AboutPage';
 import ContactsPage from 'pages/ContactsPage';
-// import ContactData from 'components/ContactData';
-// import AddContactForm from 'components/AddContactForm';
-// import NotFoundPage from 'pages/NotFoundPage';
-// import ContactModalForm from 'components/ContactModalForm';
+import ContactData from 'components/ContactData';
+import AddContactForm from 'components/AddContactForm';
+import NotFoundPage from 'pages/NotFoundPage';
 import GlobalStyles from 'components/GlobalStyles';
 import {
   aboutPath,
@@ -16,6 +15,9 @@ import {
   registerPath,
 } from 'constants/pathNames';
 import Toast from './Toast/Toast';
+import ContactDetails from 'components/ContactDetails';
+import ContactDescription from 'components/ContactDescription';
+import ContactModalForm from './ContactModalForm/ContactModalForm';
 
 export const App = () => {
   return (
@@ -27,13 +29,16 @@ export const App = () => {
           <Route path={`${registerPath}`} element={<RegisterPage />} />
           <Route path={`${aboutPath}`} element={<AboutPage />} />
           <Route path="contacts" element={<ContactsPage />}>
-            {/* <Route path="contact-details/:id" element={<ContactDetails />}> */}
-            {/* <Route path="contact" element={<ContactData />}></Route> */}
-            {/* <Route path="about" element={<ContactDescription />}></Route> */}
-            {/* </Route> */}
-            {/* <Route path="new-contact" element={<ContactModalForm children={<AddContactForm />} />}/> */}
+            <Route path="contact-details/:id" element={<ContactDetails />}>
+              <Route path="contact" element={<ContactData />} />
+              <Route path="about" element={<ContactDescription />} />
+            </Route>
+            <Route
+              path="new-contact"
+              element={<ContactModalForm children={<AddContactForm />} />}
+            />
           </Route>
-          {/* <Route path="*" element={<NotFoundPage />} /> */}
+          <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
       <Toast />

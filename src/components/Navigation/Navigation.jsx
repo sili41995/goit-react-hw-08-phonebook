@@ -1,4 +1,4 @@
-import { NavLink, useLocation } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import { GrAddCircle } from 'react-icons/gr';
 import {
   NavContainer,
@@ -9,7 +9,6 @@ import {
 } from './Navigation.styled';
 import Filter from 'components/Filter';
 import isContactsPage from 'utils/isContactsPage';
-import makeBlur from 'utils/makeBlur';
 import {
   aboutPath,
   addNewContactPath,
@@ -33,16 +32,12 @@ const Navigation = () => {
       </List>
       <LinkContainer>
         {isContactsPage(location.pathname) && <Filter />}
-        <NavLink
-          to={`${addNewContactPath}`}
-          state={{ from: location }}
-          onClick={makeBlur}
-        >
+        <Link to={`/${addNewContactPath}`} state={{ from: location }}>
           <IconContainer>
             <GrAddCircle />
           </IconContainer>
           New Contact
-        </NavLink>
+        </Link>
       </LinkContainer>
       <List>
         <ListItem>

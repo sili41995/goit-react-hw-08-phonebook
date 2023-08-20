@@ -2,9 +2,8 @@ import { useSearchParams } from 'react-router-dom';
 import { BsSortAlphaDown } from 'react-icons/bs';
 import { BsSortAlphaDownAlt } from 'react-icons/bs';
 import { FiFilter } from 'react-icons/fi';
-
 import { useEffect, useRef, useState } from 'react';
-import { Button, FilterContainer, Input } from './Filter.styled';
+import { FilterContainer, Input } from './Filter.styled';
 import { FILTER_SP_KEY, SORT_SP_KEY } from 'constants/searchParamsKey';
 import makeFocus from 'utils/makeFocus';
 import { DESC_SORT_TYPE } from 'constants/sortType';
@@ -12,6 +11,7 @@ import updateSortSearchParams from 'utils/updateSortSearchParams';
 import updateFilterSearchParams from 'utils/updateFilterSearchParams';
 import handleFilterBtnClick from 'utils/handleFilterBtnClick';
 import makeBlur from 'utils/makeBlur';
+import IconButton from 'components/IconButton';
 
 const Filter = () => {
   const [showFilter, setShowFilter] = useState(false);
@@ -57,12 +57,22 @@ const Filter = () => {
           onChange={onFilterChange}
         />
       )}
-      <Button onClick={onFilterBtnClick}>
+      <IconButton
+        type="filter"
+        iconSize={28}
+        width={44}
+        onBtnClick={onFilterBtnClick}
+      >
         <FiFilter />
-      </Button>
-      <Button onClick={onSortBtnClick}>
+      </IconButton>
+      <IconButton
+        type="filter"
+        iconSize={28}
+        width={44}
+        onBtnClick={onSortBtnClick}
+      >
         {deskSortType ? <BsSortAlphaDown /> : <BsSortAlphaDownAlt />}
-      </Button>
+      </IconButton>
     </FilterContainer>
   );
 };

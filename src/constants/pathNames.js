@@ -10,4 +10,4 @@ export const loginPath = 'login';
 
 export const contactDetailsPath = 'contact-details';
 
-export const addNewContactPath = '/contacts/new-contact';
+export const addNewContactPath = 'contacts/new-contact';

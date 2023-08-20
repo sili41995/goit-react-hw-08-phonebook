@@ -1,6 +1,8 @@
 import styled from '@emotion/styled';
 
-export const UserProfileContainer = styled.div``;
+export const UserProfileContainer = styled.div`
+  flex-shrink: 0;
+`;
 
 export const Image = styled.img`
   width: 150px;

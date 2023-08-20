@@ -1,7 +1,6 @@
 import { useForm } from 'react-hook-form';
 import 'react-toastify/dist/ReactToastify.css';
 import { Form, Button, Message, Title, Image, Input } from './LoginForm.styled';
-import Toast from 'components/Toast';
 import defaultAvatar from '../default-signin-avatar.png';
 import { errorNotify } from 'utils/toasts';
 import AuthFormMessage from 'components/AuthFormMessage';
@@ -56,7 +55,6 @@ const LoginForm = () => {
         />
         <Button type="submit">Log in</Button>
       </Form>
-      <Toast />
     </>
   );
 };

@@ -26,7 +26,7 @@ const ContactsListItem = ({ contact }) => {
             <Role>{role}</Role>
           </Person>
           <Phone>{number}</Phone>
-          <Email>sili41995@gmail.com</Email>
+          <Email>test@gmail.com</Email>
         </ContactInfo>
       </ContactLink>
     </Item>

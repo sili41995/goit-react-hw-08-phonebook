@@ -22,22 +22,3 @@ export const Input = styled.input`
     outline: none;
   }
 `;
-
-export const Button = styled.button`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 44px;
-  background-color: #d9d9d9;
-  border-radius: 8px;
-  border-color: transparent;
-  &:hover,
-  &:focus {
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  }
-  & svg {
-    width: 28px;
-    height: 28px;
-    stroke: #555555;
-  }
-`;
