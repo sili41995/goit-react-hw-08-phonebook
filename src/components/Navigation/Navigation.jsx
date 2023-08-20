@@ -55,7 +55,10 @@ const Navigation = () => {
           width={44}
           onBtnClick={onLogoutBtnClick}
         >
-          <SlLogout />
+          <IconContainer>
+            <SlLogout />
+          </IconContainer>
+          Logout
         </IconButton>
       </LinkContainer>
       <List>
