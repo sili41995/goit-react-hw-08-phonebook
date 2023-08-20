@@ -11,8 +11,11 @@ import {
   Input,
 } from './EditForm.styled';
 import { errorNotify } from 'utils/toasts';
+import { useEffect, useRef } from 'react';
+import makeFocus from 'utils/makeFocus';
 
 const EditForm = ({ setEditContact }) => {
+  const userNameRef = useRef();
   const {
     register,
     formState: { errors },
@@ -23,6 +26,10 @@ const EditForm = ({ setEditContact }) => {
     setEditContact();
   };
 
+  useEffect(() => {
+    makeFocus(userNameRef.current);
+  }, []);
+
   return (
     <>
       <Title>Contact editing</Title>
@@ -31,6 +38,7 @@ const EditForm = ({ setEditContact }) => {
           {...register('name', { required: true })}
           type="text"
           placeholder="Name"
+          ref={userNameRef}
         />
         {errors.name && errorNotify('Name is required')}
         <Input

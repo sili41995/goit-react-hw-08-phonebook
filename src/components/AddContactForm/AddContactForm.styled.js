@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 
 export const Title = styled.p`
   color: #000;
-  font-family: Inter;
+  font-family: 'InterMedium';
   font-size: 20px;
   font-weight: 600;
   text-align: center;
@@ -24,6 +24,10 @@ export const Input = styled.input`
   font-size: 18px;
   line-height: normal;
   letter-spacing: 0.04em;
+  &:focus {
+    outline: none;
+    border-color: ${({ theme }) => theme.primaryColor};
+  }
 `;
 
 export const Buttons = styled.div`

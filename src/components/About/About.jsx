@@ -2,12 +2,12 @@ import { Message } from './About.styled';
 
 const About = () => (
   <Message>
-    Цей додаток було створено з метою демонстрації потенційному роботодавцю моїх
-    навичок роботи з HTML, CSS, JavaScript, React, React Router та React Redux.
-    Додаток було створено без бібліоткеки Axios для вдосконалення навичок роботи
-    з HTTP-запитами. Так як під капотом у React Redux Toolkit знаходиться Immer
-    - ми можемо не соромлячись "мутувати" state, а Immer за нас його правильно
-    оновить.
+    This application was created to demonstrate my skills to potential employers
+    skills in working with HTML, CSS, JavaScript, React, React Router, and React
+    Redux. This application was created without the Axios library to improve
+    work skills with HTTP requests. Because under the hood of the React Redux
+    Toolkit is Immer - we can freely "mutate" the state, and Immer will do it
+    correctly for us to update.
   </Message>
 );
 

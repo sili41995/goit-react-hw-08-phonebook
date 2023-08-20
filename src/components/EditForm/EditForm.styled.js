@@ -66,6 +66,10 @@ export const Input = styled.input`
   font-size: 18px;
   line-height: normal;
   letter-spacing: 0.04em;
+  &:focus {
+    outline: none;
+    border-color: ${({ theme }) => theme.primaryColor};
+  }
 `;
 
 export const EditIcon = styled(GiCheckMark)`

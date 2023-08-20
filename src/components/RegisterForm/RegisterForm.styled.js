@@ -58,4 +58,8 @@ export const Input = styled.input`
   font-size: 20px;
   line-height: 1.17;
   letter-spacing: 0.04em;
+  &:focus {
+    outline: none;
+    border-color: ${({ theme }) => theme.primaryColor};
+  }
 `;
