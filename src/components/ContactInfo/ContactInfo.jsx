@@ -9,17 +9,23 @@ import {
   Navigation,
 } from './ContactInfo.styled';
 import { getContactAvatar } from 'utils/getAvatar';
+import useTargetContact from 'hooks/useTargetContact';
+import getContactInfo from 'utils/getContactInfo';
 
-const ContactInfo = ({ avatar }) => {
-  // потом avatar удалить
+const ContactInfo = () => {
+  const targetContact = useTargetContact();
+  if (!targetContact) {
+    return;
+  }
+  const { name, role, avatar } = getContactInfo(targetContact);
   const userAvatar = getContactAvatar(avatar);
 
   return (
     <>
-      <Image src={userAvatar} alt="" />
+      <Image src={userAvatar} alt={`${name} photo`} />
       <ContactTitle>
-        <ContactName>Maria Onichan</ContactName>
-        <ContactDesc>my friend</ContactDesc>
+        <ContactName>{name}</ContactName>
+        <ContactDesc>{role}</ContactDesc>
       </ContactTitle>
       <Navigation>
         <List>

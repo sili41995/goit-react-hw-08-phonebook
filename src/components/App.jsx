@@ -22,29 +22,26 @@ import useToken from 'hooks/useToken';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { refreshUser } from 'redux/auth/operations';
-import { selectIsLoggedIn, selectIsRefreshing } from 'redux/auth/selectors';
+import { selectIsRefreshing } from 'redux/auth/selectors';
 import PublicRoute from './PublicRoute/PublicRoute';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import Loader from './Loader/Loader';
 
 export const App = () => {
-  const token = useToken();
+  useToken();
   const dispatch = useDispatch();
-  const isLoggedIn = useSelector(selectIsLoggedIn);
   const isRefreshing = useSelector(selectIsRefreshing);
 
   useEffect(() => {
-    if (token && !isLoggedIn) {
-      dispatch(refreshUser());
-    }
-  }, [dispatch, isLoggedIn, token]);
+    dispatch(refreshUser());
+  }, [dispatch]);
 
   return isRefreshing ? (
     <Loader />
   ) : (
     <>
       <Routes>
-        <Route path={`${homePath}`} restricted element={<SharedLayout />}>
+        <Route path={`${homePath}`} element={<SharedLayout />}>
           <Route
             index
             element={<PublicRoute restricted element={<LoginPage />} />}

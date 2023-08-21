@@ -3,7 +3,7 @@ import initialState from 'redux/initialState';
 import { loginUser, logoutUser, refreshUser, registerUser } from './operations';
 
 const handlePending = (state) => ({ ...state, isLoading: true });
-const handleRejected = (state) => (state) => ({
+const handleRejected = (state) => ({
   ...state,
   isLoading: false,
 });
@@ -36,14 +36,23 @@ const authSlice = createSlice({
         ...initialState.auth,
       }))
       .addCase(logoutUser.rejected, handleRejected)
-      .addCase(refreshUser.pending, handlePending)
+      .addCase(refreshUser.pending, (state) => ({
+        ...state,
+        isLoading: true,
+        isRefreshing: true,
+      }))
       .addCase(refreshUser.fulfilled, (state, { payload }) => ({
         ...state,
         isLoading: false,
         user: { name: payload.name, email: payload.email },
         isLoggedIn: true,
+        isRefreshing: false,
       }))
-      .addCase(refreshUser.rejected, handleRejected);
+      .addCase(refreshUser.rejected, (state) => ({
+        ...state,
+        isLoading: false,
+        isRefreshing: false,
+      }));
   },
 });
 
