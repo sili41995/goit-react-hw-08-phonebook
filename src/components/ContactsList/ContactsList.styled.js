@@ -1,7 +1,10 @@
 import styled from '@emotion/styled';
 
-export const List = styled.ul`
+export const Container = styled.div`
   width: 650px;
+`;
+
+export const List = styled.ul`
   list-style: none;
   display: flex;
   flex-direction: column;
