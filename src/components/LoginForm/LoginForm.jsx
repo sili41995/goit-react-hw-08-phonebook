@@ -8,8 +8,10 @@ import { registerPath } from 'constants/pathNames';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { loginUser } from 'redux/auth/operations';
+import useToken from 'hooks/useToken';
 
 const LoginForm = () => {
+  useToken();
   const dispatch = useDispatch();
   const {
     register,

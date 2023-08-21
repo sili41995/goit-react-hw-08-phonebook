@@ -18,8 +18,22 @@ import Toast from './Toast/Toast';
 import ContactDetails from 'components/ContactDetails';
 import ContactDescription from 'components/ContactDescription';
 import ContactModalForm from './ContactModalForm/ContactModalForm';
+import useToken from 'hooks/useToken';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { refreshUser } from 'redux/auth/operations';
+import { selectIsLoggedIn } from 'redux/auth/selectors';
 
 export const App = () => {
+  const token = useToken();
+  const dispatch = useDispatch();
+  const isLoggedIn = useSelector(selectIsLoggedIn);
+
+  useEffect(() => {
+    if (token && !isLoggedIn) {
+      dispatch(refreshUser());
+    }
+  }, [dispatch, isLoggedIn, token]);
   return (
     <>
       <Routes>

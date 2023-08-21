@@ -39,9 +39,26 @@ export const logoutUser = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       const response = await contactsServiceApi.logoutUser();
-      // if (!response.token) {
-      //   throw new Error('Wrong username or password');
-      // }
+      if (response.message) {
+        throw new Error(response.message);
+      }
+      console.log(response);
+      return response;
+    } catch (error) {
+      console.log(error.message);
+      return rejectWithValue();
+    }
+  }
+);
+
+export const refreshUser = createAsyncThunk(
+  'auth/refreshUser',
+  async (_, { rejectWithValue }) => {
+    try {
+      const response = await contactsServiceApi.refreshUser();
+      if (response.message) {
+        throw new Error(response.message);
+      }
       console.log(response);
       return response;
     } catch (error) {

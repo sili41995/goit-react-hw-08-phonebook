@@ -55,6 +55,20 @@ class ContactsServiceApi {
     );
   }
 
+  refreshUser() {
+    const options = {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json; charset=UTF-8',
+        Authorization: `Bearer ${this.#TOKEN}`,
+      },
+    };
+
+    return fetch(`${this.#BASE_URL}/users/current`, options).then((response) =>
+      response.json()
+    );
+  }
+
   // fetchContacts() {
   //   return fetch(this.#BASE_URL).then((response) => {
   //     if (!response.ok) {

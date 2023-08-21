@@ -7,8 +7,10 @@ import { loginPath } from 'constants/pathNames';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { registerUser } from 'redux/auth/operations';
+import useToken from 'hooks/useToken';
 
 const RegisterForm = () => {
+  useToken();
   const dispatch = useDispatch();
   const {
     register,

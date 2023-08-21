@@ -1,11 +1,5 @@
 import styled from '@emotion/styled';
 
-export const NavContainer = styled.nav`
-  display: flex;
-  justify-content: space-between;
-  gap: ${({ theme }) => theme.primaryGap}px;
-`;
-
 export const List = styled.ul`
   display: flex;
   gap: ${({ theme }) => theme.primaryGap}px;
