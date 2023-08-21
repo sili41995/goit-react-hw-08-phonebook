@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import { Link } from 'react-router-dom';
 
 export const Item = styled.li`
   align-items: center;
@@ -10,13 +9,12 @@ export const Item = styled.li`
   &:focus {
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   }
-`;
-
-export const ContactLink = styled(Link)`
-  display: flex;
-  gap: ${({ theme }) => theme.primaryGap}px;
-  text-decoration: none;
-  color: black;
+  & a {
+    display: flex;
+    gap: ${({ theme }) => theme.primaryGap}px;
+    text-decoration: none;
+    color: black;
+  }
 `;
 
 export const Image = styled.img`
@@ -25,17 +23,16 @@ export const Image = styled.img`
 
 export const ContactInfo = styled.div`
   display: flex;
-  flex-wrap: wrap;
   width: 100%;
   justify-content: space-between;
-  /* gap: ${({ theme }) => theme.primaryGap}px; */
+  gap: ${({ theme }) => theme.primaryGap}px;
   align-items: center;
+  & div {
+    flex-basis: calc((100% - ${({ theme }) => theme.primaryGap}*2px) / 3);
+  }
 `;
 
-export const Person = styled.div`
-  /* margin-left: auto; */
-  /* margin-right: auto; */
-`;
+export const Person = styled.div``;
 
 export const Name = styled.p`
   color: ${({ theme }) => theme.primaryFontColor};
@@ -58,8 +55,7 @@ export const Phone = styled.p`
   font-family: Inter;
   font-size: ${({ theme }) => theme.secondaryFontSize}px;
   font-weight: ${({ theme }) => theme.primaryFontWeight};
-  margin-left: auto;
-  margin-right: auto;
+  text-align: center;
 `;
 
 export const Email = styled.p`
@@ -67,4 +63,5 @@ export const Email = styled.p`
   font-family: Inter;
   font-size: ${({ theme }) => theme.secondaryFontSize}px;
   font-weight: ${({ theme }) => theme.secondaryFontWeight};
+  text-align: center;
 `;

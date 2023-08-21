@@ -1,4 +1,4 @@
-import { getContactAvatar } from 'utils/getAvatar';
+import getContactInfo from 'utils/getContactInfo';
 import {
   Email,
   Image,
@@ -8,27 +8,29 @@ import {
   Phone,
   ContactInfo,
   Person,
-  ContactLink,
 } from './ContactsListItem.styled';
 import { contactDetailsPath } from 'constants/pathNames';
+import { Link } from 'react-router-dom';
 
 const ContactsListItem = ({ contact }) => {
-  const { id, name, number, avatar, role = 'my friend' } = contact;
-  const userAvatar = getContactAvatar(avatar);
-
+  const { userAvatar, name, id, role, number, email } = getContactInfo(contact);
   return (
     <Item>
-      <ContactLink to={`${contactDetailsPath}/${id}/contact`}>
+      <Link to={`${contactDetailsPath}/${id}/contact`}>
         <Image src={userAvatar} alt={name} />
         <ContactInfo>
           <Person>
             <Name>{name}</Name>
             <Role>{role}</Role>
           </Person>
-          <Phone>{number}</Phone>
-          <Email>test@gmail.com</Email>
+          <div>
+            <Phone>{number}</Phone>
+          </div>
+          <div>
+            <Email>{email}</Email>
+          </div>
         </ContactInfo>
-      </ContactLink>
+      </Link>
     </Item>
   );
 };

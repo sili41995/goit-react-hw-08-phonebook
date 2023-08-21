@@ -26,7 +26,6 @@ const ContactDetails = () => {
   const handleDeleteBtnClick = (e) => {
     makeBlur(e.currentTarget);
     setShowModalForm((prevState) => !prevState);
-    console.log(1);
   };
 
   return (

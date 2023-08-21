@@ -1,4 +1,3 @@
-import { getUserAvatar } from 'utils/getAvatar';
 import { AiOutlineCalendar } from 'react-icons/ai';
 import { HiOutlinePhone } from 'react-icons/hi';
 import { SlLocationPin } from 'react-icons/sl';
@@ -13,36 +12,48 @@ import {
   ContactInfoIconWrap,
   UserProfileContainer,
 } from './UserProfile.styled';
+import { useSelector } from 'react-redux';
+import { selectUser } from 'redux/auth/selectors';
+import getUserInfo from 'utils/getUserInfo';
 
-const UserProfile = ({ avatar }) => {
-  const userAvatar = getUserAvatar(avatar);
+const UserProfile = () => {
+  const user = useSelector(selectUser);
+  const {
+    name,
+    userAvatar,
+    userName,
+    email,
+    dateOfBirth,
+    phoneNumber,
+    location,
+  } = getUserInfo(user);
 
   return (
     <UserProfileContainer>
-      <Name>Alex</Name>
+      <Name>{name}</Name>
       <UserData>
         <Image src={userAvatar} alt="user avatar" />
-        <FullName>Nguyen Si Alex</FullName>
-        <Email>nsthien2109@gmail.com</Email>
+        <FullName>{userName}</FullName>
+        <Email>{email}</Email>
       </UserData>
       <UserInfo>
         <ContactInfo>
           <ContactInfoIconWrap>
             <AiOutlineCalendar />
           </ContactInfoIconWrap>
-          21-09-2001
+          {dateOfBirth}
         </ContactInfo>
         <ContactInfo>
           <ContactInfoIconWrap>
             <HiOutlinePhone />
           </ContactInfoIconWrap>
-          0705459542
+          {phoneNumber}
         </ContactInfo>
         <ContactInfo>
           <ContactInfoIconWrap>
             <SlLocationPin />
           </ContactInfoIconWrap>
-          Ngu Hanh Son, Da Nang
+          {location}
         </ContactInfo>
       </UserInfo>
     </UserProfileContainer>
