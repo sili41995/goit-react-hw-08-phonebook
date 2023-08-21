@@ -9,13 +9,12 @@ import {
   Title,
   Input,
 } from './AddContactForm.styled';
-import { errorNotify } from 'utils/toasts';
+import { errorToast, successToast } from 'utils/toasts';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { addContact } from 'redux/contacts/operations';
 
 const AddContactForm = () => {
-  //после создания контакта тоже должна выскакивать нотификашка
   const dispatch = useDispatch();
   const {
     register,
@@ -28,7 +27,14 @@ const AddContactForm = () => {
   const goBackLink = location.state?.from || '/';
 
   const onSubmit = (data) => {
-    dispatch(addContact(data));
+    dispatch(addContact(data))
+      .unwrap()
+      .then(() => {
+        successToast('Contact added successfully');
+      })
+      .catch(() => {
+        errorToast('Adding a contact failed');
+      });
     reset();
   };
 
@@ -45,13 +51,13 @@ const AddContactForm = () => {
           type="text"
           placeholder="Name"
         />
-        {errors.name && errorNotify('Name is required')}
+        {errors.name && errorToast('Name is required')}
         <Input
           {...register('number', { required: true })}
           type="tel"
           placeholder="Phone"
         />
-        {errors.number && errorNotify('Phone is required')}
+        {errors.number && errorToast('Phone is required')}
         <Buttons>
           <EditButton type="submit">
             <GiCheckMark />

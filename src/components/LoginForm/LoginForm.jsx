@@ -2,7 +2,7 @@ import { useForm } from 'react-hook-form';
 import 'react-toastify/dist/ReactToastify.css';
 import { Form, Button, Message, Title, Image, Input } from './LoginForm.styled';
 import defaultAvatar from '../default-signin-avatar.png';
-import { errorNotify } from 'utils/toasts';
+import { errorToast, successToast } from 'utils/toasts';
 import AuthFormMessage from 'components/AuthFormMessage';
 import { registerPath } from 'constants/pathNames';
 import { useEffect } from 'react';
@@ -25,7 +25,11 @@ const LoginForm = () => {
   }, [setFocus]);
 
   const onSubmit = (data) => {
-    dispatch(loginUser(data));
+    dispatch(loginUser(data))
+      .unwrap()
+      .then(() => {
+        successToast('Hello, my friend!');
+      });
   };
 
   return (
@@ -39,14 +43,14 @@ const LoginForm = () => {
           type="email"
           placeholder="Email"
         />
-        {errors.email && errorNotify('Email is required')}
+        {errors.email && errorToast('Email is required')}
         <Input
           {...register('password', { required: true, minLength: 7 })}
           type="password"
           placeholder="Password"
         />
         {errors.password &&
-          errorNotify(
+          errorToast(
             errors.password.type === 'required'
               ? 'Password is required'
               : 'Password minimum length is 7 characters'

@@ -11,6 +11,7 @@ import Filter from 'components/Filter';
 import isContactsPage from 'utils/isContactsPage';
 import { addNewContactPath } from 'constants/pathNames';
 import { selectContacts } from 'redux/contacts/selectors';
+import { successToast } from 'utils/toasts';
 
 const PrivateLinks = () => {
   const contacts = useSelector(selectContacts);
@@ -19,7 +20,11 @@ const PrivateLinks = () => {
 
   const onLogoutBtnClick = ({ currentTarget }) => {
     makeBlur(currentTarget);
-    dispatch(logoutUser());
+    dispatch(logoutUser())
+      .unwrap()
+      .then(() => {
+        successToast('Goodbye!');
+      });
   };
 
   return (

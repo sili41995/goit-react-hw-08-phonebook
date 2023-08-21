@@ -103,18 +103,44 @@ class ContactsServiceApi {
     });
   }
 
-  // deleteContact(id) {
-  //   const options = {
-  //     method: 'DELETE',
-  //   };
+  deleteContact(id) {
+    const options = {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json; charset=UTF-8',
+        Authorization: `Bearer ${this.#TOKEN}`,
+      },
+    };
 
-  //   return fetch(`${this.#BASE_URL}/${id}`, options).then((response) => {
-  //     if (!response.ok) {
-  //       throw new Error('Deleting a contact failed');
-  //     }
-  //     return response.json();
-  //   });
-  // }
+    return fetch(`${this.#BASE_URL}/contacts/${id}`, options).then(
+      (response) => {
+        if (!response.ok) {
+          throw new Error('Deleting a contact failed');
+        }
+        return response.json();
+      }
+    );
+  }
+
+  updateContact({ id, data }) {
+    const options = {
+      method: 'PATCH',
+      body: JSON.stringify(data),
+      headers: {
+        'Content-Type': 'application/json; charset=UTF-8',
+        Authorization: `Bearer ${this.#TOKEN}`,
+      },
+    };
+
+    return fetch(`${this.#BASE_URL}/contacts/${id}`, options).then(
+      (response) => {
+        if (!response.ok) {
+          throw new Error('Contact update failed');
+        }
+        return response.json();
+      }
+    );
+  }
 }
 
 const contactsServiceApi = new ContactsServiceApi();

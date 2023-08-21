@@ -1,5 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import contactsServiceApi from 'service/contactsServiceApi';
+import { errorToast } from 'utils/toasts';
 
 export const registerUser = createAsyncThunk(
   'auth/registerUser',
@@ -7,11 +8,11 @@ export const registerUser = createAsyncThunk(
     try {
       const response = await contactsServiceApi.registerUser(credentials);
       if (response.keyValue) {
-        throw new Error('This user is already registered');
+        errorToast('This user is already registered');
+        throw new Error();
       }
       return response;
     } catch (error) {
-      console.log(error.message);
       return rejectWithValue();
     }
   }
@@ -23,12 +24,12 @@ export const loginUser = createAsyncThunk(
     try {
       const response = await contactsServiceApi.loginUser(credentials);
       if (!response.token) {
-        throw new Error('Wrong username or password');
+        errorToast('Wrong username or password');
+        throw new Error();
       }
       console.log(response);
       return response;
     } catch (error) {
-      console.log(error.message);
       return rejectWithValue();
     }
   }
@@ -40,12 +41,12 @@ export const logoutUser = createAsyncThunk(
     try {
       const response = await contactsServiceApi.logoutUser();
       if (response.message) {
-        throw new Error(response.message);
+        errorToast(response.message);
+        throw new Error();
       }
       console.log(response);
       return response;
     } catch (error) {
-      console.log(error.message);
       return rejectWithValue();
     }
   }
@@ -57,11 +58,11 @@ export const refreshUser = createAsyncThunk(
     try {
       const response = await contactsServiceApi.refreshUser();
       if (response.message) {
-        throw new Error(response.message);
+        errorToast(response.message);
+        throw new Error();
       }
       return response;
     } catch (error) {
-      console.log(error.message);
       return rejectWithValue();
     }
   }

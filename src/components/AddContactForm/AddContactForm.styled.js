@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 
 export const Title = styled.p`
   color: #000;
-  font-family: 'InterMedium';
+  font-family: Inter;
   font-size: 20px;
   font-weight: 600;
   text-align: center;

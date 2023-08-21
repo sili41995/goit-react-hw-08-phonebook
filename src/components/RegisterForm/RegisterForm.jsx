@@ -1,7 +1,7 @@
 import { useForm } from 'react-hook-form';
 import 'react-toastify/dist/ReactToastify.css';
 import { Form, Button, Message, Title, Input } from './RegisterForm.styled';
-import { errorNotify } from 'utils/toasts';
+import { errorToast, successToast } from 'utils/toasts';
 import AuthFormMessage from 'components/AuthFormMessage';
 import { loginPath } from 'constants/pathNames';
 import { useEffect } from 'react';
@@ -20,8 +20,11 @@ const RegisterForm = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    dispatch(registerUser(data));
-    console.log(data);
+    dispatch(registerUser(data))
+      .unwrap()
+      .then(() => {
+        successToast('Hello, my friend!');
+      });
   };
 
   useEffect(() => {
@@ -38,20 +41,20 @@ const RegisterForm = () => {
           type="text"
           placeholder="Username"
         />
-        {errors.name && errorNotify('Username is required')}
+        {errors.name && errorToast('Username is required')}
         <Input
           {...register('email', { required: true })}
           type="email"
           placeholder="Email"
         />
-        {errors.email && errorNotify('Email is required')}
+        {errors.email && errorToast('Email is required')}
         <Input
           {...register('password', { required: true, minLength: 7 })}
           type="password"
           placeholder="Password"
         />
         {errors.password &&
-          errorNotify(
+          errorToast(
             errors.password.type === 'required'
               ? 'Password is required'
               : 'Password minimum length is 7 characters'
