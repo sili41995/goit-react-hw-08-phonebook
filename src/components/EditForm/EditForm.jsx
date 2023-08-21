@@ -48,7 +48,6 @@ const EditForm = ({ setEditContact }) => {
             width={44}
             height={35}
             onBtnClick={setEditContact}
-            type="button"
           >
             <GoX />
           </IconButton>
