@@ -1,9 +1,8 @@
-// import initialState from 'redux/initialState';
+import initialState from 'redux/initialState';
 
 class ContactsServiceApi {
   #BASE_URL = 'https://connections-api.herokuapp.com';
-  // #TOKEN = initialState.auth.token;
-  #TOKEN = 'dddddddddddddddddddddddddddddd';
+  #TOKEN = initialState.auth.token;
 
   get token() {
     return this.#TOKEN;
@@ -69,30 +68,40 @@ class ContactsServiceApi {
     );
   }
 
-  // fetchContacts() {
-  //   return fetch(this.#BASE_URL).then((response) => {
-  //     if (!response.ok) {
-  //       throw new Error('Loading contacts failed');
-  //     }
-  //     return response.json();
-  //   });
-  // }
+  fetchContacts() {
+    const options = {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json; charset=UTF-8',
+        Authorization: `Bearer ${this.#TOKEN}`,
+      },
+    };
 
-  // addContact(data) {
-  //   const options = {
-  //     method: 'POST',
-  //     body: JSON.stringify(data),
-  //     headers: {
-  //       'Content-Type': 'application/json; charset=UTF-8',
-  //     },
-  //   };
-  //   return fetch(this.#BASE_URL, options).then((response) => {
-  //     if (!response.ok) {
-  //       throw new Error('Adding a contact failed');
-  //     }
-  //     return response.json();
-  //   });
-  // }
+    return fetch(`${this.#BASE_URL}/contacts`, options).then((response) => {
+      if (!response.ok) {
+        throw new Error('Loading contacts failed');
+      }
+      return response.json();
+    });
+  }
+
+  addContact(data) {
+    const options = {
+      method: 'POST',
+      body: JSON.stringify(data),
+      headers: {
+        'Content-Type': 'application/json; charset=UTF-8',
+        Authorization: `Bearer ${this.#TOKEN}`,
+      },
+    };
+
+    return fetch(`${this.#BASE_URL}/contacts`, options).then((response) => {
+      if (!response.ok) {
+        throw new Error('Adding a contact failed');
+      }
+      return response.json();
+    });
+  }
 
   // deleteContact(id) {
   //   const options = {

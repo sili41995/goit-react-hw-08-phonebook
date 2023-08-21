@@ -10,27 +10,31 @@ import {
   Input,
 } from './AddContactForm.styled';
 import { errorNotify } from 'utils/toasts';
-import { useEffect, useRef } from 'react';
-import makeFocus from 'utils/makeFocus';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { addContact } from 'redux/contacts/operations';
 
 const AddContactForm = () => {
   //после создания контакта тоже должна выскакивать нотификашка
-  const userNameRef = useRef();
+  const dispatch = useDispatch();
   const {
     register,
     formState: { errors },
     handleSubmit,
+    setFocus,
+    reset,
   } = useForm();
   const location = useLocation();
   const goBackLink = location.state?.from || '/';
 
   const onSubmit = (data) => {
-    console.log(data);
+    dispatch(addContact(data));
+    reset();
   };
 
   useEffect(() => {
-    makeFocus(userNameRef.current);
-  }, []);
+    setFocus('name');
+  }, [setFocus]);
 
   return (
     <>
@@ -40,7 +44,6 @@ const AddContactForm = () => {
           {...register('name', { required: true, minLength: 1 })}
           type="text"
           placeholder="Name"
-          ref={userNameRef}
         />
         {errors.name && errorNotify('Name is required')}
         <Input
