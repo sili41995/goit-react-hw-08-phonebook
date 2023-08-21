@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from './ActionLink.styled';
 
-const ActionLink = ({ link, children, type }) => {
+const ActionLink = ({ link, children, btnType }) => {
   return (
-    <Link type={type} href={link}>
+    <Link btnType={btnType} href={link}>
       {children}
     </Link>
   );

@@ -1,5 +1,5 @@
-function setButtonColor({ type }) {
-  switch (type) {
+function setButtonColor({ btnType }) {
+  switch (btnType) {
     case 'delete':
       return '#ff9192';
 
@@ -19,6 +19,12 @@ function setButtonColor({ type }) {
       return '#d9d9d9';
 
     case 'logout':
+      return '#ff9192';
+
+    case 'accept':
+      return '#89f2a6';
+
+    case 'cancel':
       return '#ff9192';
 
     default:

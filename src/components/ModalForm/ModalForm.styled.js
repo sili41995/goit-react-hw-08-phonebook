@@ -9,10 +9,24 @@ export const Backdrop = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(46, 47, 66, 0.2);
-  z-index: 1200;
+  background-color: rgba(0, 0, 0, 0.8);
 `;
 
 export const Container = styled.div`
+  width: 600px;
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  background-color: #fcfcfc;
+  padding: 40px;
+  margin: 40px auto;
+  border-radius: 30px;
+  box-shadow: 0px 4px 17px 0px rgba(0, 0, 0, 0.17);
   overflow-y: hidden;
+`;
+
+export const Buttons = styled.div`
+  display: flex;
+  gap: 40px;
+  align-self: center;
 `;

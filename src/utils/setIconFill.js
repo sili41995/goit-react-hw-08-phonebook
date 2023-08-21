@@ -1,5 +1,5 @@
-function setIconFill({ type }) {
-  switch (type) {
+function setIconFill({ btnType }) {
+  switch (btnType) {
     case 'delete':
       return '#d3232f';
 
@@ -19,6 +19,12 @@ function setIconFill({ type }) {
       return '#555555';
 
     case 'logout':
+      return '#d3232f';
+
+    case 'accept':
+      return '#00c938';
+
+    case 'cancel':
       return '#d3232f';
 
     default:

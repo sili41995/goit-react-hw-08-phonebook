@@ -32,7 +32,7 @@ const PrivateLinks = () => {
         New Contact
       </Link>
       <IconButton
-        type="logout"
+        btnType="logout"
         iconSize={28}
         width={44}
         onBtnClick={onLogoutBtnClick}

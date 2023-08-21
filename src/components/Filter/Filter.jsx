@@ -58,7 +58,7 @@ const Filter = () => {
         />
       )}
       <IconButton
-        type="filter"
+        btnType="filter"
         iconSize={28}
         width={44}
         onBtnClick={onFilterBtnClick}
@@ -66,7 +66,7 @@ const Filter = () => {
         <FiFilter />
       </IconButton>
       <IconButton
-        type="filter"
+        btnType="filter"
         iconSize={28}
         width={44}
         onBtnClick={onSortBtnClick}

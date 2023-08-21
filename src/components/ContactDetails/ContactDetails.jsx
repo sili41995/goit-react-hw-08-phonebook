@@ -35,7 +35,7 @@ const ContactDetails = () => {
         <ButtonContainer>
           {!editContact && (
             <IconButton
-              type="delete"
+              btnType="delete"
               width={44}
               height={35}
               onBtnClick={handleDeleteBtnClick}
@@ -44,7 +44,7 @@ const ContactDetails = () => {
             </IconButton>
           )}
           <IconButton
-            type="edit"
+            btnType="edit"
             width={44}
             height={35}
             onBtnClick={handleEditBtnClick}
@@ -54,14 +54,19 @@ const ContactDetails = () => {
         </ButtonContainer>
         {editContact ? (
           <ContactModalForm>
-            <EditForm setEditContact={handleEditBtnClick} />
+            <EditForm setEditContact={setEditState} />
           </ContactModalForm>
         ) : (
           <ContactInfo />
         )}
       </Container>
       {showModalForm && (
-        <ModalForm>
+        <ModalForm
+          setModalWinState={setShowModalForm}
+          action={() => {
+            console.log(11111);
+          }}
+        >
           <DeleteContactForm />
         </ModalForm>
       )}

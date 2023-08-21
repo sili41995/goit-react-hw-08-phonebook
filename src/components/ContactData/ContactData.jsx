@@ -12,7 +12,7 @@ const ContactData = () => {
           <InfoDesc>Phone number</InfoDesc>
           <InfoData>0902362954</InfoData>
         </div>
-        <ActionLink link="tel:0000000000" type="phone">
+        <ActionLink link="tel:0000000000" btnType="phone">
           <HiOutlinePhone />
         </ActionLink>
       </Field>
@@ -21,7 +21,7 @@ const ContactData = () => {
           <InfoDesc>Email Address</InfoDesc>
           <InfoData>test@gmail.com</InfoData>
         </div>
-        <ActionLink link="test@gmail.com" type="message">
+        <ActionLink link="test@gmail.com" btnType="message">
           <IoMdMail />
         </ActionLink>
       </Field>
@@ -30,7 +30,7 @@ const ContactData = () => {
           <InfoDesc>Chat</InfoDesc>
           <InfoData>testchat</InfoData>
         </div>
-        <ActionLink link="test@gmail.com" type="chat">
+        <ActionLink link="test@gmail.com" btnType="chat">
           <RiChat1Line />
         </ActionLink>
       </Field>

@@ -1,25 +1,18 @@
 import { useForm } from 'react-hook-form';
 import 'react-toastify/dist/ReactToastify.css';
-import {
-  EditButton,
-  CancelButton,
-  Buttons,
-  Form,
-  Title,
-  EditIcon,
-  CancelIcon,
-  Input,
-} from './EditForm.styled';
+import { Buttons, Form, Title, Input } from './EditForm.styled';
 import { errorNotify } from 'utils/toasts';
-import { useEffect, useRef } from 'react';
-import makeFocus from 'utils/makeFocus';
+import { useEffect } from 'react';
+import IconButton from 'components/IconButton/IconButton';
+import { GiCheckMark } from 'react-icons/gi';
+import { GoX } from 'react-icons/go';
 
 const EditForm = ({ setEditContact }) => {
-  const userNameRef = useRef();
   const {
     register,
     formState: { errors },
     handleSubmit,
+    setFocus,
   } = useForm();
   const onSubmit = (data) => {
     console.log(data);
@@ -27,8 +20,8 @@ const EditForm = ({ setEditContact }) => {
   };
 
   useEffect(() => {
-    makeFocus(userNameRef.current);
-  }, []);
+    setFocus('name');
+  }, [setFocus]);
 
   return (
     <>
@@ -38,7 +31,6 @@ const EditForm = ({ setEditContact }) => {
           {...register('name', { required: true })}
           type="text"
           placeholder="Name"
-          ref={userNameRef}
         />
         {errors.name && errorNotify('Name is required')}
         <Input
@@ -48,12 +40,18 @@ const EditForm = ({ setEditContact }) => {
         />
         {errors.number && errorNotify('Phone is required')}
         <Buttons>
-          <EditButton type="submit">
-            <EditIcon />
-          </EditButton>
-          <CancelButton type="button" onClick={setEditContact}>
-            <CancelIcon />
-          </CancelButton>
+          <IconButton btnType="accept" width={44} height={35} type="submit">
+            <GiCheckMark />
+          </IconButton>
+          <IconButton
+            btnType="cancel"
+            width={44}
+            height={35}
+            onBtnClick={setEditContact}
+            type="button"
+          >
+            <GoX />
+          </IconButton>
         </Buttons>
       </Form>
     </>
@@ -61,3 +59,5 @@ const EditForm = ({ setEditContact }) => {
 };
 
 export default EditForm;
+
+<Buttons></Buttons>;

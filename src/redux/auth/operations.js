@@ -59,7 +59,6 @@ export const refreshUser = createAsyncThunk(
       if (response.message) {
         throw new Error(response.message);
       }
-      console.log(response);
       return response;
     } catch (error) {
       console.log(error.message);
