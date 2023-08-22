@@ -7,7 +7,6 @@ import getPhoneNumber from 'utils/getPhoneNumber';
 import getContactInfo from 'utils/getContactInfo';
 import useTargetContact from 'hooks/useTargetContact';
 import iconBtnType from 'constants/iconBtnType';
-import makeBlur from 'utils/makeBlur';
 
 const ContactData = () => {
   const targetContact = useTargetContact();
@@ -17,10 +16,6 @@ const ContactData = () => {
   const { number, email, chat } = getContactInfo(targetContact);
   const phoneNumber = getPhoneNumber(number);
 
-  const onBtnClick = (e) => {
-    makeBlur(e.currentTarget);
-  };
-
   return (
     <Container>
       <Field>
@@ -28,11 +23,7 @@ const ContactData = () => {
           <InfoDesc>Phone number</InfoDesc>
           <InfoData>{number}</InfoData>
         </div>
-        <ActionLink
-          link={`tel:${phoneNumber}`}
-          btnType={iconBtnType.phone}
-          action={onBtnClick}
-        >
+        <ActionLink link={`tel:${phoneNumber}`} btnType={iconBtnType.phone}>
           <HiOutlinePhone />
         </ActionLink>
       </Field>
@@ -41,11 +32,7 @@ const ContactData = () => {
           <InfoDesc>Email Address</InfoDesc>
           <InfoData>{email}</InfoData>
         </div>
-        <ActionLink
-          link={`mailto:${email}`}
-          btnType={iconBtnType.message}
-          action={onBtnClick}
-        >
+        <ActionLink link={`mailto:${email}`} btnType={iconBtnType.message}>
           <IoMdMail />
         </ActionLink>
       </Field>
@@ -57,7 +44,6 @@ const ContactData = () => {
         <ActionLink
           link={`tg://resolve?domain=${chat}`}
           btnType={iconBtnType.chat}
-          action={onBtnClick}
         >
           <RiChat1Line />
         </ActionLink>
