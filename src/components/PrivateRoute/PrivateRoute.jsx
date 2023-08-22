@@ -10,13 +10,7 @@ const PrivateRoute = ({ element }) => {
   const shouldRedirect = !isLoggedIn && !isRefreshing;
 
   return shouldRedirect ? (
-    <Navigate
-      to={`/${pagesPath.loginPath}`}
-      state={{
-        from: location,
-        message: 'Please, authenticate in app',
-      }}
-    />
+    <Navigate to={`/${pagesPath.loginPath}`} state={{ from: location }} />
   ) : (
     element
   );

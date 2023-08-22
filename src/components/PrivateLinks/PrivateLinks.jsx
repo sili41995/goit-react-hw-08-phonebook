@@ -1,5 +1,5 @@
 import { SlLogout } from 'react-icons/sl';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { GrAddCircle } from 'react-icons/gr';
 import { selectContacts } from 'redux/contacts/selectors';
@@ -17,6 +17,7 @@ const PrivateLinks = () => {
   const contacts = useSelector(selectContacts);
   const dispatch = useDispatch();
   const location = useLocation();
+  const navigate = useNavigate();
 
   const onLogoutBtnClick = ({ currentTarget }) => {
     makeBlur(currentTarget);
@@ -24,6 +25,7 @@ const PrivateLinks = () => {
       .unwrap()
       .then(() => {
         successToast('Goodbye!');
+        navigate(`${pagesPath.homePath}`);
       });
   };
 
