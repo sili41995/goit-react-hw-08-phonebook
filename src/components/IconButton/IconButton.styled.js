@@ -18,6 +18,7 @@ export const Button = styled.button`
   font-size: ${({ theme }) => theme.primaryFontSize}px;
   font-weight: ${({ theme }) => theme.primaryFontWeight};
   text-decoration: none;
+  transition: box-shadow ${({ theme }) => theme.transitionDurationAndFunc};
   &:hover,
   &:focus {
     box-shadow: ${({ theme }) => theme.primaryShadow};

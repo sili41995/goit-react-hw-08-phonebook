@@ -51,6 +51,7 @@ export const ListItem = styled.li`
     font-size: ${({ theme }) => theme.primaryFontSize}px;
     font-weight: ${({ theme }) => theme.otherFontWeight};
     text-decoration: none;
+    transition: background ${({ theme }) => theme.transitionDurationAndFunc};
     &.active,
     &:hover,
     &:focus {

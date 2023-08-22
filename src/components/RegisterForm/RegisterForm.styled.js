@@ -37,6 +37,7 @@ export const Button = styled.button`
   font-weight: ${({ theme }) => theme.primaryFontWeight};
   line-height: 1.5;
   letter-spacing: 0.64px;
+  transition: background-color ${({ theme }) => theme.transitionDurationAndFunc};
   &:hover,
   &:focus {
     background-color: ${({ theme }) => theme.secondaryLinkColor};

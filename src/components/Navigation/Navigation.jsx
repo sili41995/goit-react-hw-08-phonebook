@@ -1,8 +1,8 @@
+import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { NavContainer, List, ListItem } from './Navigation.styled';
-import PrivateLinks from 'components/PrivateLinks/PrivateLinks';
-import PublicLinks from 'components/PublicLinks/PublicLinks';
-import { useSelector } from 'react-redux';
+import PrivateLinks from 'components/PrivateLinks';
+import PublicLinks from 'components/PublicLinks';
 import { selectIsLoggedIn } from 'redux/auth/selectors';
 import pagesPath from 'constants/pagesPath';
 

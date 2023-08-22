@@ -24,6 +24,7 @@ export const Input = styled.input`
   font-weight: ${({ theme }) => theme.primaryFontWeight};
   font-size: ${({ theme }) => theme.secondaryFontSize}px;
   letter-spacing: 0.04em;
+  transition: border-color ${({ theme }) => theme.transitionDurationAndFunc};
   &:focus {
     outline: none;
     border-color: ${({ theme }) => theme.primaryColor};
@@ -48,6 +49,7 @@ export const Buttons = styled.div`
     font-size: ${({ theme }) => theme.primaryFontSize}px;
     font-weight: ${({ theme }) => theme.primaryFontWeight};
     text-decoration: none;
+    transition: box-shadow ${({ theme }) => theme.transitionDurationAndFunc};
     &:hover,
     &:focus {
       box-shadow: ${({ theme }) => theme.primaryShadow};

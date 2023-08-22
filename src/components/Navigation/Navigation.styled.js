@@ -24,6 +24,8 @@ export const ListItem = styled.li`
     font-weight: ${({ theme }) => theme.primaryFontWeight};
     text-decoration: none;
     text-align: center;
+    transition: color,
+      background-color ${({ theme }) => theme.transitionDurationAndFunc};
     &:hover,
     &:focus,
     &.active {

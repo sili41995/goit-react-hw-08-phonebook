@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+import pagesPath from 'constants/pagesPath';
 import getContactInfo from 'utils/getContactInfo';
 import {
   Email,
@@ -9,14 +11,15 @@ import {
   ContactInfo,
   Person,
 } from './ContactsListItem.styled';
-import { Link } from 'react-router-dom';
-import pagesPath from 'constants/pagesPath';
 
 const ContactsListItem = ({ contact }) => {
   const { userAvatar, name, id, role, number, email } = getContactInfo(contact);
+
   return (
     <Item>
-      <Link to={`${pagesPath.contactDetailsPath}/${id}/contact`}>
+      <Link
+        to={`${pagesPath.contactDetailsPath}/${id}/${pagesPath.contactPath}`}
+      >
         <Image src={userAvatar} alt={name} />
         <ContactInfo>
           <Person>

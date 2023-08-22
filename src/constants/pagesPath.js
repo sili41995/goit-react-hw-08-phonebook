@@ -8,6 +8,7 @@ const pagesPath = {
   addNewContactPath: 'contacts/new-contact',
   contactPath: 'contact',
   newContactPath: 'new-contact',
+  dynamicParam: 'id',
 };
 
 export default pagesPath;

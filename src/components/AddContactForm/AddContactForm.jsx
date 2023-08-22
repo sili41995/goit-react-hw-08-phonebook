@@ -1,15 +1,15 @@
 import { Link, useLocation } from 'react-router-dom';
 import { GiCheckMark } from 'react-icons/gi';
 import { useForm } from 'react-hook-form';
-import 'react-toastify/dist/ReactToastify.css';
-import { Buttons, Form, Title, Input } from './AddContactForm.styled';
-import { errorToast, successToast } from 'utils/toasts';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import 'react-toastify/dist/ReactToastify.css';
+import { errorToast, successToast } from 'utils/toasts';
 import { addContact } from 'redux/contacts/operations';
 import { selectIsLoading } from 'redux/contacts/selectors';
-import IconButton from 'components/IconButton/IconButton';
+import IconButton from 'components/IconButton';
 import iconBtnType from 'constants/iconBtnType';
+import { Buttons, Form, Title, Input } from './AddContactForm.styled';
 
 const AddContactForm = () => {
   const isLoading = useSelector(selectIsLoading);

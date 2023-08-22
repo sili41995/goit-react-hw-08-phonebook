@@ -1,11 +1,11 @@
+import { useSelector } from 'react-redux';
 import { useSearchParams } from 'react-router-dom';
 import ContactsListItem from 'components/ContactsListItem';
+import EmptyListMessage from 'components/EmptyListMessage';
 import { Container, List } from './ContactsList.styled';
 import sortContactsByName from 'utils/sortContactsByName';
 import filterContactsByName from 'utils/filterContactsByName';
-import { useSelector } from 'react-redux';
 import { selectContacts } from 'redux/contacts/selectors';
-import EmptyListMessage from 'components/EmptyListMessage';
 import searchParamsKeys from 'constants/searchParamsKeys';
 
 const { FILTER_SP_KEY, SORT_SP_KEY } = searchParamsKeys;

@@ -11,6 +11,7 @@ export const Link = styled.a`
   padding: ${({ theme }) => theme.spacing}px;
   background-color: ${setButtonColor};
   border-radius: 8px;
+  transition: box-shadow ${({ theme }) => theme.transitionDurationAndFunc};
   &:hover,
   &:focus {
     box-shadow: ${({ theme }) => theme.primaryShadow};

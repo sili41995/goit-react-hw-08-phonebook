@@ -2,7 +2,7 @@ import { HiOutlinePhone } from 'react-icons/hi';
 import { IoMdMail } from 'react-icons/io';
 import { RiChat1Line } from 'react-icons/ri';
 import { InfoDesc, InfoData, Container, Field } from './ContactData.styled';
-import ActionLink from 'components/ActionLink/ActionLink';
+import ActionLink from 'components/ActionLink';
 import getPhoneNumber from 'utils/getPhoneNumber';
 import getContactInfo from 'utils/getContactInfo';
 import useTargetContact from 'hooks/useTargetContact';
@@ -10,9 +10,11 @@ import iconBtnType from 'constants/iconBtnType';
 
 const ContactData = () => {
   const targetContact = useTargetContact();
+
   if (!targetContact) {
     return;
   }
+
   const { number, email, chat } = getContactInfo(targetContact);
   const phoneNumber = getPhoneNumber(number);
 

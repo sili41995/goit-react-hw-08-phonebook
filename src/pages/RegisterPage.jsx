@@ -1,12 +1,10 @@
-import AuthForm from 'components/AuthForm/AuthForm';
+import AuthForm from 'components/AuthForm';
 import RegisterForm from 'components/RegisterForm';
 
-const RegisterPage = () => {
-  return (
-    <AuthForm>
-      <RegisterForm />
-    </AuthForm>
-  );
-};
+const RegisterPage = () => (
+  <AuthForm>
+    <RegisterForm />
+  </AuthForm>
+);
 
 export default RegisterPage;

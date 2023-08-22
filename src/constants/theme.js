@@ -16,6 +16,7 @@ const theme = {
   secondaryLinkColor: '#404bbf',
   primaryShadow: '0px 4px 4px 0px rgba(0, 0, 0, 0.25)',
   secondaryShadow: '0px 4px 17px 0px rgba(0, 0, 0, 0.17)',
+  transitionDurationAndFunc: '250ms cubic-bezier(0.4, 0, 0.2, 1)',
 };
 
 export default theme;

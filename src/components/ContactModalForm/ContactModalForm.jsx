@@ -1,8 +1,5 @@
-import React from 'react';
 import { Container } from './ContactModalForm.styled';
 
-const ContactModalForm = ({ children }) => {
-  return <Container>{children}</Container>;
-};
+const ContactModalForm = ({ children }) => <Container>{children}</Container>;
 
 export default ContactModalForm;

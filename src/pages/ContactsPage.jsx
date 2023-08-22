@@ -1,9 +1,10 @@
+import { Suspense, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { Outlet } from 'react-router-dom';
 import ContactsList from 'components/ContactsList';
 import UserProfile from 'components/UserProfile';
-import { useDispatch } from 'react-redux';
-import { useEffect } from 'react';
 import { fetchContacts } from 'redux/contacts/operations';
+import Loader from 'components/Loader';
 
 const ContactsPage = () => {
   const dispatch = useDispatch();
@@ -16,7 +17,9 @@ const ContactsPage = () => {
     <>
       <UserProfile />
       <ContactsList />
-      <Outlet />
+      <Suspense fallback={<Loader />}>
+        <Outlet />
+      </Suspense>
     </>
   );
 };

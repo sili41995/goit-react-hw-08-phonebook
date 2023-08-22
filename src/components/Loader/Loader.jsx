@@ -11,6 +11,7 @@ const Loader = () => (
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
+      flexGrow: '1',
     }}
     wrapperClassName=""
     visible={true}

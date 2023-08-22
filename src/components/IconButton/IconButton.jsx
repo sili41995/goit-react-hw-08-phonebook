@@ -1,4 +1,3 @@
-import React from 'react';
 import { Button } from './IconButton.styled';
 
 const IconButton = ({ children, type = 'button', onBtnClick, ...props }) => (

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from './ActionLink.styled';
 import makeBlur from 'utils/makeBlur';
 

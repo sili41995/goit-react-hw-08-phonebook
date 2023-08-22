@@ -1,33 +1,36 @@
+import { useParams } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { GoX } from 'react-icons/go';
+import { GiCheckMark } from 'react-icons/gi';
 import { useForm } from 'react-hook-form';
 import 'react-toastify/dist/ReactToastify.css';
 import { Buttons, Form, Title, Input } from './EditForm.styled';
+import IconButton from 'components/IconButton';
 import { errorToast, successToast } from 'utils/toasts';
-import IconButton from 'components/IconButton/IconButton';
-import { GiCheckMark } from 'react-icons/gi';
-import { GoX } from 'react-icons/go';
 import getContactInfo from 'utils/getContactInfo';
 import useTargetContact from 'hooks/useTargetContact';
-import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
 import { updateContact } from 'redux/contacts/operations';
 import { selectIsLoading } from 'redux/contacts/selectors';
 import iconBtnType from 'constants/iconBtnType';
+import pagesPath from 'constants/pagesPath';
 
 const EditForm = ({ setEditContact }) => {
   const isLoading = useSelector(selectIsLoading);
   const dispatch = useDispatch();
-  const { id } = useParams();
+  const id = useParams()[pagesPath.dynamicParam];
   const targetContact = useTargetContact();
   const {
     register,
     formState: { errors },
     handleSubmit,
   } = useForm();
+
   if (!targetContact) {
     return;
   }
 
   const { name, number } = getContactInfo(targetContact);
+
   const onSubmit = (data) => {
     dispatch(updateContact({ data, id }))
       .unwrap()

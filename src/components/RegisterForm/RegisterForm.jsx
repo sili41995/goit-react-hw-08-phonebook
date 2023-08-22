@@ -1,12 +1,12 @@
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import 'react-toastify/dist/ReactToastify.css';
 import { Form, Button, Message, Title, Input } from './RegisterForm.styled';
 import { errorToast, successToast } from 'utils/toasts';
 import AuthFormMessage from 'components/AuthFormMessage';
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { registerUser } from 'redux/auth/operations';
 import useToken from 'hooks/useToken';
+import { registerUser } from 'redux/auth/operations';
 import { selectIsLoading } from 'redux/auth/selectors';
 import pagesPath from 'constants/pagesPath';
 

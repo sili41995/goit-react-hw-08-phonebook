@@ -31,6 +31,7 @@ export const Input = styled.input`
   font-weight: ${({ theme }) => theme.primaryFontWeight};
   font-size: ${({ theme }) => theme.secondaryFontSize}px;
   letter-spacing: 0.04em;
+  transition: border-color ${({ theme }) => theme.transitionDurationAndFunc};
   &:focus {
     outline: none;
     border-color: ${({ theme }) => theme.primaryColor};

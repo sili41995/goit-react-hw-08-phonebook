@@ -1,4 +1,4 @@
-import defaultValues from 'constants/gefaultValues';
+import defaultValues from 'constants/defaultValues';
 import { getContactAvatar } from 'utils/getAvatar';
 
 const getContactInfo = (contact) => {

@@ -5,6 +5,7 @@ export const Item = styled.li`
   padding: ${({ theme }) => theme.spacing * 3}px;
   border-radius: 10px;
   border: 0.5px solid rgba(137, 137, 137, 0.43);
+  transition: box-shadow ${({ theme }) => theme.transitionDurationAndFunc};
   &:hover,
   &:focus {
     box-shadow: ${({ theme }) => theme.primaryShadow};
