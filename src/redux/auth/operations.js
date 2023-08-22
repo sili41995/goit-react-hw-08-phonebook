@@ -58,7 +58,6 @@ export const refreshUser = createAsyncThunk(
     try {
       const response = await contactsServiceApi.refreshUser();
       if (response.message) {
-        errorToast(response.message);
         throw new Error();
       }
       return response;

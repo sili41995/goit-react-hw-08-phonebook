@@ -11,10 +11,12 @@ import {
 } from './AddContactForm.styled';
 import { errorToast, successToast } from 'utils/toasts';
 import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/contacts/operations';
+import { selectIsLoading } from 'redux/contacts/selectors';
 
 const AddContactForm = () => {
+  const isLoading = useSelector(selectIsLoading);
   const dispatch = useDispatch();
   const {
     register,
@@ -59,7 +61,7 @@ const AddContactForm = () => {
         />
         {errors.number && errorToast('Phone is required')}
         <Buttons>
-          <EditButton type="submit">
+          <EditButton disabled={isLoading} type="submit">
             <GiCheckMark />
           </EditButton>
           <Link to={goBackLink}>Cancel</Link>

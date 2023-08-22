@@ -7,11 +7,13 @@ import { GiCheckMark } from 'react-icons/gi';
 import { GoX } from 'react-icons/go';
 import getContactInfo from 'utils/getContactInfo';
 import useTargetContact from 'hooks/useTargetContact';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { updateContact } from 'redux/contacts/operations';
+import { selectIsLoading } from 'redux/contacts/selectors';
 
 const EditForm = ({ setEditContact }) => {
+  const isLoading = useSelector(selectIsLoading);
   const dispatch = useDispatch();
   const { id } = useParams();
   const targetContact = useTargetContact();
@@ -55,7 +57,13 @@ const EditForm = ({ setEditContact }) => {
         />
         {errors.number && errorToast('Phone is required')}
         <Buttons>
-          <IconButton btnType="accept" width={44} height={35} type="submit">
+          <IconButton
+            disabled={isLoading}
+            btnType="accept"
+            width={44}
+            height={35}
+            type="submit"
+          >
             <GiCheckMark />
           </IconButton>
           <IconButton

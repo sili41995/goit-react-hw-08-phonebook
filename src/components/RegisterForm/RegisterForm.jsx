@@ -5,11 +5,13 @@ import { errorToast, successToast } from 'utils/toasts';
 import AuthFormMessage from 'components/AuthFormMessage';
 import { loginPath } from 'constants/pathNames';
 import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { registerUser } from 'redux/auth/operations';
 import useToken from 'hooks/useToken';
+import { selectIsLoading } from 'redux/auth/selectors';
 
 const RegisterForm = () => {
+  const isLoading = useSelector(selectIsLoading);
   useToken();
   const dispatch = useDispatch();
   const {
@@ -64,7 +66,9 @@ const RegisterForm = () => {
           pageLink={`/${loginPath}`}
           message={'if you have an account'}
         />
-        <Button type="submit">Enlist</Button>
+        <Button disabled={isLoading} type="submit">
+          Enlist
+        </Button>
       </Form>
     </>
   );

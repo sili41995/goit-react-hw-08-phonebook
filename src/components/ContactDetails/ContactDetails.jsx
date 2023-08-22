@@ -7,14 +7,16 @@ import EditForm from 'components/EditForm';
 import makeBlur from 'utils/makeBlur';
 import ContactModalForm from 'components/ContactModalForm';
 import IconButton from 'components/IconButton';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
 import { deleteContact } from 'redux/contacts/operations';
 import { errorToast, successToast } from 'utils/toasts';
 import { contactsPath } from 'constants/pathNames';
+import { selectIsLoading } from 'redux/contacts/selectors';
 
 const ContactDetails = () => {
   const [editContact, setEditContact] = useState(false);
+  const isLoading = useSelector(selectIsLoading);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { id } = useParams();
@@ -47,6 +49,7 @@ const ContactDetails = () => {
         <ButtonContainer>
           {!editContact && (
             <IconButton
+              disabled={isLoading}
               btnType="delete"
               width={44}
               height={35}
