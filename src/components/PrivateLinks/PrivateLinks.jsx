@@ -25,7 +25,7 @@ const PrivateLinks = () => {
       .unwrap()
       .then(() => {
         successToast('Goodbye!');
-        navigate(`${pagesPath.homePath}`);
+        navigate(pagesPath.homePath);
       });
   };
 
