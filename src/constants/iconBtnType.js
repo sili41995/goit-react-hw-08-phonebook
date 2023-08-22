@@ -1,9 +1,13 @@
 const iconBtnType = {
+  delete: 'delete',
+  edit: 'edit',
   phone: 'phone',
   message: 'message',
   chat: 'chat',
-  delete: 'delete',
-  edit: 'edit',
+  filter: 'filter',
+  logout: 'logout',
+  accept: 'accept',
+  cancel: 'cancel',
 };
 
 export default iconBtnType;

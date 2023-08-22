@@ -6,7 +6,7 @@ export const Container = styled.div`
 
 export const ButtonContainer = styled.div`
   display: flex;
-  gap: 20px;
+  gap: ${({ theme }) => theme.primaryGap}px;
   justify-content: flex-end;
-  margin-bottom: 110px;
+  margin-bottom: ${({ theme }) => theme.spacing * 28}px;
 `;

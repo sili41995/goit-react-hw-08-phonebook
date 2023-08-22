@@ -9,9 +9,10 @@ import makeBlur from 'utils/makeBlur';
 import { IconContainer, LinkContainer } from './PrivateLinks.styled';
 import Filter from 'components/Filter';
 import isContactsPage from 'utils/isContactsPage';
-import { addNewContactPath } from 'constants/pathNames';
 import { selectContacts } from 'redux/contacts/selectors';
 import { successToast } from 'utils/toasts';
+import iconBtnType from 'constants/iconBtnType';
+import pagesPath from 'constants/pagesPath';
 
 const PrivateLinks = () => {
   const contacts = useSelector(selectContacts);
@@ -30,14 +31,14 @@ const PrivateLinks = () => {
   return (
     <LinkContainer>
       {isContactsPage(location.pathname) && !!contacts.length && <Filter />}
-      <Link to={`/${addNewContactPath}`} state={{ from: location }}>
+      <Link to={`/${pagesPath.addNewContactPath}`} state={{ from: location }}>
         <IconContainer>
           <GrAddCircle />
         </IconContainer>
         New Contact
       </Link>
       <IconButton
-        btnType="logout"
+        btnType={iconBtnType.logout}
         iconSize={28}
         width={44}
         onBtnClick={onLogoutBtnClick}

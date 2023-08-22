@@ -1,4 +1,6 @@
-import { DESC_SORT_TYPE } from 'constants/sortType';
+import sortTypes from 'constants/sortTypes';
+
+const { DESC_SORT_TYPE } = sortTypes;
 
 const sortContactsByName = (contacts, sortType) =>
   [...contacts].sort(({ name: prevContact }, { name: nextContact }) =>

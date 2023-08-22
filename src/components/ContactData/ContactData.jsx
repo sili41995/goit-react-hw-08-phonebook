@@ -6,6 +6,7 @@ import ActionLink from 'components/ActionLink/ActionLink';
 import getPhoneNumber from 'utils/getPhoneNumber';
 import getContactInfo from 'utils/getContactInfo';
 import useTargetContact from 'hooks/useTargetContact';
+import iconBtnType from 'constants/iconBtnType';
 
 const ContactData = () => {
   const targetContact = useTargetContact();
@@ -22,7 +23,7 @@ const ContactData = () => {
           <InfoDesc>Phone number</InfoDesc>
           <InfoData>{number}</InfoData>
         </div>
-        <ActionLink link={`tel:${phoneNumber}`} btnType="phone">
+        <ActionLink link={`tel:${phoneNumber}`} btnType={iconBtnType.phone}>
           <HiOutlinePhone />
         </ActionLink>
       </Field>
@@ -31,7 +32,7 @@ const ContactData = () => {
           <InfoDesc>Email Address</InfoDesc>
           <InfoData>{email}</InfoData>
         </div>
-        <ActionLink link={`mailto:${email}`} btnType="message">
+        <ActionLink link={`mailto:${email}`} btnType={iconBtnType.message}>
           <IoMdMail />
         </ActionLink>
       </Field>
@@ -40,7 +41,10 @@ const ContactData = () => {
           <InfoDesc>Chat</InfoDesc>
           <InfoData>{chat}</InfoData>
         </div>
-        <ActionLink link={`tg://resolve?domain=${chat}`} btnType="chat">
+        <ActionLink
+          link={`tg://resolve?domain=${chat}`}
+          btnType={iconBtnType.chat}
+        >
           <RiChat1Line />
         </ActionLink>
       </Field>

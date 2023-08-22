@@ -2,18 +2,14 @@ import { Link, useLocation } from 'react-router-dom';
 import { GiCheckMark } from 'react-icons/gi';
 import { useForm } from 'react-hook-form';
 import 'react-toastify/dist/ReactToastify.css';
-import {
-  EditButton,
-  Buttons,
-  Form,
-  Title,
-  Input,
-} from './AddContactForm.styled';
+import { Buttons, Form, Title, Input } from './AddContactForm.styled';
 import { errorToast, successToast } from 'utils/toasts';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/contacts/operations';
 import { selectIsLoading } from 'redux/contacts/selectors';
+import IconButton from 'components/IconButton/IconButton';
+import iconBtnType from 'constants/iconBtnType';
 
 const AddContactForm = () => {
   const isLoading = useSelector(selectIsLoading);
@@ -61,9 +57,15 @@ const AddContactForm = () => {
         />
         {errors.number && errorToast('Phone is required')}
         <Buttons>
-          <EditButton disabled={isLoading} type="submit">
+          <IconButton
+            disabled={isLoading}
+            btnType={iconBtnType.accept}
+            width={44}
+            height={35}
+            type="submit"
+          >
             <GiCheckMark />
-          </EditButton>
+          </IconButton>
           <Link to={goBackLink}>Cancel</Link>
         </Buttons>
       </Form>

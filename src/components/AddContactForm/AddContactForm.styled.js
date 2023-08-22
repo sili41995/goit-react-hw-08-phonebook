@@ -1,28 +1,28 @@
 import styled from '@emotion/styled';
 
 export const Title = styled.p`
-  color: #000;
+  color: ${({ theme }) => theme.primaryFontColor};
   font-family: Inter;
   font-size: 20px;
-  font-weight: 600;
+  font-weight: ${({ theme }) => theme.secondaryFontWeight};
   text-align: center;
 `;
 
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: ${({ theme }) => theme.primaryGap}px;
 `;
 
 export const Input = styled.input`
   height: 50px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 8px;
-  padding: 8px 38px;
+  padding: ${({ theme }) => theme.spacing * 2}px
+    ${({ theme }) => theme.spacing * 9}px;
   font-family: Inter;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: normal;
+  font-weight: ${({ theme }) => theme.primaryFontWeight};
+  font-size: ${({ theme }) => theme.secondaryFontSize}px;
   letter-spacing: 0.04em;
   &:focus {
     outline: none;
@@ -32,47 +32,25 @@ export const Input = styled.input`
 
 export const Buttons = styled.div`
   display: flex;
-  gap: 40px;
+  gap: ${({ theme }) => theme.spacing * 10}px;
   align-self: center;
   & a {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
-    padding: 4px;
+    padding: ${({ theme }) => theme.spacing}px;
     background: rgba(217, 217, 217, 0.58);
     border-radius: 8px;
     border-color: transparent;
-    color: #303030;
+    color: ${({ theme }) => theme.primaryFontColor};
     font-family: Inter;
-    font-size: 15px;
-    font-weight: 500;
+    font-size: ${({ theme }) => theme.primaryFontSize}px;
+    font-weight: ${({ theme }) => theme.primaryFontWeight};
     text-decoration: none;
     &:hover,
     &:focus {
-      box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+      box-shadow: ${({ theme }) => theme.primaryShadow};
     }
-  }
-`;
-
-export const EditButton = styled.button`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 44px;
-  height: 35px;
-  padding: 4px;
-  background-color: #89f2a6;
-  border-radius: 8px;
-  border-color: transparent;
-  &:hover,
-  &:focus {
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  }
-  & svg {
-    width: 100%;
-    height: 100%;
-    fill: #00c938;
-    stroke: inherit;
   }
 `;

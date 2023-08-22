@@ -11,6 +11,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { updateContact } from 'redux/contacts/operations';
 import { selectIsLoading } from 'redux/contacts/selectors';
+import iconBtnType from 'constants/iconBtnType';
 
 const EditForm = ({ setEditContact }) => {
   const isLoading = useSelector(selectIsLoading);
@@ -59,7 +60,7 @@ const EditForm = ({ setEditContact }) => {
         <Buttons>
           <IconButton
             disabled={isLoading}
-            btnType="accept"
+            btnType={iconBtnType.accept}
             width={44}
             height={35}
             type="submit"
@@ -67,7 +68,7 @@ const EditForm = ({ setEditContact }) => {
             <GiCheckMark />
           </IconButton>
           <IconButton
-            btnType="cancel"
+            btnType={iconBtnType.cancel}
             width={44}
             height={35}
             onBtnClick={setEditContact}

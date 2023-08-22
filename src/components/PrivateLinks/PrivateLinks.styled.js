@@ -5,23 +5,21 @@ export const LinkContainer = styled.div`
   gap: ${({ theme }) => theme.primaryGap}px;
   & a {
     display: flex;
-    gap: 10px;
+    gap: ${({ theme }) => theme.spacing * 3}px;
     justify-content: space-between;
     align-items: center;
     white-space: nowrap;
     border-radius: 5px;
     background: #55c875;
-    padding: 12px;
-    color: #000000;
+    padding: ${({ theme }) => theme.spacing * 3}px;
+    color: ${({ theme }) => theme.primaryFontColor};
     font-family: Inter;
-    font-size: 15px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
+    font-size: ${({ theme }) => theme.primaryFontSize}px;
+    font-weight: ${({ theme }) => theme.primaryFontWeight};
     text-decoration: none;
     &:hover,
     &:focus {
-      box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+      box-shadow: ${({ theme }) => theme.primaryShadow};
     }
   }
 `;

@@ -2,48 +2,44 @@ import styled from '@emotion/styled';
 
 export const Title = styled.h2`
   text-transform: uppercase;
-  color: #000000;
+  color: ${({ theme }) => theme.primaryFontColor};
   font-family: Inter;
   font-size: 35px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
+  font-weight: ${({ theme }) => theme.primaryFontWeight};
 `;
 
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: ${({ theme }) => theme.primaryGap}px;
 `;
 
 export const Message = styled.p`
-  color: #000000;
+  color: ${({ theme }) => theme.primaryFontColor};
   font-family: Inter;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
+  font-size: ${({ theme }) => theme.secondaryFontSize}px;
+  font-weight: ${({ theme }) => theme.primaryFontWeight};
 `;
 
 export const Button = styled.button`
   display: block;
   min-width: 170px;
-  padding: 16px 32px;
+  padding: ${({ theme }) => theme.spacing * 4}px
+    ${({ theme }) => theme.spacing * 8}px;
   align-self: center;
-  background-color: #4d5ae5;
+  background-color: ${({ theme }) => theme.primaryLinkColor};
   border-color: transparent;
   border-radius: 4px;
   color: #fff;
   text-align: center;
   font-family: Inter;
   font-size: 16px;
-  font-style: normal;
-  font-weight: 500;
+  font-weight: ${({ theme }) => theme.primaryFontWeight};
   line-height: 1.5;
   letter-spacing: 0.64px;
   &:hover,
   &:focus {
-    background-color: #404bbf;
+    background-color: ${({ theme }) => theme.secondaryLinkColor};
   }
 `;
 
@@ -52,9 +48,10 @@ export const Input = styled.input`
   height: 60px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 8px;
-  padding: 8px 38px;
+  padding: ${({ theme }) => theme.spacing * 2}px
+    ${({ theme }) => theme.spacing * 10}px;
   font-family: Inter;
-  font-weight: 500;
+  font-weight: ${({ theme }) => theme.primaryFontWeight};
   font-size: 20px;
   line-height: 1.17;
   letter-spacing: 0.04em;

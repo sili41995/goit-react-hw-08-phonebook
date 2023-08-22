@@ -3,12 +3,12 @@ import 'react-toastify/dist/ReactToastify.css';
 import { Form, Button, Message, Title, Input } from './RegisterForm.styled';
 import { errorToast, successToast } from 'utils/toasts';
 import AuthFormMessage from 'components/AuthFormMessage';
-import { loginPath } from 'constants/pathNames';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { registerUser } from 'redux/auth/operations';
 import useToken from 'hooks/useToken';
 import { selectIsLoading } from 'redux/auth/selectors';
+import pagesPath from 'constants/pagesPath';
 
 const RegisterForm = () => {
   const isLoading = useSelector(selectIsLoading);
@@ -63,7 +63,7 @@ const RegisterForm = () => {
           )}
         <AuthFormMessage
           action={'Log in'}
-          pageLink={`/${loginPath}`}
+          pageLink={`/${pagesPath.loginPath}`}
           message={'if you have an account'}
         />
         <Button disabled={isLoading} type="submit">

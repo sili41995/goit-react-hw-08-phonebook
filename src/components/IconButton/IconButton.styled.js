@@ -6,23 +6,21 @@ export const Button = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: ${({ theme }) => theme.primaryGap}px;
   min-width: ${({ width }) => width}px;
   height: ${({ height }) => height}px;
-  padding: 4px;
+  padding: ${({ theme }) => theme.spacing}px;
   border-radius: 8px;
   border-color: transparent;
   background-color: ${setButtonColor};
-  color: #000000;
+  color: ${({ theme }) => theme.primaryFontColor};
   font-family: Inter;
-  font-size: 15px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
+  font-size: ${({ theme }) => theme.primaryFontSize}px;
+  font-weight: ${({ theme }) => theme.primaryFontWeight};
   text-decoration: none;
   &:hover,
   &:focus {
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: ${({ theme }) => theme.primaryShadow};
   }
   & svg {
     width: ${({ iconSize }) => (iconSize ? `${iconSize}px` : '100%')};

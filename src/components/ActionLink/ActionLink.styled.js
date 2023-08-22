@@ -8,12 +8,12 @@ export const Link = styled.a`
   align-items: center;
   width: 44px;
   height: 35px;
-  padding: 4px;
+  padding: ${({ theme }) => theme.spacing}px;
   background-color: ${setButtonColor};
   border-radius: 8px;
   &:hover,
   &:focus {
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: ${({ theme }) => theme.primaryShadow};
   }
   & svg {
     width: 100%;

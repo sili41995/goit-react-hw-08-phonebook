@@ -8,7 +8,8 @@ export const Header = styled.header`
 
 export const Container = styled.div`
   display: ${({ isContactsPage }) => (isContactsPage ? 'flex' : 'block')};
-  ${({ isContactsPage }) => isContactsPage && 'gap: 20px'};
+  ${({ isContactsPage, theme }) =>
+    isContactsPage && `gap: ${theme.primaryGap}px`};
   width: 1200px;
   padding-left: ${({ theme }) => theme.paddingContainer}px;
   padding-right: ${({ theme }) => theme.paddingContainer}px;

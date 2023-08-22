@@ -11,55 +11,47 @@ export const Image = styled.img`
 `;
 
 export const Name = styled.p`
-  color: #000;
+  color: ${({ theme }) => theme.primaryFontColor}px;
   font-family: Jua;
   font-size: 35px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
+  font-weight: ${({ theme }) => theme.otherFontWeight};
 `;
 
 export const UserData = styled.div`
-  margin-top: 28px;
-  margin-bottom: 64px;
+  margin-top: ${({ theme }) => theme.spacing * 7}px;
+  margin-bottom: ${({ theme }) => theme.spacing * 16}px;
 `;
 
 export const UserInfo = styled.div``;
 
 export const FullName = styled.p`
-  margin-top: 8px;
-  margin-bottom: 4px;
-  color: #000;
+  margin-top: ${({ theme }) => theme.spacing * 2}px;
+  margin-bottom: ${({ theme }) => theme.spacing}px;
+  color: ${({ theme }) => theme.primaryFontColor};
   font-family: Jua;
   font-size: 25px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
+  font-weight: ${({ theme }) => theme.otherFontWeight};
   text-align: center;
 `;
 
 export const Email = styled.p`
   color: #7c7c7c;
   font-family: Inter;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
+  font-size: ${({ theme }) => theme.secondaryFontSize}px;
+  font-weight: ${({ theme }) => theme.primaryFontWeight};
   text-align: center;
 `;
 
 export const ContactInfo = styled.div`
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: ${({ theme }) => theme.spacing * 3}px;
   color: #7c7c7c;
   font-family: Inter;
-  font-size: 15px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
+  font-size: ${({ theme }) => theme.primaryFontSize}px;
+  font-weight: ${({ theme }) => theme.primaryFontWeight};
   &:not(:last-child) {
-    margin-bottom: 22px;
+    margin-bottom: ${({ theme }) => theme.spacing * 6}px;
   }
 `;
 

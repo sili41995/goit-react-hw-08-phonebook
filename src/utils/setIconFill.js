@@ -1,30 +1,32 @@
+import iconBtnType from 'constants/iconBtnType';
+
 function setIconFill({ btnType }) {
   switch (btnType) {
-    case 'delete':
+    case iconBtnType.delete:
       return '#d3232f';
 
-    case 'edit':
+    case iconBtnType.edit:
       return '#2681ed';
 
-    case 'phone':
+    case iconBtnType.phone:
       return '#00c938';
 
-    case 'message':
+    case iconBtnType.message:
       return '#ffb422';
 
-    case 'chat':
+    case iconBtnType.chat:
       return '#2681ed';
 
-    case 'filter':
+    case iconBtnType.filter:
       return '#555555';
 
-    case 'logout':
+    case iconBtnType.logout:
       return '#d3232f';
 
-    case 'accept':
+    case iconBtnType.accept:
       return '#00c938';
 
-    case 'cancel':
+    case iconBtnType.cancel:
       return '#d3232f';
 
     default:

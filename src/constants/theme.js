@@ -13,6 +13,9 @@ const theme = {
   secondaryFontSize: 18,
   primaryFontColor: '#000',
   primaryLinkColor: '#4d5ae5',
+  secondaryLinkColor: '#404bbf',
+  primaryShadow: '0px 4px 4px 0px rgba(0, 0, 0, 0.25)',
+  secondaryShadow: '0px 4px 17px 0px rgba(0, 0, 0, 0.17)',
 };
 
 export default theme;

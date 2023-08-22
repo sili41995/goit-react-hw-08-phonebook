@@ -1,4 +1,4 @@
-import { loginPath } from 'constants/pathNames';
+import pagesPath from 'constants/pagesPath';
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Navigate, useLocation } from 'react-router-dom';
@@ -11,7 +11,7 @@ const PrivateRoute = ({ element }) => {
   const shouldRedirect = !isLoggedIn && !isRefreshing;
 
   return shouldRedirect ? (
-    <Navigate to={`/${loginPath}`} state={{ from: location }} />
+    <Navigate to={`/${pagesPath.loginPath}`} state={{ from: location }} />
   ) : (
     element
   );

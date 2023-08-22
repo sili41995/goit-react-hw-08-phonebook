@@ -27,7 +27,6 @@ export const loginUser = createAsyncThunk(
         errorToast('Wrong username or password');
         throw new Error();
       }
-      console.log(response);
       return response;
     } catch (error) {
       return rejectWithValue();
@@ -44,7 +43,6 @@ export const logoutUser = createAsyncThunk(
         errorToast(response.message);
         throw new Error();
       }
-      console.log(response);
       return response;
     } catch (error) {
       return rejectWithValue();

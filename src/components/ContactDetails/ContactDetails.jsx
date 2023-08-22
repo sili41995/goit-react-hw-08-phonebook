@@ -11,8 +11,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
 import { deleteContact } from 'redux/contacts/operations';
 import { errorToast, successToast } from 'utils/toasts';
-import { contactsPath } from 'constants/pathNames';
 import { selectIsLoading } from 'redux/contacts/selectors';
+import iconBtnType from 'constants/iconBtnType';
+import pagesPath from 'constants/pagesPath';
 
 const ContactDetails = () => {
   const [editContact, setEditContact] = useState(false);
@@ -36,7 +37,7 @@ const ContactDetails = () => {
       .unwrap()
       .then(() => {
         successToast('Contact successfully removed');
-        navigate(`/${contactsPath}`);
+        navigate(`/${pagesPath.contactsPath}`);
       })
       .catch(() => {
         errorToast('Deleting a contact failed');
@@ -50,7 +51,7 @@ const ContactDetails = () => {
           {!editContact && (
             <IconButton
               disabled={isLoading}
-              btnType="delete"
+              btnType={iconBtnType.delete}
               width={44}
               height={35}
               onBtnClick={handleDeleteBtnClick}
@@ -59,7 +60,7 @@ const ContactDetails = () => {
             </IconButton>
           )}
           <IconButton
-            btnType="edit"
+            btnType={iconBtnType.edit}
             width={44}
             height={35}
             onBtnClick={handleEditBtnClick}

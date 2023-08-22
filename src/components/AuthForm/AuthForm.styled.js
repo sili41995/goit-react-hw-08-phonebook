@@ -3,11 +3,11 @@ import styled from '@emotion/styled';
 export const FormContainer = styled.div`
   width: 600px;
   display: flex;
-  gap: 20px;
+  gap: ${({ theme }) => theme.primaryGap}px;
   flex-direction: column;
   background-color: #fcfcfc;
-  padding: 40px;
-  margin: 40px auto;
+  padding: ${({ theme }) => theme.spacing * 10}px;
+  margin: ${({ theme }) => theme.spacing * 10}px auto;
   border-radius: 30px;
-  box-shadow: 0px 4px 17px 0px rgba(0, 0, 0, 0.17);
+  box-shadow: ${({ theme }) => theme.secondaryShadow};
 `;

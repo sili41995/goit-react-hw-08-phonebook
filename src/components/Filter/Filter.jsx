@@ -4,14 +4,18 @@ import { BsSortAlphaDownAlt } from 'react-icons/bs';
 import { FiFilter } from 'react-icons/fi';
 import { useEffect, useRef, useState } from 'react';
 import { FilterContainer, Input } from './Filter.styled';
-import { FILTER_SP_KEY, SORT_SP_KEY } from 'constants/searchParamsKey';
 import makeFocus from 'utils/makeFocus';
-import { DESC_SORT_TYPE } from 'constants/sortType';
 import updateSortSearchParams from 'utils/updateSortSearchParams';
 import updateFilterSearchParams from 'utils/updateFilterSearchParams';
 import handleFilterBtnClick from 'utils/handleFilterBtnClick';
 import makeBlur from 'utils/makeBlur';
 import IconButton from 'components/IconButton';
+import iconBtnType from 'constants/iconBtnType';
+import searchParamsKeys from 'constants/searchParamsKeys';
+import sortTypes from 'constants/sortTypes';
+
+const { FILTER_SP_KEY, SORT_SP_KEY } = searchParamsKeys;
+const { DESC_SORT_TYPE } = sortTypes;
 
 const Filter = () => {
   const [showFilter, setShowFilter] = useState(false);
@@ -58,7 +62,7 @@ const Filter = () => {
         />
       )}
       <IconButton
-        btnType="filter"
+        btnType={iconBtnType.filter}
         iconSize={28}
         width={44}
         onBtnClick={onFilterBtnClick}
@@ -66,7 +70,7 @@ const Filter = () => {
         <FiFilter />
       </IconButton>
       <IconButton
-        btnType="filter"
+        btnType={iconBtnType.filter}
         iconSize={28}
         width={44}
         onBtnClick={onSortBtnClick}

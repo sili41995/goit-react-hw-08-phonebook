@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
 
 export const Description = styled.p`
-  color: #000;
+  color: ${({ theme }) => theme.primaryFontColor};
   font-family: Inter;
-  font-size: 15px;
-  font-weight: 500;
+  font-size: ${({ theme }) => theme.primaryFontSize}px;
+  font-weight: ${({ theme }) => theme.primaryFontWeight};
 `;

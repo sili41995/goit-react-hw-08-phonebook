@@ -4,12 +4,12 @@ import { Form, Button, Message, Title, Image, Input } from './LoginForm.styled';
 import defaultAvatar from '../default-signin-avatar.png';
 import { errorToast, successToast } from 'utils/toasts';
 import AuthFormMessage from 'components/AuthFormMessage';
-import { registerPath } from 'constants/pathNames';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { loginUser } from 'redux/auth/operations';
 import useToken from 'hooks/useToken';
 import { selectIsLoading } from 'redux/auth/selectors';
+import pagesPath from 'constants/pagesPath';
 
 const LoginForm = () => {
   const isLoading = useSelector(selectIsLoading);
@@ -59,7 +59,7 @@ const LoginForm = () => {
           )}
         <AuthFormMessage
           action={'Sign up'}
-          pageLink={`/${registerPath}`}
+          pageLink={`/${pagesPath.registerPath}`}
           message={"if you don't have an account yet"}
         />
         <Button disabled={isLoading} type="submit">

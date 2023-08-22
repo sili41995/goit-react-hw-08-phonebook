@@ -9,14 +9,14 @@ import {
   ContactInfo,
   Person,
 } from './ContactsListItem.styled';
-import { contactDetailsPath } from 'constants/pathNames';
 import { Link } from 'react-router-dom';
+import pagesPath from 'constants/pagesPath';
 
 const ContactsListItem = ({ contact }) => {
   const { userAvatar, name, id, role, number, email } = getContactInfo(contact);
   return (
     <Item>
-      <Link to={`${contactDetailsPath}/${id}/contact`}>
+      <Link to={`${pagesPath.contactDetailsPath}/${id}/contact`}>
         <Image src={userAvatar} alt={name} />
         <ContactInfo>
           <Person>

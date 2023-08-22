@@ -7,7 +7,7 @@ export const Item = styled.li`
   border: 0.5px solid rgba(137, 137, 137, 0.43);
   &:hover,
   &:focus {
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: ${({ theme }) => theme.primaryShadow};
   }
   & a {
     display: flex;

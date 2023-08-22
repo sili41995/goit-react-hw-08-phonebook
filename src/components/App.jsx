@@ -8,12 +8,6 @@ import ContactData from 'components/ContactData';
 import AddContactForm from 'components/AddContactForm';
 import NotFoundPage from 'pages/NotFoundPage';
 import GlobalStyles from 'components/GlobalStyles';
-import {
-  aboutPath,
-  homePath,
-  loginPath,
-  registerPath,
-} from 'constants/pathNames';
 import Toast from './Toast/Toast';
 import ContactDetails from 'components/ContactDetails';
 import ContactDescription from 'components/ContactDescription';
@@ -26,6 +20,7 @@ import { selectIsRefreshing } from 'redux/auth/selectors';
 import PublicRoute from './PublicRoute/PublicRoute';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import Loader from './Loader/Loader';
+import pagesPath from 'constants/pagesPath';
 
 export const App = () => {
   useToken();
@@ -41,33 +36,39 @@ export const App = () => {
   ) : (
     <>
       <Routes>
-        <Route path={`${homePath}`} element={<SharedLayout />}>
+        <Route path={pagesPath.homePath} element={<SharedLayout />}>
           <Route
             index
             element={<PublicRoute restricted element={<LoginPage />} />}
           />
           <Route
-            path={`${loginPath}`}
+            path={pagesPath.loginPath}
             element={<PublicRoute restricted element={<LoginPage />} />}
           />
           <Route
-            path={`${registerPath}`}
+            path={pagesPath.registerPath}
             element={<PublicRoute restricted element={<RegisterPage />} />}
           />
           <Route
-            path={`${aboutPath}`}
+            path={pagesPath.aboutPath}
             element={<PublicRoute element={<AboutPage />} />}
           />
           <Route
-            path="contacts"
+            path={pagesPath.contactsPath}
             element={<PrivateRoute element={<ContactsPage />} />}
           >
-            <Route path="contact-details/:id" element={<ContactDetails />}>
-              <Route path="contact" element={<ContactData />} />
-              <Route path="about" element={<ContactDescription />} />
+            <Route
+              path={`${pagesPath.contactDetailsPath}/:id`}
+              element={<ContactDetails />}
+            >
+              <Route path={pagesPath.contactPath} element={<ContactData />} />
+              <Route
+                path={pagesPath.aboutPath}
+                element={<ContactDescription />}
+              />
             </Route>
             <Route
-              path="new-contact"
+              path={pagesPath.newContactPath}
               element={<ContactModalForm children={<AddContactForm />} />}
             />
           </Route>

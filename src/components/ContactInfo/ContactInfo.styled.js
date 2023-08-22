@@ -2,41 +2,37 @@ import styled from '@emotion/styled';
 
 export const Image = styled.img`
   width: 112px;
-  margin: 0 auto 6px;
+  margin: 0 auto ${({ theme }) => theme.spacing * 2}px;
 `;
 
 export const ContactTitle = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: ${({ theme }) => theme.spacing * 2}px;
 `;
 
 export const ContactName = styled.p`
-  color: #000;
+  color: ${({ theme }) => theme.primaryFontColor};
   font-family: Jua;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
+  font-size: ${({ theme }) => theme.secondaryFontSize}px;
+  font-weight: ${({ theme }) => theme.otherFontWeight};
   text-align: center;
 `;
 
 export const ContactDesc = styled.p`
   color: #7c7c7c;
   font-family: Inter;
-  font-size: 15px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
+  font-size: ${({ theme }) => theme.primaryFontSize}px;
+  font-weight: ${({ theme }) => theme.primaryFontWeight};
   text-align: center;
 `;
 
 export const Navigation = styled.nav`
-  padding: 2px;
+  padding: ${({ theme }) => theme.spacing}px;
   border-radius: 10px;
   background: #eee;
-  margin-top: 80px;
-  margin-bottom: 40px;
+  margin-top: ${({ theme }) => theme.spacing * 20}px;
+  margin-bottom: ${({ theme }) => theme.spacing * 10}px;
 `;
 
 export const List = styled.ul`
@@ -47,14 +43,13 @@ export const List = styled.ul`
 export const ListItem = styled.li`
   & a {
     display: block;
-    padding: 5px 20px;
+    padding: ${({ theme }) => theme.spacing}px
+      ${({ theme }) => theme.spacing * 5}px;
     border-radius: 10px;
     color: #555;
     font-family: Jua;
-    font-size: 15px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+    font-size: ${({ theme }) => theme.primaryFontSize}px;
+    font-weight: ${({ theme }) => theme.otherFontWeight};
     text-decoration: none;
     &.active,
     &:hover,
