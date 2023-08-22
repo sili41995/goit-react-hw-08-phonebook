@@ -5,14 +5,12 @@ import 'react-toastify/dist/ReactToastify.css';
 import { Form, Button, Message, Title, Input } from './RegisterForm.styled';
 import { errorToast, successToast } from 'utils/toasts';
 import AuthFormMessage from 'components/AuthFormMessage';
-import useToken from 'hooks/useToken';
 import { registerUser } from 'redux/auth/operations';
 import { selectIsLoading } from 'redux/auth/selectors';
 import pagesPath from 'constants/pagesPath';
 
 const RegisterForm = () => {
   const isLoading = useSelector(selectIsLoading);
-  useToken();
   const dispatch = useDispatch();
   const {
     register,

@@ -6,14 +6,12 @@ import { Form, Button, Message, Title, Image, Input } from './LoginForm.styled';
 import defaultAvatar from '../default-signin-avatar.png';
 import { errorToast, successToast } from 'utils/toasts';
 import AuthFormMessage from 'components/AuthFormMessage';
-import useToken from 'hooks/useToken';
 import { loginUser } from 'redux/auth/operations';
 import { selectIsLoading } from 'redux/auth/selectors';
 import pagesPath from 'constants/pagesPath';
 
 const LoginForm = () => {
   const isLoading = useSelector(selectIsLoading);
-  useToken();
   const dispatch = useDispatch();
   const {
     register,

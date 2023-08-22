@@ -8,6 +8,7 @@ export const PublicRoute = ({ element, restricted = false }) => {
   const shouldRedirect = isLoggedIn && restricted;
   const location = useLocation();
   const goBackPath = location.state?.from ?? `/${pagesPath.contactsPath}`;
+  console.log(location.state.message);
 
   return shouldRedirect ? <Navigate to={goBackPath} /> : element;
 };

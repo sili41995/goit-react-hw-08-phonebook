@@ -1,7 +1,7 @@
 import AuthForm from 'components/AuthForm';
 import LoginForm from 'components/LoginForm';
 
-const LoginPage = () => (
+const LoginPage = ({ message }) => (
   <AuthForm>
     <LoginForm />
   </AuthForm>

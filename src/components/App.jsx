@@ -1,7 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { lazy, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import useToken from 'hooks/useToken';
 import { refreshUser } from 'redux/auth/operations';
 import { selectIsRefreshing } from 'redux/auth/selectors';
 import pagesPath from 'constants/pagesPath';
@@ -24,7 +23,6 @@ const ContactDescription = lazy(() => import('components/ContactDescription'));
 const PrivateRoute = lazy(() => import('components/PrivateRoute'));
 
 const App = () => {
-  useToken();
   const dispatch = useDispatch();
   const isRefreshing = useSelector(selectIsRefreshing);
 
