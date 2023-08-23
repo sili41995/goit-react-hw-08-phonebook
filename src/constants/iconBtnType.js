@@ -8,6 +8,7 @@ const iconBtnType = {
   logout: 'logout',
   accept: 'accept',
   cancel: 'cancel',
+  deleteTransparent: 'deleteTransparent',
 };
 
 export default iconBtnType;

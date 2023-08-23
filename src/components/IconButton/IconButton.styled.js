@@ -3,6 +3,9 @@ import setButtonColor from 'utils/setButtonColor';
 import setIconFill from 'utils/setIconFill';
 
 export const Button = styled.button`
+  position: ${({ position }) => position};
+  top: ${({ top }) => top}px;
+  right: ${({ right }) => right}px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,6 +22,7 @@ export const Button = styled.button`
   font-weight: ${({ theme }) => theme.primaryFontWeight};
   text-decoration: none;
   transition: box-shadow ${({ theme }) => theme.transitionDurationAndFunc};
+  z-index: 10;
   &:hover,
   &:focus {
     box-shadow: ${({ theme }) => theme.primaryShadow};

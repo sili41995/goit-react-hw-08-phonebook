@@ -1,4 +1,9 @@
+import { useSelector } from 'react-redux';
+import { AiOutlineDelete } from 'react-icons/ai';
+import { selectIsLoading } from 'redux/contacts/selectors';
 import pagesPath from 'constants/pagesPath';
+import iconBtnType from 'constants/iconBtnType';
+import IconButton from 'components/IconButton';
 import LinkWithQuery from 'components/LinkWithQuery/LinkWithQuery';
 import getContactInfo from 'utils/getContactInfo';
 import {
@@ -14,6 +19,7 @@ import {
 
 const ContactsListItem = ({ contact }) => {
   const { userAvatar, name, id, role, number, email } = getContactInfo(contact);
+  const isLoading = useSelector(selectIsLoading);
 
   return (
     <Item>
@@ -34,6 +40,20 @@ const ContactsListItem = ({ contact }) => {
           </div>
         </ContactInfo>
       </LinkWithQuery>
+      <IconButton
+        top={0}
+        right={0}
+        position="absolute"
+        disabled={isLoading}
+        btnType={iconBtnType.deleteTransparent}
+        width={44}
+        height={35}
+        onBtnClick={() => {
+          console.log(1);
+        }}
+      >
+        <AiOutlineDelete />
+      </IconButton>
     </Item>
   );
 };

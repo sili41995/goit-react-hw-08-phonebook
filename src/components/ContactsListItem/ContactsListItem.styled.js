@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 
 export const Item = styled.li`
+  position: relative;
   align-items: center;
   border-radius: 10px;
   border: 0.5px solid rgba(137, 137, 137, 0.43);

@@ -29,6 +29,9 @@ function setButtonColor({ btnType }) {
     case iconBtnType.cancel:
       return '#ff9192';
 
+    case iconBtnType.deleteTransparent:
+      return 'transparent';
+
     default:
       return 'grey';
   }
