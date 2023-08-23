@@ -1,5 +1,6 @@
-import { useLocation, useNavigate, useParams } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import { useState } from 'react';
 import { AiOutlineDelete } from 'react-icons/ai';
 import { CiEdit } from 'react-icons/ci';
@@ -9,19 +10,17 @@ import EditForm from 'components/EditForm';
 import ContactModalForm from 'components/ContactModalForm';
 import IconButton from 'components/IconButton';
 import makeBlur from 'utils/makeBlur';
-import { errorToast, successToast } from 'utils/toasts';
-import { deleteContact } from 'redux/contacts/operations';
 import { selectIsLoading } from 'redux/contacts/selectors';
 import iconBtnType from 'constants/iconBtnType';
 import pagesPath from 'constants/pagesPath';
+import useDeleteContact from 'hooks/useDeleteContact';
 
 const ContactDetails = () => {
   const [editContact, setEditContact] = useState(false);
   const isLoading = useSelector(selectIsLoading);
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
   const id = useParams()[pagesPath.dynamicParam];
   const { search } = useLocation();
+  const deleteContact = useDeleteContact();
 
   const setEditState = () => {
     setEditContact((editContact) => !editContact);
@@ -32,17 +31,9 @@ const ContactDetails = () => {
     makeBlur(e.currentTarget);
   };
 
-  const handleDeleteBtnClick = (e) => {
-    makeBlur(e.currentTarget);
-    dispatch(deleteContact(id))
-      .unwrap()
-      .then(() => {
-        successToast('Contact successfully removed');
-        navigate(`/${pagesPath.contactsPath + search}`);
-      })
-      .catch(() => {
-        errorToast('Deleting a contact failed');
-      });
+  const handleDeleteBtnClick = (id) => {
+    const path = `/${pagesPath.contactsPath + search}`;
+    deleteContact(id, path);
   };
 
   return (
@@ -55,7 +46,9 @@ const ContactDetails = () => {
               btnType={iconBtnType.delete}
               width={44}
               height={35}
-              onBtnClick={handleDeleteBtnClick}
+              onBtnClick={() => {
+                handleDeleteBtnClick(id);
+              }}
             >
               <AiOutlineDelete />
             </IconButton>

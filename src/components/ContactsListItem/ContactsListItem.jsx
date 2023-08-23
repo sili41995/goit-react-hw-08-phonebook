@@ -6,6 +6,7 @@ import iconBtnType from 'constants/iconBtnType';
 import IconButton from 'components/IconButton';
 import LinkWithQuery from 'components/LinkWithQuery/LinkWithQuery';
 import getContactInfo from 'utils/getContactInfo';
+import useDeleteContact from 'hooks/useDeleteContact';
 import {
   Email,
   Image,
@@ -20,6 +21,7 @@ import {
 const ContactsListItem = ({ contact }) => {
   const { userAvatar, name, id, role, number, email } = getContactInfo(contact);
   const isLoading = useSelector(selectIsLoading);
+  const deleteContact = useDeleteContact();
 
   return (
     <Item>
@@ -49,7 +51,7 @@ const ContactsListItem = ({ contact }) => {
         width={44}
         height={35}
         onBtnClick={() => {
-          console.log(1);
+          deleteContact(id);
         }}
       >
         <AiOutlineDelete />
