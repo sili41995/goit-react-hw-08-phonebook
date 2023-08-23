@@ -1,4 +1,4 @@
-import { useNavigate, useParams } from 'react-router-dom';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
 import { AiOutlineDelete } from 'react-icons/ai';
@@ -21,6 +21,7 @@ const ContactDetails = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const id = useParams()[pagesPath.dynamicParam];
+  const { search } = useLocation();
 
   const setEditState = () => {
     setEditContact((editContact) => !editContact);
@@ -37,7 +38,7 @@ const ContactDetails = () => {
       .unwrap()
       .then(() => {
         successToast('Contact successfully removed');
-        navigate(`/${pagesPath.contactsPath}`);
+        navigate(`/${pagesPath.contactsPath + search}`);
       })
       .catch(() => {
         errorToast('Deleting a contact failed');
