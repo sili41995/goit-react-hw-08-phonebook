@@ -13,7 +13,6 @@ export const PublicRoute = ({ element, restricted = false }) => {
   const goBackPath = location.state?.from ?? `/${pagesPath.contactsPath}`;
   const showWarnToast =
     location.state && !isLoggedIn && isFirstRenderRef.current;
-  console.log(location.state);
 
   useEffect(() => {
     showWarnToast && warnToast('Please, authenticate in the app');

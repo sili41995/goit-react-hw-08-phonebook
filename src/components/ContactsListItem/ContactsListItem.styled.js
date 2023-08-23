@@ -2,7 +2,6 @@ import styled from '@emotion/styled';
 
 export const Item = styled.li`
   align-items: center;
-  padding: ${({ theme }) => theme.spacing * 3}px;
   border-radius: 10px;
   border: 0.5px solid rgba(137, 137, 137, 0.43);
   transition: box-shadow ${({ theme }) => theme.transitionDurationAndFunc};
@@ -11,6 +10,7 @@ export const Item = styled.li`
     box-shadow: ${({ theme }) => theme.primaryShadow};
   }
   & a {
+    padding: ${({ theme }) => theme.spacing * 3}px;
     display: flex;
     gap: ${({ theme }) => theme.primaryGap}px;
     text-decoration: none;
