@@ -16,8 +16,7 @@ const useDeleteContact = () => {
         successToast('Contact successfully removed');
         if (path) {
           navigate(path);
-        }
-        if (id === contactId) {
+        } else if (id === contactId) {
           navigate(`/${pagesPath.contactsPath}`);
         }
       })
