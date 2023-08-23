@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
 import pagesPath from 'constants/pagesPath';
+import LinkWithQuery from 'components/LinkWithQuery/LinkWithQuery';
 import getContactInfo from 'utils/getContactInfo';
 import {
   Email,
@@ -17,7 +17,7 @@ const ContactsListItem = ({ contact }) => {
 
   return (
     <Item>
-      <Link
+      <LinkWithQuery
         to={`${pagesPath.contactDetailsPath}/${id}/${pagesPath.contactPath}`}
       >
         <Image src={userAvatar} alt={name} />
@@ -33,7 +33,7 @@ const ContactsListItem = ({ contact }) => {
             <Email>{email}</Email>
           </div>
         </ContactInfo>
-      </Link>
+      </LinkWithQuery>
     </Item>
   );
 };

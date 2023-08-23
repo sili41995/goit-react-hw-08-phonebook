@@ -1,11 +1,12 @@
 import { SlLogout } from 'react-icons/sl';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { GrAddCircle } from 'react-icons/gr';
 import { selectContacts } from 'redux/contacts/selectors';
 import { logoutUser } from 'redux/auth/operations';
 import IconButton from 'components/IconButton';
 import Filter from 'components/Filter';
+import LinkWithQuery from 'components/LinkWithQuery';
 import { IconContainer, LinkContainer } from './PrivateLinks.styled';
 import isContactsPage from 'utils/isContactsPage';
 import makeBlur from 'utils/makeBlur';
@@ -32,12 +33,15 @@ const PrivateLinks = () => {
   return (
     <LinkContainer>
       {isContactsPage(location.pathname) && !!contacts.length && <Filter />}
-      <Link to={`/${pagesPath.addNewContactPath}`} state={{ from: location }}>
+      <LinkWithQuery
+        to={`/${pagesPath.addNewContactPath}`}
+        state={{ from: location }}
+      >
         <IconContainer>
           <GrAddCircle />
         </IconContainer>
         New Contact
-      </Link>
+      </LinkWithQuery>
       <IconButton
         btnType={iconBtnType.logout}
         iconSize={28}
