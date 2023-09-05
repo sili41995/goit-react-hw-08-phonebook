@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 
 export const Header = styled.header`
+  display: inline-block;
   padding-top: ${({ theme }) => theme.spacing * 5}px;
   padding-bottom: ${({ theme }) => theme.spacing * 5}px;
   background-color: ${({ theme }) => theme.primaryColor};
