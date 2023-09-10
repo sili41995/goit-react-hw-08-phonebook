@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/goit-react-hw-08-phonebook/static/css/main.7cda0caf.css",
-    "main.js": "/goit-react-hw-08-phonebook/static/js/main.44d6d3b9.js",
+    "main.js": "/goit-react-hw-08-phonebook/static/js/main.cb721a8c.js",
     "static/js/661.589f0311.chunk.js": "/goit-react-hw-08-phonebook/static/js/661.589f0311.chunk.js",
-    "static/js/506.afcdbb73.chunk.js": "/goit-react-hw-08-phonebook/static/js/506.afcdbb73.chunk.js",
+    "static/js/506.e248485d.chunk.js": "/goit-react-hw-08-phonebook/static/js/506.e248485d.chunk.js",
     "static/js/173.ba782e79.chunk.js": "/goit-react-hw-08-phonebook/static/js/173.ba782e79.chunk.js",
     "static/js/916.b1bdf3e5.chunk.js": "/goit-react-hw-08-phonebook/static/js/916.b1bdf3e5.chunk.js",
     "static/js/342.aecf5003.chunk.js": "/goit-react-hw-08-phonebook/static/js/342.aecf5003.chunk.js",
@@ -28,9 +28,9 @@
     "static/media/default-contact-avatar.jpg": "/goit-react-hw-08-phonebook/static/media/default-contact-avatar.08a73d47add070689699.jpg",
     "index.html": "/goit-react-hw-08-phonebook/index.html",
     "main.7cda0caf.css.map": "/goit-react-hw-08-phonebook/static/css/main.7cda0caf.css.map",
-    "main.44d6d3b9.js.map": "/goit-react-hw-08-phonebook/static/js/main.44d6d3b9.js.map",
+    "main.cb721a8c.js.map": "/goit-react-hw-08-phonebook/static/js/main.cb721a8c.js.map",
     "661.589f0311.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/661.589f0311.chunk.js.map",
-    "506.afcdbb73.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/506.afcdbb73.chunk.js.map",
+    "506.e248485d.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/506.e248485d.chunk.js.map",
     "173.ba782e79.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/173.ba782e79.chunk.js.map",
     "916.b1bdf3e5.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/916.b1bdf3e5.chunk.js.map",
     "342.aecf5003.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/342.aecf5003.chunk.js.map",
@@ -50,6 +50,6 @@
   },
   "entrypoints": [
     "static/css/main.7cda0caf.css",
-    "static/js/main.44d6d3b9.js"
+    "static/js/main.cb721a8c.js"
   ]
 }
