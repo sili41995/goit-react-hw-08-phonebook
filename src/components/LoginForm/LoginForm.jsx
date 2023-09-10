@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import 'react-toastify/dist/ReactToastify.css';
 import { Form, Button, Message, Title, Image, Input } from './LoginForm.styled';
@@ -11,6 +11,7 @@ import { selectIsLoading } from 'redux/auth/selectors';
 import pagesPath from 'constants/pagesPath';
 
 const LoginForm = () => {
+  const [credentials, setCredentials] = useState(null);
   const isLoading = useSelector(selectIsLoading);
   const dispatch = useDispatch();
   const {
@@ -24,20 +25,25 @@ const LoginForm = () => {
     setFocus('email');
   }, [setFocus]);
 
-  const onSubmit = (data) => {
-    dispatch(loginUser(data))
-      .unwrap()
-      .then(() => {
+  useEffect(() => {
+    if (credentials) {
+      const promise = dispatch(loginUser(credentials));
+      promise.unwrap().then(() => {
         successToast('Hello, my friend!');
       });
-  };
+
+      return () => {
+        promise.abort();
+      };
+    }
+  }, [credentials, dispatch]);
 
   return (
     <>
       <Title>log in</Title>
       <Message>Welcome to Phonebook!</Message>
       <Image src={defaultAvatar} alt="user avatar" />
-      <Form onSubmit={handleSubmit(onSubmit)}>
+      <Form onSubmit={handleSubmit(setCredentials)}>
         <Input
           {...register('email', { required: true })}
           type="email"

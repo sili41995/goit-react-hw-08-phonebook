@@ -22,9 +22,9 @@ export const registerUser = createAsyncThunk(
 
 export const loginUser = createAsyncThunk(
   'auth/loginUser',
-  async (credentials, { rejectWithValue }) => {
+  async (credentials, { rejectWithValue, signal }) => {
     try {
-      const response = await contactsServiceApi.loginUser(credentials);
+      const response = await contactsServiceApi.loginUser(credentials, signal);
       if (!response.token) {
         errorToast('Wrong username or password');
         throw new Error();

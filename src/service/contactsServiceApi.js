@@ -26,8 +26,9 @@ class ContactsServiceApi {
     );
   }
 
-  loginUser(data) {
+  loginUser(data, signal) {
     const options = {
+      signal,
       method: 'POST',
       body: JSON.stringify(data),
       headers: {
