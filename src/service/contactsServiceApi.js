@@ -69,8 +69,9 @@ class ContactsServiceApi {
     );
   }
 
-  fetchContacts() {
+  fetchContacts(signal) {
     const options = {
+      signal,
       method: 'GET',
       headers: {
         'Content-Type': 'application/json; charset=UTF-8',
@@ -86,8 +87,9 @@ class ContactsServiceApi {
     });
   }
 
-  addContact(data) {
+  addContact(data, signal) {
     const options = {
+      signal,
       method: 'POST',
       body: JSON.stringify(data),
       headers: {
@@ -123,8 +125,9 @@ class ContactsServiceApi {
     );
   }
 
-  updateContact({ id, data }) {
+  updateContact({ id, contact: data }, signal) {
     const options = {
+      signal,
       method: 'PATCH',
       body: JSON.stringify(data),
       headers: {

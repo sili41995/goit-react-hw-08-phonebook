@@ -10,7 +10,11 @@ const ContactsPage = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchContacts());
+    const promise = dispatch(fetchContacts());
+
+    return () => {
+      promise.abort();
+    };
   }, [dispatch]);
 
   return (

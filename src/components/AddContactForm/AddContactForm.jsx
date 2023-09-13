@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { GiCheckMark } from 'react-icons/gi';
 import { useForm } from 'react-hook-form';
@@ -12,6 +13,7 @@ import iconBtnType from 'constants/iconBtnType';
 import { Buttons, Form, Title, Input } from './AddContactForm.styled';
 
 const AddContactForm = () => {
+  const [newContact, setNewContact] = useState(null);
   const isLoading = useSelector(selectIsLoading);
   const dispatch = useDispatch();
   const {
@@ -24,17 +26,24 @@ const AddContactForm = () => {
   const location = useLocation();
   const goBackLink = location.state?.from || '/';
 
-  const onSubmit = (data) => {
-    dispatch(addContact(data))
-      .unwrap()
-      .then(() => {
-        successToast('Contact added successfully');
-      })
-      .catch(() => {
-        errorToast('Adding a contact failed');
-      });
-    reset();
-  };
+  useEffect(() => {
+    if (newContact) {
+      const promise = dispatch(addContact(newContact));
+      promise
+        .unwrap()
+        .then(() => {
+          successToast('Contact added successfully');
+          reset();
+        })
+        .catch(() => {
+          errorToast('Adding a contact failed');
+        });
+
+      return () => {
+        promise.abort();
+      };
+    }
+  }, [dispatch, newContact, reset]);
 
   useEffect(() => {
     setFocus('name');
@@ -43,7 +52,7 @@ const AddContactForm = () => {
   return (
     <>
       <Title>Add contact</Title>
-      <Form onSubmit={handleSubmit(onSubmit)}>
+      <Form onSubmit={handleSubmit(setNewContact)}>
         <Input
           {...register('name', { required: true, minLength: 1 })}
           type="text"
