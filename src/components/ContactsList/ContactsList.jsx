@@ -7,6 +7,7 @@ import sortContactsByName from 'utils/sortContactsByName';
 import filterContactsByName from 'utils/filterContactsByName';
 import { selectContacts } from 'redux/contacts/selectors';
 import searchParamsKeys from 'constants/searchParamsKeys';
+import { useMemo } from 'react';
 
 const { FILTER_SP_KEY, SORT_SP_KEY } = searchParamsKeys;
 
@@ -15,8 +16,10 @@ const ContactsList = () => {
   const [searchParams] = useSearchParams();
   const filter = searchParams.get(FILTER_SP_KEY) ?? '';
   const sortType = searchParams.get(SORT_SP_KEY) ?? '';
-  const sortedContacts = sortContactsByName(contacts, sortType);
-  const filteredContacts = filterContactsByName(sortedContacts, filter);
+  const filteredContacts = useMemo(() => {
+    const sortedContacts = sortContactsByName(contacts, sortType);
+    return filterContactsByName(sortedContacts, filter);
+  }, [contacts, filter, sortType]);
 
   return (
     <Container>
