@@ -21,7 +21,7 @@ import {
 const ContactsListItem = ({ contact }) => {
   const { userAvatar, name, id, role, number, email } = getContactInfo(contact);
   const isLoading = useSelector(selectIsLoading);
-  const deleteContact = useDeleteContact();
+  const setContactId = useDeleteContact();
 
   return (
     <Item>
@@ -51,7 +51,7 @@ const ContactsListItem = ({ contact }) => {
         width={44}
         height={35}
         onBtnClick={() => {
-          deleteContact(id);
+          setContactId(id);
         }}
       >
         <AiOutlineDelete />

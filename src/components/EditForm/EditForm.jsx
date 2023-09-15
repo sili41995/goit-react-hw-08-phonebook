@@ -45,10 +45,6 @@ const EditForm = ({ setEditContact }) => {
     }
   }, [contact, dispatch, id]);
 
-  if (!targetContact) {
-    return;
-  }
-
   const { name, number } = getContactInfo(targetContact);
 
   return (

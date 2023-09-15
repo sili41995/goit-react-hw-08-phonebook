@@ -1,4 +1,4 @@
-const getPhoneNumber = (number) =>
+const getPhoneNumber = (number = '') =>
   number
     .split('')
     .filter((symbol) => symbol === '+' || symbol !== '-')

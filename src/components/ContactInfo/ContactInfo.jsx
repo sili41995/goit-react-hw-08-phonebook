@@ -17,10 +17,6 @@ import {
 const ContactInfo = () => {
   const targetContact = useTargetContact();
 
-  if (!targetContact) {
-    return;
-  }
-
   const { name, role, avatar } = getContactInfo(targetContact);
   const userAvatar = getContactAvatar(avatar);
 

@@ -3,27 +3,35 @@ import { useDispatch } from 'react-redux';
 import { deleteContact } from 'redux/contacts/operations';
 import { errorToast, successToast } from 'utils/toasts';
 import pagesPath from 'constants/pagesPath';
+import { useEffect, useState } from 'react';
 
-const useDeleteContact = () => {
-  const id = useParams()[pagesPath.dynamicParam];
+const useDeleteContact = (path) => {
+  const [contactId, setContactId] = useState(null);
+  const targetId = useParams()[pagesPath.dynamicParam];
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  return (contactId, path) => {
-    dispatch(deleteContact(contactId))
-      .unwrap()
-      .then(() => {
-        successToast('Contact successfully removed');
-        if (path) {
-          navigate(path);
-        } else if (id === contactId) {
-          navigate(`/${pagesPath.contactsPath}`);
-        }
-      })
-      .catch(() => {
-        errorToast('Deleting a contact failed');
-      });
-  };
+  useEffect(() => {
+    if (contactId) {
+      const promise = dispatch(deleteContact(contactId));
+      promise
+        .unwrap()
+        .then(() => {
+          successToast('Contact successfully removed');
+          if (path) {
+            navigate(path);
+          } else if (targetId === contactId) {
+            navigate(`/${pagesPath.contactsPath}`);
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+          errorToast('Deleting a contact failed');
+        });
+    }
+  }, [contactId, dispatch, navigate, path, targetId]);
+
+  return setContactId;
 };
 
 export default useDeleteContact;

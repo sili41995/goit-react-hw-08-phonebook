@@ -20,7 +20,8 @@ const ContactDetails = () => {
   const isLoading = useSelector(selectIsLoading);
   const id = useParams()[pagesPath.dynamicParam];
   const { search } = useLocation();
-  const deleteContact = useDeleteContact();
+  const path = `/${pagesPath.contactsPath + search}`;
+  const setContactId = useDeleteContact(path);
 
   const setEditState = () => {
     setEditContact((editContact) => !editContact);
@@ -29,11 +30,6 @@ const ContactDetails = () => {
   const handleEditBtnClick = (e) => {
     setEditState();
     makeBlur(e.currentTarget);
-  };
-
-  const handleDeleteBtnClick = (id) => {
-    const path = `/${pagesPath.contactsPath + search}`;
-    deleteContact(id, path);
   };
 
   return (
@@ -47,7 +43,7 @@ const ContactDetails = () => {
               width={44}
               height={35}
               onBtnClick={() => {
-                handleDeleteBtnClick(id);
+                setContactId(id);
               }}
             >
               <AiOutlineDelete />

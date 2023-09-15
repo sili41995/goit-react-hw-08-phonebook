@@ -11,10 +11,6 @@ import iconBtnType from 'constants/iconBtnType';
 const ContactData = () => {
   const targetContact = useTargetContact();
 
-  if (!targetContact) {
-    return;
-  }
-
   const { number, email, chat } = getContactInfo(targetContact);
   const phoneNumber = getPhoneNumber(number);
 
