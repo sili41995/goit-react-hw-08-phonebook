@@ -87,9 +87,8 @@ class ContactsServiceApi {
     });
   }
 
-  addContact(data, signal) {
+  addContact(data) {
     const options = {
-      signal,
       method: 'POST',
       body: JSON.stringify(data),
       headers: {
@@ -125,9 +124,8 @@ class ContactsServiceApi {
     );
   }
 
-  updateContact({ id, contact: data }, signal) {
+  updateContact({ id, contact: data }) {
     const options = {
-      signal,
       method: 'PATCH',
       body: JSON.stringify(data),
       headers: {

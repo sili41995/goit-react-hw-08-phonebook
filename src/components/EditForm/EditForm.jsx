@@ -38,10 +38,6 @@ const EditForm = ({ setEditContact }) => {
         .catch(() => {
           errorToast('Contact update failed');
         });
-
-      return () => {
-        promise.abort();
-      };
     }
   }, [contact, dispatch, id]);
 

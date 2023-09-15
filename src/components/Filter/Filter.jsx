@@ -5,17 +5,15 @@ import { FiFilter } from 'react-icons/fi';
 import { useEffect, useRef, useState } from 'react';
 import { FilterContainer, Input } from './Filter.styled';
 import makeFocus from 'utils/makeFocus';
-import updateSortSearchParams from 'utils/updateSortSearchParams';
-import updateFilterSearchParams from 'utils/updateFilterSearchParams';
-import handleFilterBtnClick from 'utils/handleFilterBtnClick';
 import makeBlur from 'utils/makeBlur';
+import updateSortSearchParams from 'utils/updateSortSearchParams';
 import IconButton from 'components/IconButton';
 import iconBtnType from 'constants/iconBtnType';
 import searchParamsKeys from 'constants/searchParamsKeys';
 import sortTypes from 'constants/sortTypes';
 
-const { FILTER_SP_KEY, SORT_SP_KEY } = searchParamsKeys;
 const { DESC_SORT_TYPE } = sortTypes;
+const { FILTER_SP_KEY, SORT_SP_KEY } = searchParamsKeys;
 
 const Filter = () => {
   const [showFilter, setShowFilter] = useState(false);
@@ -38,17 +36,27 @@ const Filter = () => {
 
   const onSortBtnClick = ({ currentTarget }) => {
     makeBlur(currentTarget);
-    updateSortSearchParams(searchParams, setSearchParams);
+    updateSortSearchParams(searchParams, setSearchParams, SORT_SP_KEY);
   };
 
   const onFilterChange = (e) => {
     const { value } = e.target;
-    updateFilterSearchParams(value, searchParams, setSearchParams);
+    value
+      ? searchParams.set(FILTER_SP_KEY, value)
+      : searchParams.delete(FILTER_SP_KEY);
+    setSearchParams(searchParams);
   };
 
   const onFilterBtnClick = ({ currentTarget }) => {
     makeBlur(currentTarget);
-    handleFilterBtnClick(searchParams, setShowFilter, setSearchParams);
+    setShowFilter((showFilter) => {
+      const updateState = !showFilter;
+      if (!updateState) {
+        searchParams.delete(FILTER_SP_KEY);
+        setSearchParams(searchParams);
+      }
+      return updateState;
+    });
   };
 
   return (

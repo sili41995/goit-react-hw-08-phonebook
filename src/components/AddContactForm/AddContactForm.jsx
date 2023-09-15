@@ -38,10 +38,6 @@ const AddContactForm = () => {
         .catch(() => {
           errorToast('Adding a contact failed');
         });
-
-      return () => {
-        promise.abort();
-      };
     }
   }, [dispatch, newContact, reset]);
 
