@@ -11,7 +11,7 @@ export const Image = styled.img`
 `;
 
 export const Name = styled.p`
-  color: ${({ theme }) => theme.primaryFontColor}px;
+  color: ${({ theme }) => theme.primaryFontColor};
   font-family: Jua;
   font-size: 35px;
   font-weight: ${({ theme }) => theme.otherFontWeight};
