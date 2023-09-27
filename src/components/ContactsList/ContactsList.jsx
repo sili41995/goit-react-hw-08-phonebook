@@ -20,7 +20,6 @@ const ContactsList = () => {
     const sortedContacts = sortContactsByName(contacts, sortType);
     return filterContactsByName(sortedContacts, filter);
   }, [contacts, filter, sortType]);
-  console.log(searchParams);
 
   return (
     <Container>

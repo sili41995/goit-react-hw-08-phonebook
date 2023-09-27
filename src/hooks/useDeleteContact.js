@@ -25,7 +25,6 @@ const useDeleteContact = (path) => {
           }
         })
         .catch((error) => {
-          console.log(error);
           errorToast('Deleting a contact failed');
         });
     }
