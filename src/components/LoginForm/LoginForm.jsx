@@ -2,13 +2,15 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import 'react-toastify/dist/ReactToastify.css';
-import { Form, Button, Message, Title, Image, Input } from './LoginForm.styled';
+import { Form, Button, Message, Title, Image } from './LoginForm.styled';
 import defaultAvatar from '../default-signin-avatar.png';
 import { errorToast, successToast } from 'utils/toasts';
 import AuthFormMessage from 'components/AuthFormMessage';
+import Input from 'components/Input';
 import { loginUser } from 'redux/auth/operations';
 import { selectIsLoading } from 'redux/auth/selectors';
 import pagesPath from 'constants/pagesPath';
+import formType from 'constants/formType';
 
 const LoginForm = () => {
   const [credentials, setCredentials] = useState(null);
@@ -45,15 +47,19 @@ const LoginForm = () => {
       <Image src={defaultAvatar} alt="user avatar" />
       <Form onSubmit={handleSubmit(setCredentials)}>
         <Input
-          {...register('email', { required: true })}
+          settings={{ ...register('email', { required: true }) }}
           type="email"
           placeholder="Email"
+          inputType={formType.authForm}
         />
         {errors.email && errorToast('Email is required')}
         <Input
-          {...register('password', { required: true, minLength: 7 })}
+          settings={{
+            ...register('password', { required: true, minLength: 7 }),
+          }}
           type="password"
           placeholder="Password"
+          inputType={formType.authForm}
         />
         {errors.password &&
           errorToast(

@@ -48,22 +48,3 @@ export const Button = styled.button`
     background-color: ${({ theme }) => theme.secondaryLinkColor};
   }
 `;
-
-export const Input = styled.input`
-  width: 100%;
-  height: 60px;
-  border: 1px solid rgba(33, 33, 33, 0.2);
-  border-radius: 8px;
-  padding: ${({ theme }) => theme.spacing * 2}px
-    ${({ theme }) => theme.spacing * 10}px;
-  font-family: Inter;
-  font-weight: ${({ theme }) => theme.primaryFontWeight};
-  font-size: 20px;
-  line-height: 1.17;
-  letter-spacing: 0.04em;
-  transition: border-color ${({ theme }) => theme.transitionDurationAndFunc};
-  &:focus {
-    outline: none;
-    border-color: ${({ theme }) => theme.primaryColor};
-  }
-`;

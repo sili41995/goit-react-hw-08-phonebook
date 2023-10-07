@@ -4,8 +4,9 @@ import { GoX } from 'react-icons/go';
 import { GiCheckMark } from 'react-icons/gi';
 import { useForm } from 'react-hook-form';
 import 'react-toastify/dist/ReactToastify.css';
-import { Buttons, Form, Title, Input } from './EditForm.styled';
+import { Buttons, Form, Title } from './EditForm.styled';
 import IconButton from 'components/IconButton';
+import Input from 'components/Input';
 import { errorToast, successToast } from 'utils/toasts';
 import getContactInfo from 'utils/getContactInfo';
 import useTargetContact from 'hooks/useTargetContact';
@@ -43,14 +44,14 @@ const EditForm = ({ setEditContact }) => {
       <Form onSubmit={handleSubmit(handleFormSubmit)}>
         <Input
           defaultValue={name}
-          {...register('name', { required: true })}
+          settings={{ ...register('name', { required: true }) }}
           type="text"
           placeholder="Name"
         />
         {errors.name && errorToast('Name is required')}
         <Input
           defaultValue={number}
-          {...register('number', { required: true })}
+          settings={{ ...register('number', { required: true }) }}
           type="tel"
           placeholder="Phone"
         />

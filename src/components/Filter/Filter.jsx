@@ -3,14 +3,16 @@ import { BsSortAlphaDown } from 'react-icons/bs';
 import { BsSortAlphaDownAlt } from 'react-icons/bs';
 import { FiFilter } from 'react-icons/fi';
 import { useEffect, useRef, useState } from 'react';
-import { FilterContainer, Input } from './Filter.styled';
+import { FilterContainer } from './Filter.styled';
 import makeFocus from 'utils/makeFocus';
 import makeBlur from 'utils/makeBlur';
 import updateSortSearchParams from 'utils/updateSortSearchParams';
 import IconButton from 'components/IconButton';
+import Input from 'components/Input';
 import iconBtnType from 'constants/iconBtnType';
 import searchParamsKeys from 'constants/searchParamsKeys';
 import sortTypes from 'constants/sortTypes';
+import formType from 'constants/formType';
 
 const Filter = () => {
   const [showFilter, setShowFilter] = useState(false);
@@ -60,10 +62,11 @@ const Filter = () => {
     <FilterContainer>
       {showFilter && (
         <Input
-          ref={inputRef}
+          inputRef={inputRef}
           type="text"
           value={filter}
           onChange={onFilterChange}
+          inputType={formType.filter}
         />
       )}
       <IconButton

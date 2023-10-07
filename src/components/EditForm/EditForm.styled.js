@@ -19,21 +19,3 @@ export const Buttons = styled.div`
   gap: ${({ theme }) => theme.spacing * 10}px;
   align-self: center;
 `;
-
-export const Input = styled.input`
-  width: 100%;
-  height: 50px;
-  border: 1px solid rgba(33, 33, 33, 0.2);
-  border-radius: 8px;
-  padding: ${({ theme }) => theme.spacing * 2}px
-    ${({ theme }) => theme.spacing * 10}px;
-  font-family: Inter;
-  font-weight: ${({ theme }) => theme.primaryFontWeight};
-  font-size: ${({ theme }) => theme.secondaryFontSize}px;
-  letter-spacing: 0.04em;
-  transition: border-color ${({ theme }) => theme.transitionDurationAndFunc};
-  &:focus {
-    outline: none;
-    border-color: ${({ theme }) => theme.primaryColor};
-  }
-`;

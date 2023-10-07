@@ -12,6 +12,7 @@ const theme = {
   primaryFontSize: 15,
   secondaryFontSize: 18,
   primaryFontColor: '#000',
+  secondaryFontColor: '#fff',
   primaryLinkColor: '#4d5ae5',
   secondaryLinkColor: '#404bbf',
   primaryShadow: '0px 4px 4px 0px rgba(0, 0, 0, 0.25)',

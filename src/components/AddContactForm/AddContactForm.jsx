@@ -8,8 +8,9 @@ import { errorToast, successToast } from 'utils/toasts';
 import { addContact } from 'redux/contacts/operations';
 import { selectIsLoading } from 'redux/contacts/selectors';
 import IconButton from 'components/IconButton';
+import Input from 'components/Input';
 import iconBtnType from 'constants/iconBtnType';
-import { Buttons, Form, Title, Input } from './AddContactForm.styled';
+import { Buttons, Form, Title } from './AddContactForm.styled';
 
 const AddContactForm = () => {
   const isLoading = useSelector(selectIsLoading);
@@ -45,13 +46,13 @@ const AddContactForm = () => {
       <Title>Add contact</Title>
       <Form onSubmit={handleSubmit(handleFormSubmit)}>
         <Input
-          {...register('name', { required: true, minLength: 1 })}
+          settings={{ ...register('name', { required: true, minLength: 1 }) }}
           type="text"
           placeholder="Name"
         />
         {errors.name && errorToast('Name is required')}
         <Input
-          {...register('number', { required: true })}
+          settings={{ ...register('number', { required: true }) }}
           type="tel"
           placeholder="Phone"
         />

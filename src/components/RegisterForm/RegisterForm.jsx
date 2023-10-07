@@ -2,11 +2,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import 'react-toastify/dist/ReactToastify.css';
-import { Form, Button, Message, Title, Input } from './RegisterForm.styled';
+import { Form, Button, Message, Title } from './RegisterForm.styled';
 import { errorToast, successToast } from 'utils/toasts';
 import AuthFormMessage from 'components/AuthFormMessage';
+import Input from 'components/Input';
 import { registerUser } from 'redux/auth/operations';
 import { selectIsLoading } from 'redux/auth/selectors';
+import formType from 'constants/formType';
 import pagesPath from 'constants/pagesPath';
 
 const RegisterForm = () => {
@@ -37,21 +39,26 @@ const RegisterForm = () => {
       <Message>Welcome to Phonebook!</Message>
       <Form onSubmit={handleSubmit(onSubmit)}>
         <Input
-          {...register('name', { required: true })}
+          settings={{ ...register('name', { required: true }) }}
           type="text"
           placeholder="Username"
+          inputType={formType.authForm}
         />
         {errors.name && errorToast('Username is required')}
         <Input
-          {...register('email', { required: true })}
+          settings={{ ...register('email', { required: true }) }}
           type="email"
           placeholder="Email"
+          inputType={formType.authForm}
         />
         {errors.email && errorToast('Email is required')}
         <Input
-          {...register('password', { required: true, minLength: 7 })}
+          settings={{
+            ...register('password', { required: true, minLength: 7 }),
+          }}
           type="password"
           placeholder="Password"
+          inputType={formType.authForm}
         />
         {errors.password &&
           errorToast(
