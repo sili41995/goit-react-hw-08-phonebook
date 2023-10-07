@@ -124,7 +124,7 @@ class ContactsServiceApi {
     );
   }
 
-  updateContact({ id, contact: data }) {
+  updateContact({ id, data }) {
     const options = {
       method: 'PATCH',
       body: JSON.stringify(data),

@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { GoX } from 'react-icons/go';
@@ -16,37 +15,32 @@ import iconBtnType from 'constants/iconBtnType';
 import pagesPath from 'constants/pagesPath';
 
 const EditForm = ({ setEditContact }) => {
-  const [contact, setContact] = useState(null);
   const isLoading = useSelector(selectIsLoading);
   const dispatch = useDispatch();
   const id = useParams()[pagesPath.dynamicParam];
   const targetContact = useTargetContact();
+  const { name, number } = getContactInfo(targetContact);
   const {
     register,
     formState: { errors },
     handleSubmit,
   } = useForm();
 
-  useEffect(() => {
-    if (contact) {
-      const promise = dispatch(updateContact({ contact, id }));
-      promise
-        .unwrap()
-        .then(() => {
-          successToast('Contact updated successfully');
-        })
-        .catch(() => {
-          errorToast('Contact update failed');
-        });
-    }
-  }, [contact, dispatch, id]);
-
-  const { name, number } = getContactInfo(targetContact);
+  const handleFormSubmit = (data) => {
+    dispatch(updateContact({ data, id }))
+      .unwrap()
+      .then(() => {
+        successToast('Contact updated successfully');
+      })
+      .catch(() => {
+        errorToast('Contact update failed');
+      });
+  };
 
   return (
     <>
       <Title>Contact editing</Title>
-      <Form onSubmit={handleSubmit(setContact)}>
+      <Form onSubmit={handleSubmit(handleFormSubmit)}>
         <Input
           defaultValue={name}
           {...register('name', { required: true })}

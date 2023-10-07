@@ -12,13 +12,12 @@ import iconBtnType from 'constants/iconBtnType';
 import searchParamsKeys from 'constants/searchParamsKeys';
 import sortTypes from 'constants/sortTypes';
 
-const { DESC_SORT_TYPE } = sortTypes;
-const { FILTER_SP_KEY, SORT_SP_KEY } = searchParamsKeys;
-
 const Filter = () => {
   const [showFilter, setShowFilter] = useState(false);
   const [searchParams, setSearchParams] = useSearchParams();
   const inputRef = useRef();
+  const { DESC_SORT_TYPE } = sortTypes;
+  const { FILTER_SP_KEY, SORT_SP_KEY } = searchParamsKeys;
   const filter = searchParams.get(FILTER_SP_KEY) ?? '';
   const deskSortType = searchParams.get(SORT_SP_KEY) === DESC_SORT_TYPE;
 
@@ -26,7 +25,12 @@ const Filter = () => {
     if (showFilter) {
       makeFocus(inputRef.current);
     }
-  }, [showFilter]);
+
+    if (!showFilter) {
+      searchParams.delete(FILTER_SP_KEY);
+      setSearchParams(searchParams);
+    }
+  }, [FILTER_SP_KEY, searchParams, setSearchParams, showFilter]);
 
   useEffect(() => {
     if (filter) {
@@ -49,14 +53,7 @@ const Filter = () => {
 
   const onFilterBtnClick = ({ currentTarget }) => {
     makeBlur(currentTarget);
-    setShowFilter((showFilter) => {
-      const updateState = !showFilter;
-      if (!updateState) {
-        searchParams.delete(FILTER_SP_KEY);
-        setSearchParams(searchParams);
-      }
-      return updateState;
-    });
+    setShowFilter((showFilter) => !showFilter);
   };
 
   return (
