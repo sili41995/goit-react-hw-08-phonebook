@@ -62,7 +62,7 @@ const Filter = () => {
     <FilterContainer>
       {showFilter && (
         <Input
-          inputRef={inputRef}
+          ref={inputRef}
           type="text"
           value={filter}
           onChange={onFilterChange}
