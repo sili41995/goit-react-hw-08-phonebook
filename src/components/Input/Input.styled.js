@@ -1,13 +1,17 @@
 import styled from '@emotion/styled';
 import formType from 'constants/formType';
-import setInputBorderColor from 'utils/setInputBorderColor';
-import setInputBorderRadius from 'utils/setInputBorderRadius';
-import setInputFilter from 'utils/setInputFilter';
-import setInputFontColor from 'utils/setInputFontColor';
-import setInputFontSize from 'utils/setInputFontSize';
-import setInputHeight from 'utils/setInputHeight';
-import setInputMaxWidth from 'utils/setInputMaxWidth';
-import setInputPadding from 'utils/setInputPadding';
+import utils from 'utils';
+
+const {
+  setInputMaxWidth,
+  setInputHeight,
+  setInputBorderColor,
+  setInputFilter,
+  setInputBorderRadius,
+  setInputPadding,
+  setInputFontColor,
+  setInputFontSize,
+} = utils;
 
 export const StyledInput = styled.input`
   width: 100%;

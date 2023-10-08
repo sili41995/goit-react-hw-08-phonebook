@@ -1,6 +1,8 @@
 import useTargetContact from 'hooks/useTargetContact';
 import { Description } from './ContactDescription.styled';
-import getContactInfo from 'utils/getContactInfo';
+import utils from 'utils';
+
+const { getContactInfo } = utils;
 
 const ContactDescription = () => {
   const targetContact = useTargetContact();

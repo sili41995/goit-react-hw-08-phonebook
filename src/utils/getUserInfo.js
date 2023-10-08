@@ -1,7 +1,8 @@
 import defaultValues from 'constants/defaultValues';
-import { getUserAvatar } from 'utils/getAvatar';
+import utils from 'utils';
 
 const getUserInfo = (user) => {
+  const { getAvatar } = utils;
   const {
     name,
     lastName,
@@ -12,7 +13,7 @@ const getUserInfo = (user) => {
     location = defaultValues.location,
   } = user;
   const userName = lastName ? `${name} ${lastName}` : `${name}`;
-  const userAvatar = getUserAvatar(avatar);
+  const userAvatar = getAvatar.getUserAvatar(avatar);
 
   return {
     name,

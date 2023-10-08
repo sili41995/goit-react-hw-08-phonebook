@@ -7,13 +7,14 @@ import 'react-toastify/dist/ReactToastify.css';
 import { Buttons, Form, Title } from './EditForm.styled';
 import IconButton from 'components/IconButton';
 import Input from 'components/Input';
-import { errorToast, successToast } from 'utils/toasts';
-import getContactInfo from 'utils/getContactInfo';
+import utils from 'utils';
 import useTargetContact from 'hooks/useTargetContact';
 import { updateContact } from 'redux/contacts/operations';
 import { selectIsLoading } from 'redux/contacts/selectors';
 import iconBtnType from 'constants/iconBtnType';
 import pagesPath from 'constants/pagesPath';
+
+const { getContactInfo, toasts } = utils;
 
 const EditForm = ({ setEditContact }) => {
   const isLoading = useSelector(selectIsLoading);
@@ -31,10 +32,10 @@ const EditForm = ({ setEditContact }) => {
     dispatch(updateContact({ data, id }))
       .unwrap()
       .then(() => {
-        successToast('Contact updated successfully');
+        toasts.successToast('Contact updated successfully');
       })
       .catch(() => {
-        errorToast('Contact update failed');
+        toasts.errorToast('Contact update failed');
       });
   };
 
@@ -48,14 +49,14 @@ const EditForm = ({ setEditContact }) => {
           type="text"
           placeholder="Name"
         />
-        {errors.name && errorToast('Name is required')}
+        {errors.name && toasts.errorToast('Name is required')}
         <Input
           defaultValue={number}
           settings={{ ...register('number', { required: true }) }}
           type="tel"
           placeholder="Phone"
         />
-        {errors.number && errorToast('Phone is required')}
+        {errors.number && toasts.errorToast('Phone is required')}
         <Buttons>
           <IconButton
             disabled={isLoading}

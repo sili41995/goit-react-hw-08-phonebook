@@ -8,11 +8,11 @@ import IconButton from 'components/IconButton';
 import Filter from 'components/Filter';
 import LinkWithQuery from 'components/LinkWithQuery';
 import { IconContainer, LinkContainer } from './PrivateLinks.styled';
-import isContactsPage from 'utils/isContactsPage';
-import makeBlur from 'utils/makeBlur';
-import { successToast } from 'utils/toasts';
+import utils from 'utils';
 import iconBtnType from 'constants/iconBtnType';
 import pagesPath from 'constants/pagesPath';
+
+const { makeBlur, toasts, isContactsPage } = utils;
 
 const PrivateLinks = () => {
   const contacts = useSelector(selectContacts);
@@ -25,7 +25,7 @@ const PrivateLinks = () => {
     dispatch(logoutUser())
       .unwrap()
       .then(() => {
-        successToast('Goodbye!');
+        toasts.successToast('Goodbye!');
         navigate(pagesPath.homePath);
       });
   };

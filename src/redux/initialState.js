@@ -2,6 +2,7 @@ const initialState = {
   contacts: {
     items: [],
     isLoading: false,
+    isLoaded: false,
     error: null,
   },
   auth: {

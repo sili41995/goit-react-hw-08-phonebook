@@ -3,10 +3,11 @@ import { IoMdMail } from 'react-icons/io';
 import { RiChat1Line } from 'react-icons/ri';
 import { InfoDesc, InfoData, Container, Field } from './ContactData.styled';
 import ActionLink from 'components/ActionLink';
-import getPhoneNumber from 'utils/getPhoneNumber';
-import getContactInfo from 'utils/getContactInfo';
+import utils from 'utils';
 import useTargetContact from 'hooks/useTargetContact';
 import iconBtnType from 'constants/iconBtnType';
+
+const { getContactInfo, getPhoneNumber } = utils;
 
 const ContactData = () => {
   const targetContact = useTargetContact();

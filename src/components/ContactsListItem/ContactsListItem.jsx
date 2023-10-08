@@ -5,7 +5,7 @@ import pagesPath from 'constants/pagesPath';
 import iconBtnType from 'constants/iconBtnType';
 import IconButton from 'components/IconButton';
 import LinkWithQuery from 'components/LinkWithQuery/LinkWithQuery';
-import getContactInfo from 'utils/getContactInfo';
+import utils from 'utils';
 import useDeleteContact from 'hooks/useDeleteContact';
 import {
   Email,
@@ -17,6 +17,8 @@ import {
   ContactInfo,
   Person,
 } from './ContactsListItem.styled';
+
+const { getContactInfo } = utils;
 
 const ContactsListItem = ({ contact }) => {
   const { userAvatar, name, id, role, number, email } = getContactInfo(contact);

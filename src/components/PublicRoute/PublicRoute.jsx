@@ -3,7 +3,9 @@ import { Navigate, useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import pagesPath from 'constants/pagesPath';
 import { selectIsLoggedIn } from 'redux/auth/selectors';
-import { warnToast } from 'utils/toasts';
+import utils from 'utils';
+
+const { toasts } = utils;
 
 export const PublicRoute = ({ element, restricted = false }) => {
   const isFirstRenderRef = useRef(true);
@@ -15,7 +17,7 @@ export const PublicRoute = ({ element, restricted = false }) => {
     location.state && !isLoggedIn && isFirstRenderRef.current;
 
   useEffect(() => {
-    showWarnToast && warnToast('Please, authenticate in the app');
+    showWarnToast && toasts.warnToast('Please, authenticate in the app');
     isFirstRenderRef.current = false;
   }, [showWarnToast]);
 

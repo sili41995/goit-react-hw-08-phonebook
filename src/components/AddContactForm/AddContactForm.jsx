@@ -4,13 +4,15 @@ import { useForm } from 'react-hook-form';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import 'react-toastify/dist/ReactToastify.css';
-import { errorToast, successToast } from 'utils/toasts';
+import utils from 'utils';
 import { addContact } from 'redux/contacts/operations';
 import { selectIsLoading } from 'redux/contacts/selectors';
 import IconButton from 'components/IconButton';
 import Input from 'components/Input';
 import iconBtnType from 'constants/iconBtnType';
 import { Buttons, Form, Title } from './AddContactForm.styled';
+
+const { toasts } = utils;
 
 const AddContactForm = () => {
   const isLoading = useSelector(selectIsLoading);
@@ -33,11 +35,11 @@ const AddContactForm = () => {
     dispatch(addContact(data))
       .unwrap()
       .then(() => {
-        successToast('Contact added successfully');
+        toasts.successToast('Contact added successfully');
         reset();
       })
       .catch(() => {
-        errorToast('Adding a contact failed');
+        toasts.errorToast('Adding a contact failed');
       });
   };
 
@@ -50,13 +52,13 @@ const AddContactForm = () => {
           type="text"
           placeholder="Name"
         />
-        {errors.name && errorToast('Name is required')}
+        {errors.name && toasts.errorToast('Name is required')}
         <Input
           settings={{ ...register('number', { required: true }) }}
           type="tel"
           placeholder="Phone"
         />
-        {errors.number && errorToast('Phone is required')}
+        {errors.number && toasts.errorToast('Phone is required')}
         <Buttons>
           <IconButton
             disabled={isLoading}

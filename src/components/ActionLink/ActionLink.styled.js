@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
-import setButtonColor from 'utils/setButtonColor';
-import setIconFill from 'utils/setIconFill';
+import utils from 'utils';
+
+const { setButtonColor, setIconFill } = utils;
 
 export const Link = styled.a`
   display: flex;

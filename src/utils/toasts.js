@@ -1,13 +1,17 @@
 import { toast } from 'react-toastify';
 
-export const errorToast = (message) => {
+const errorToast = (message) => {
   toast.error(message);
 };
 
-export const successToast = (message) => {
+const successToast = (message) => {
   toast.success(message);
 };
 
-export const warnToast = (message) => {
+const warnToast = (message) => {
   toast.warn(message);
 };
+
+const toasts = { errorToast, successToast, warnToast };
+
+export default toasts;

@@ -1,5 +1,7 @@
 import { Link } from './ActionLink.styled';
-import makeBlur from 'utils/makeBlur';
+import utils from 'utils';
+
+const { makeBlur } = utils;
 
 const ActionLink = ({ link, children, btnType }) => {
   const onBtnClick = (e) => {

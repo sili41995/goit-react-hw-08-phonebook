@@ -1,7 +1,8 @@
 import defaultValues from 'constants/defaultValues';
-import { getContactAvatar } from 'utils/getAvatar';
+import utils from 'utils';
 
 const getContactInfo = (contact = {}) => {
+  const { getAvatar } = utils;
   const {
     id,
     name,
@@ -12,7 +13,7 @@ const getContactInfo = (contact = {}) => {
     chat = defaultValues.chat,
     description = defaultValues.description,
   } = contact;
-  const userAvatar = getContactAvatar(avatar);
+  const userAvatar = getAvatar.getContactAvatar(avatar);
 
   return { userAvatar, name, id, role, number, email, chat, description };
 };

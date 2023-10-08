@@ -1,7 +1,9 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import initialState from 'redux/initialState';
 import contactsServiceApi from 'service/contactsServiceApi';
-import { errorToast } from 'utils/toasts';
+import utils from 'utils';
+
+const { toasts } = utils;
 
 export const registerUser = createAsyncThunk(
   'auth/registerUser',
@@ -9,7 +11,7 @@ export const registerUser = createAsyncThunk(
     try {
       const response = await contactsServiceApi.registerUser(credentials);
       if (response.keyValue) {
-        errorToast('This user is already registered');
+        toasts.errorToast('This user is already registered');
         throw new Error();
       }
       contactsServiceApi.token = response.token;
@@ -26,7 +28,7 @@ export const loginUser = createAsyncThunk(
     try {
       const response = await contactsServiceApi.loginUser(credentials, signal);
       if (!response.token) {
-        errorToast('Wrong username or password');
+        toasts.errorToast('Wrong username or password');
         throw new Error();
       }
       contactsServiceApi.token = response.token;
@@ -43,7 +45,7 @@ export const logoutUser = createAsyncThunk(
     try {
       const response = await contactsServiceApi.logoutUser();
       if (response.message) {
-        errorToast(response.message);
+        toasts.errorToast(response.message);
         throw new Error();
       }
       contactsServiceApi.token = initialState.auth.token;

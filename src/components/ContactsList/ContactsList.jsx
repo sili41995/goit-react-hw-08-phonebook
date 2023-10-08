@@ -3,13 +3,13 @@ import { useSearchParams } from 'react-router-dom';
 import ContactsListItem from 'components/ContactsListItem';
 import EmptyListMessage from 'components/EmptyListMessage';
 import { Container, List } from './ContactsList.styled';
-import sortContactsByName from 'utils/sortContactsByName';
-import filterContactsByName from 'utils/filterContactsByName';
+import utils from 'utils';
 import { selectContacts } from 'redux/contacts/selectors';
 import searchParamsKeys from 'constants/searchParamsKeys';
 import { useMemo } from 'react';
 
 const { FILTER_SP_KEY, SORT_SP_KEY } = searchParamsKeys;
+const { filterContactsByName, sortContactsByName } = utils;
 
 const ContactsList = () => {
   const contacts = useSelector(selectContacts);

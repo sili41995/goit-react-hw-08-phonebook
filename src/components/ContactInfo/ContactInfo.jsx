@@ -1,8 +1,7 @@
 import { Suspense } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import useTargetContact from 'hooks/useTargetContact';
-import getContactInfo from 'utils/getContactInfo';
-import { getContactAvatar } from 'utils/getAvatar';
+import utils from 'utils';
 import Loader from 'components/Loader';
 import {
   ContactDesc,
@@ -14,11 +13,13 @@ import {
   Navigation,
 } from './ContactInfo.styled';
 
+const { getAvatar, getContactInfo } = utils;
+
 const ContactInfo = () => {
   const targetContact = useTargetContact();
 
   const { name, role, avatar } = getContactInfo(targetContact);
-  const userAvatar = getContactAvatar(avatar);
+  const userAvatar = getAvatar.getContactAvatar(avatar);
 
   return (
     <>
