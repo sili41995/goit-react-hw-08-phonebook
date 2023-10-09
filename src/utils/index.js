@@ -6,7 +6,6 @@ import getUserInfo from 'utils/getUserInfo';
 import isAuthPage from 'utils/isAuthPage';
 import isContactsPage from 'utils/isContactsPage';
 import makeBlur from 'utils/makeBlur';
-import makeFocus from 'utils/makeFocus';
 import setAuthPageBackgroundColor from 'utils/setAuthPageBackgroundColor';
 import setButtonColor from 'utils/setButtonColor';
 import setIconFill from 'utils/setIconFill';
@@ -31,7 +30,6 @@ const utils = {
   isAuthPage: isAuthPage,
   isContactsPage: isContactsPage,
   makeBlur: makeBlur,
-  makeFocus: makeFocus,
   setAuthPageBackgroundColor: setAuthPageBackgroundColor,
   setButtonColor: setButtonColor,
   setIconFill: setIconFill,

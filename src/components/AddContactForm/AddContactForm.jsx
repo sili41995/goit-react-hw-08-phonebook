@@ -1,7 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import { GiCheckMark } from 'react-icons/gi';
 import { useForm } from 'react-hook-form';
-import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import 'react-toastify/dist/ReactToastify.css';
 import utils from 'utils';
@@ -21,15 +20,10 @@ const AddContactForm = () => {
     register,
     formState: { errors },
     handleSubmit,
-    setFocus,
     reset,
   } = useForm();
   const location = useLocation();
   const goBackLink = location.state?.from || '/';
-
-  useEffect(() => {
-    setFocus('name');
-  }, [setFocus]);
 
   const handleFormSubmit = (data) => {
     dispatch(addContact(data))
@@ -51,6 +45,7 @@ const AddContactForm = () => {
           settings={{ ...register('name', { required: true, minLength: 1 }) }}
           type="text"
           placeholder="Name"
+          autoFocus
         />
         {errors.name && toasts.errorToast('Name is required')}
         <Input

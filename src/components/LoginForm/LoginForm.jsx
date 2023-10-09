@@ -22,12 +22,7 @@ const LoginForm = () => {
     register,
     formState: { errors },
     handleSubmit,
-    setFocus,
   } = useForm();
-
-  useEffect(() => {
-    setFocus('email');
-  }, [setFocus]);
 
   useEffect(() => {
     if (credentials) {
@@ -53,6 +48,7 @@ const LoginForm = () => {
           type="email"
           placeholder="Email"
           inputType={formType.authForm}
+          autoFocus
         />
         {errors.email && toasts.errorToast('Email is required')}
         <Input

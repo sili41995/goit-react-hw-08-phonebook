@@ -1,5 +1,4 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import 'react-toastify/dist/ReactToastify.css';
 import { Form, Button, Message, Title } from './RegisterForm.styled';
@@ -20,7 +19,6 @@ const RegisterForm = () => {
     register,
     formState: { errors },
     handleSubmit,
-    setFocus,
   } = useForm();
 
   const onSubmit = (data) => {
@@ -30,10 +28,6 @@ const RegisterForm = () => {
         toasts.successToast('Hello, my friend!');
       });
   };
-
-  useEffect(() => {
-    setFocus('name');
-  }, [setFocus]);
 
   return (
     <>
@@ -45,6 +39,7 @@ const RegisterForm = () => {
           type="text"
           placeholder="Username"
           inputType={formType.authForm}
+          autoFocus
         />
         {errors.name && toasts.errorToast('Username is required')}
         <Input

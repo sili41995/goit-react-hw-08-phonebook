@@ -12,7 +12,7 @@ import searchParamsKeys from 'constants/searchParamsKeys';
 import sortTypes from 'constants/sortTypes';
 import formType from 'constants/formType';
 
-const { makeFocus, makeBlur, updateSortSearchParams } = utils;
+const { makeBlur, updateSortSearchParams } = utils;
 
 const Filter = () => {
   const [showFilter, setShowFilter] = useState(false);
@@ -24,10 +24,6 @@ const Filter = () => {
   const deskSortType = searchParams.get(SORT_SP_KEY) === DESC_SORT_TYPE;
 
   useEffect(() => {
-    if (showFilter) {
-      makeFocus(inputRef.current);
-    }
-
     if (!showFilter) {
       searchParams.delete(FILTER_SP_KEY);
       setSearchParams(searchParams);
@@ -67,6 +63,7 @@ const Filter = () => {
           value={filter}
           onChange={onFilterChange}
           inputType={formType.filter}
+          autoFocus
         />
       )}
       <IconButton
