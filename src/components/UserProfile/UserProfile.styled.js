@@ -18,15 +18,15 @@ export const Name = styled.p`
 `;
 
 export const UserData = styled.div`
-  margin-top: ${({ theme }) => theme.spacing * 7}px;
-  margin-bottom: ${({ theme }) => theme.spacing * 16}px;
+  margin-top: ${({ theme }) => theme.spacing(7)};
+  margin-bottom: ${({ theme }) => theme.spacing(16)};
 `;
 
 export const UserInfo = styled.div``;
 
 export const FullName = styled.p`
-  margin-top: ${({ theme }) => theme.spacing * 2}px;
-  margin-bottom: ${({ theme }) => theme.spacing}px;
+  margin-top: ${({ theme }) => theme.spacing(2)};
+  margin-bottom: ${({ theme }) => theme.spacing()};
   color: ${({ theme }) => theme.primaryFontColor};
   font-family: Jua;
   font-size: 25px;
@@ -45,13 +45,13 @@ export const Email = styled.p`
 export const ContactInfo = styled.div`
   display: flex;
   align-items: center;
-  gap: ${({ theme }) => theme.spacing * 3}px;
+  gap: ${({ theme }) => theme.spacing(3)};
   color: #7c7c7c;
   font-family: Inter;
   font-size: ${({ theme }) => theme.primaryFontSize}px;
   font-weight: ${({ theme }) => theme.primaryFontWeight};
   &:not(:last-child) {
-    margin-bottom: ${({ theme }) => theme.spacing * 6}px;
+    margin-bottom: ${({ theme }) => theme.spacing(6)};
   }
 `;
 

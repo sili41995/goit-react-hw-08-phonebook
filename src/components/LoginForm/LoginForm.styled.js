@@ -29,8 +29,7 @@ export const Image = styled.img`
 export const Button = styled.button`
   display: block;
   min-width: 170px;
-  padding: ${({ theme }) => theme.spacing * 4}px
-    ${({ theme }) => theme.spacing * 8}px;
+  padding: ${({ theme }) => `${theme.spacing(4)} ${theme.spacing(8)}`};
   align-self: center;
   background-color: ${({ theme }) => theme.primaryLinkColor};
   border-color: transparent;

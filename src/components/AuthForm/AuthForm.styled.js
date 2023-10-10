@@ -6,8 +6,8 @@ export const FormContainer = styled.div`
   gap: ${({ theme }) => theme.primaryGap}px;
   flex-direction: column;
   background-color: #fcfcfc;
-  padding: ${({ theme }) => theme.spacing * 10}px;
-  margin: ${({ theme }) => theme.spacing * 10}px auto;
+  padding: ${({ theme }) => theme.spacing(10)};
+  margin: ${({ theme }) => theme.spacing(10)} auto;
   border-radius: 30px;
   box-shadow: ${({ theme }) => theme.secondaryShadow};
 `;

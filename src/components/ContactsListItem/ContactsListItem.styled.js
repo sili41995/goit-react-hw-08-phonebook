@@ -11,7 +11,7 @@ export const Item = styled.li`
     box-shadow: ${({ theme }) => theme.primaryShadow};
   }
   & a {
-    padding: ${({ theme }) => theme.spacing * 3}px;
+    padding: ${({ theme }) => theme.spacing(3)};
     display: flex;
     gap: ${({ theme }) => theme.primaryGap}px;
     text-decoration: none;

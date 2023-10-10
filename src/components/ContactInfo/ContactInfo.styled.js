@@ -2,13 +2,13 @@ import styled from '@emotion/styled';
 
 export const Image = styled.img`
   width: 112px;
-  margin: 0 auto ${({ theme }) => theme.spacing * 2}px;
+  margin: 0 auto ${({ theme }) => theme.spacing(2)};
 `;
 
 export const ContactTitle = styled.div`
   display: flex;
   flex-direction: column;
-  gap: ${({ theme }) => theme.spacing * 2}px;
+  gap: ${({ theme }) => theme.spacing(2)};
 `;
 
 export const ContactName = styled.p`
@@ -28,11 +28,11 @@ export const ContactDesc = styled.p`
 `;
 
 export const Navigation = styled.nav`
-  padding: ${({ theme }) => theme.spacing}px;
+  padding: ${({ theme }) => theme.spacing()};
   border-radius: 10px;
   background: #eee;
-  margin-top: ${({ theme }) => theme.spacing * 20}px;
-  margin-bottom: ${({ theme }) => theme.spacing * 10}px;
+  margin-top: ${({ theme }) => theme.spacing(20)};
+  margin-bottom: ${({ theme }) => theme.spacing(10)};
 `;
 
 export const List = styled.ul`
@@ -43,8 +43,7 @@ export const List = styled.ul`
 export const ListItem = styled.li`
   & a {
     display: block;
-    padding: ${({ theme }) => theme.spacing}px
-      ${({ theme }) => theme.spacing * 5}px;
+    padding: ${({ theme }) => `${theme.spacing()} ${theme.spacing(5)}`};
     border-radius: 10px;
     color: #555;
     font-family: Jua;

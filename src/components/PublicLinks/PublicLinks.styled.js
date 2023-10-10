@@ -9,7 +9,7 @@ export const ListItem = styled.li`
   & a {
     display: block;
     width: 100px;
-    padding: ${({ theme }) => theme.spacing * 3}px;
+    padding: ${({ theme }) => theme.spacing(3)};
     border-radius: 5px;
     border: 1px solid #fff;
     color: #fff;

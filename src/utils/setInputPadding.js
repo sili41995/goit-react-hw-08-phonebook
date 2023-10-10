@@ -5,13 +5,13 @@ const setInputPadding = (inputType) => {
 
   switch (inputType) {
     case formType.filter:
-      return `${theme.spacing * 2}px ${theme.spacing * 4}px`;
+      return `${theme.spacing(2)} ${theme.spacing(4)}`;
 
     case formType.authForm:
-      return `${theme.spacing * 2}px ${theme.spacing * 10}px`;
+      return `${theme.spacing(2)} ${theme.spacing(10)}`;
 
     default:
-      return `${theme.spacing * 2}px ${theme.spacing * 9}px`;
+      return `${theme.spacing(2)} ${theme.spacing(9)}`;
   }
 };
 

@@ -9,7 +9,7 @@ export const Link = styled.a`
   align-items: center;
   width: 44px;
   height: 35px;
-  padding: ${({ theme }) => theme.spacing}px;
+  padding: ${({ theme }) => theme.spacing()};
   background-color: ${setButtonColor};
   border-radius: 8px;
   transition: box-shadow ${({ theme }) => theme.transitionDurationAndFunc};

@@ -16,14 +16,14 @@ export const Form = styled.form`
 
 export const Buttons = styled.div`
   display: flex;
-  gap: ${({ theme }) => theme.spacing * 10}px;
+  gap: ${({ theme }) => theme.spacing(10)};
   align-self: center;
   & a {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
-    padding: ${({ theme }) => theme.spacing}px;
+    padding: ${({ theme }) => theme.spacing()};
     background: rgba(217, 217, 217, 0.58);
     border-radius: 8px;
     border-color: transparent;

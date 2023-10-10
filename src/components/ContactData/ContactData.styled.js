@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  gap: ${({ theme }) => theme.spacing * 10}px;
+  gap: ${({ theme }) => theme.spacing(10)};
 `;
 
 export const InfoDesc = styled.p`

@@ -13,7 +13,7 @@ export const Button = styled.button`
   gap: ${({ theme }) => theme.primaryGap}px;
   min-width: ${({ width }) => width}px;
   height: ${({ height }) => height}px;
-  padding: ${({ theme }) => theme.spacing}px;
+  padding: ${({ theme }) => theme.spacing()};
   border-radius: 8px;
   border-color: transparent;
   background-color: ${setButtonColor};

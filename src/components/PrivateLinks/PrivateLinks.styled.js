@@ -5,13 +5,13 @@ export const LinkContainer = styled.div`
   gap: ${({ theme }) => theme.primaryGap}px;
   & a {
     display: flex;
-    gap: ${({ theme }) => theme.spacing * 3}px;
+    gap: ${({ theme }) => theme.spacing(3)};
     justify-content: space-between;
     align-items: center;
     white-space: nowrap;
     border-radius: 5px;
     background: #55c875;
-    padding: ${({ theme }) => theme.spacing * 3}px;
+    padding: ${({ theme }) => theme.spacing(3)};
     color: ${({ theme }) => theme.primaryFontColor};
     font-family: Inter;
     font-size: ${({ theme }) => theme.primaryFontSize}px;

@@ -16,6 +16,6 @@ export const Form = styled.form`
 
 export const Buttons = styled.div`
   display: flex;
-  gap: ${({ theme }) => theme.spacing * 10}px;
+  gap: ${({ theme }) => theme.spacing(10)};
   align-self: center;
 `;

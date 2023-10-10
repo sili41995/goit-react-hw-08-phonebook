@@ -2,7 +2,6 @@ const theme = {
   deskContainerWidth: 1200,
   paddingContainer: 16,
   paddingAuthForm: 32,
-  spacing: 4,
   primaryColor: '#38b6ff',
   authPageBackground: 'rgba(46, 47, 66, 0.2)',
   primaryGap: 20,
@@ -18,6 +17,7 @@ const theme = {
   primaryShadow: '0px 4px 4px 0px rgba(0, 0, 0, 0.25)',
   secondaryShadow: '0px 4px 17px 0px rgba(0, 0, 0, 0.17)',
   transitionDurationAndFunc: '250ms cubic-bezier(0.4, 0, 0.2, 1)',
+  spacing: (value = 1) => `${value * 4}px`,
 };
 
 export default theme;
