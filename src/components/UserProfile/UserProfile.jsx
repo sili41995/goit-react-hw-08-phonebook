@@ -2,7 +2,6 @@ import { useSelector } from 'react-redux';
 import { AiOutlineCalendar } from 'react-icons/ai';
 import { HiOutlinePhone } from 'react-icons/hi';
 import { SlLocationPin } from 'react-icons/sl';
-import { selectUser } from 'redux/auth/selectors';
 import utils from 'utils';
 import {
   UserInfo,
@@ -15,6 +14,7 @@ import {
   ContactInfoIconWrap,
   UserProfileContainer,
 } from './UserProfile.styled';
+import { selectUser } from 'redux/auth/selectors';
 
 const { getUserInfo } = utils;
 

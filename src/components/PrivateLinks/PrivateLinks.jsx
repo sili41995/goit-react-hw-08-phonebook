@@ -2,14 +2,14 @@ import { SlLogout } from 'react-icons/sl';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { GrAddCircle } from 'react-icons/gr';
-import { selectContacts } from 'redux/contacts/selectors';
-import { logoutUser } from 'redux/auth/operations';
 import IconButton from 'components/IconButton';
 import Filter from 'components/Filter';
 import LinkWithQuery from 'components/LinkWithQuery';
 import { IconContainer, LinkContainer } from './PrivateLinks.styled';
 import utils from 'utils';
 import constants from 'constants';
+import { selectContacts } from 'redux/contacts/selectors';
+import { logoutUser } from 'redux/auth/operations';
 
 const { pagesPath, iconBtnType } = constants;
 const { makeBlur, toasts, isContactsPage } = utils;

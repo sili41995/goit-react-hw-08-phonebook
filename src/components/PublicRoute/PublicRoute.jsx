@@ -2,8 +2,8 @@ import { useEffect, useRef } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import constants from 'constants';
-import { selectIsLoggedIn } from 'redux/auth/selectors';
 import utils from 'utils';
+import { selectIsLoggedIn } from 'redux/auth/selectors';
 
 const { pagesPath } = constants;
 const { toasts } = utils;

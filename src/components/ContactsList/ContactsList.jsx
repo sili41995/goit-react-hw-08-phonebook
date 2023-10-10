@@ -1,12 +1,12 @@
+import { useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import { useSearchParams } from 'react-router-dom';
 import ContactsListItem from 'components/ContactsListItem';
 import EmptyListMessage from 'components/EmptyListMessage';
 import { Container, List } from './ContactsList.styled';
-import utils from 'utils';
 import { selectContacts } from 'redux/contacts/selectors';
 import constants from 'constants';
-import { useMemo } from 'react';
+import utils from 'utils';
 
 const { searchParamsKeys } = constants;
 const { filterContactsByName, sortContactsByName } = utils;

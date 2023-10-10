@@ -9,9 +9,9 @@ import IconButton from 'components/IconButton';
 import Input from 'components/Input';
 import utils from 'utils';
 import hooks from 'hooks';
+import constants from 'constants';
 import { updateContact } from 'redux/contacts/operations';
 import { selectIsLoading } from 'redux/contacts/selectors';
-import constants from 'constants';
 
 const { getContactInfo, toasts } = utils;
 const { pagesPath, iconBtnType } = constants;

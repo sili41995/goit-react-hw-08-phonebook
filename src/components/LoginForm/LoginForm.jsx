@@ -7,9 +7,9 @@ import defaultAvatar from '../default-signin-avatar.png';
 import utils from 'utils';
 import AuthFormMessage from 'components/AuthFormMessage';
 import Input from 'components/Input';
+import constants from 'constants';
 import { loginUser } from 'redux/auth/operations';
 import { selectIsLoading } from 'redux/auth/selectors';
-import constants from 'constants';
 
 const { pagesPath, formType } = constants;
 const { toasts } = utils;

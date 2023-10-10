@@ -3,13 +3,13 @@ import { GiCheckMark } from 'react-icons/gi';
 import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
 import 'react-toastify/dist/ReactToastify.css';
-import utils from 'utils';
-import { addContact } from 'redux/contacts/operations';
-import { selectIsLoading } from 'redux/contacts/selectors';
 import IconButton from 'components/IconButton';
 import Input from 'components/Input';
-import constants from 'constants';
 import { Buttons, Form, Title } from './AddContactForm.styled';
+import utils from 'utils';
+import constants from 'constants';
+import { selectIsLoading } from 'redux/contacts/selectors';
+import { addContact } from 'redux/contacts/operations';
 
 const { toasts } = utils;
 const { iconBtnType } = constants;

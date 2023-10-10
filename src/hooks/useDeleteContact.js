@@ -1,4 +1,4 @@
-import { useNavigate, useParams } from 'react-router-dom';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { deleteContact } from 'redux/contacts/operations';
 import utils from 'utils';
@@ -8,30 +8,26 @@ import { useEffect, useState } from 'react';
 const { toasts } = utils;
 const { pagesPath } = constants;
 
-const useDeleteContact = (path) => {
+const useDeleteContact = () => {
   const [contactId, setContactId] = useState(null);
-  const targetId = useParams()[pagesPath.dynamicParam];
+  const currentId = useParams()[pagesPath.dynamicParam];
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const { search } = useLocation();
+  const path = `/${pagesPath.contactsPath + search}`;
 
   useEffect(() => {
     if (contactId) {
-      const promise = dispatch(deleteContact(contactId));
-      promise
+      dispatch(deleteContact(contactId))
         .unwrap()
         .then(() => {
           toasts.successToast('Contact successfully removed');
-          if (path) {
-            navigate(path);
-          } else if (targetId === contactId) {
-            navigate(`/${pagesPath.contactsPath}`);
-          }
         })
         .catch(() => {
           toasts.errorToast('Deleting a contact failed');
         });
     }
-  }, [contactId, dispatch, navigate, path, targetId]);
+  }, [contactId, dispatch, navigate, path, currentId]);
 
   return setContactId;
 };

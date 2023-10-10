@@ -1,5 +1,4 @@
 import { useParams } from 'react-router-dom';
-import { useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { useState } from 'react';
 import { AiOutlineDelete } from 'react-icons/ai';
@@ -10,9 +9,9 @@ import EditForm from 'components/EditForm';
 import ContactModalForm from 'components/ContactModalForm';
 import IconButton from 'components/IconButton';
 import utils from 'utils';
-import { selectIsLoading } from 'redux/contacts/selectors';
 import constants from 'constants';
 import hooks from 'hooks';
+import { selectIsLoading } from 'redux/contacts/selectors';
 
 const { makeBlur } = utils;
 const { iconBtnType, pagesPath } = constants;
@@ -22,9 +21,8 @@ const ContactDetails = () => {
   const [editContact, setEditContact] = useState(false);
   const isLoading = useSelector(selectIsLoading);
   const id = useParams()[pagesPath.dynamicParam];
-  const { search } = useLocation();
-  const path = `/${pagesPath.contactsPath + search}`;
-  const setContactId = useDeleteContact(path);
+
+  const setContactId = useDeleteContact();
 
   const setEditState = () => {
     setEditContact((editContact) => !editContact);

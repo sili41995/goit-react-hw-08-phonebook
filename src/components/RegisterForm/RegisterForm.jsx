@@ -5,9 +5,9 @@ import { Form, Button, Message, Title } from './RegisterForm.styled';
 import utils from 'utils';
 import AuthFormMessage from 'components/AuthFormMessage';
 import Input from 'components/Input';
+import constants from 'constants';
 import { registerUser } from 'redux/auth/operations';
 import { selectIsLoading } from 'redux/auth/selectors';
-import constants from 'constants';
 
 const { formType, pagesPath } = constants;
 const { toasts } = utils;

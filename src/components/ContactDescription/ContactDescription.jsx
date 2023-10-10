@@ -1,5 +1,5 @@
-import hooks from 'hooks';
 import { Description } from './ContactDescription.styled';
+import hooks from 'hooks';
 import utils from 'utils';
 
 const { getContactInfo } = utils;

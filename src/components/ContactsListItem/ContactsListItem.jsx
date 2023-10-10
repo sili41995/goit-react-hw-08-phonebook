@@ -1,9 +1,8 @@
 import { useSelector } from 'react-redux';
 import { AiOutlineDelete } from 'react-icons/ai';
-import { selectIsLoading } from 'redux/contacts/selectors';
-import constants from 'constants';
 import IconButton from 'components/IconButton';
 import LinkWithQuery from 'components/LinkWithQuery/LinkWithQuery';
+import constants from 'constants';
 import utils from 'utils';
 import hooks from 'hooks';
 import {
@@ -16,6 +15,7 @@ import {
   ContactInfo,
   Person,
 } from './ContactsListItem.styled';
+import { selectIsLoading } from 'redux/contacts/selectors';
 
 const { getContactInfo } = utils;
 const { pagesPath, iconBtnType } = constants;
