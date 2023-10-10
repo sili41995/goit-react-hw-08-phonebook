@@ -3,12 +3,14 @@ import { lazy, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { refreshUser } from 'redux/auth/operations';
 import { selectIsRefreshing } from 'redux/auth/selectors';
-import pagesPath from 'constants/pagesPath';
+import constants from 'constants';
 import PublicRoute from 'components/PublicRoute';
 import Loader from 'components/Loader';
 import SharedLayout from 'components/SharedLayout';
 import GlobalStyles from 'components/GlobalStyles';
 import Toast from 'components/Toast';
+
+const { pagesPath } = constants;
 
 const RegisterPage = lazy(() => import('pages/RegisterPage'));
 const LoginPage = lazy(() => import('pages/LoginPage'));

@@ -1,10 +1,11 @@
 import { useEffect, useRef } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import pagesPath from 'constants/pagesPath';
+import constants from 'constants';
 import { selectIsLoggedIn } from 'redux/auth/selectors';
 import utils from 'utils';
 
+const { pagesPath } = constants;
 const { toasts } = utils;
 
 export const PublicRoute = ({ element, restricted = false }) => {

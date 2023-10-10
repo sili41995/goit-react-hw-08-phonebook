@@ -9,9 +9,9 @@ import AuthFormMessage from 'components/AuthFormMessage';
 import Input from 'components/Input';
 import { loginUser } from 'redux/auth/operations';
 import { selectIsLoading } from 'redux/auth/selectors';
-import pagesPath from 'constants/pagesPath';
-import formType from 'constants/formType';
+import constants from 'constants';
 
+const { pagesPath, formType } = constants;
 const { toasts } = utils;
 
 const LoginForm = () => {

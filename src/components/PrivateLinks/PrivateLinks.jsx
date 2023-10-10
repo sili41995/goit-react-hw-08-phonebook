@@ -9,9 +9,9 @@ import Filter from 'components/Filter';
 import LinkWithQuery from 'components/LinkWithQuery';
 import { IconContainer, LinkContainer } from './PrivateLinks.styled';
 import utils from 'utils';
-import iconBtnType from 'constants/iconBtnType';
-import pagesPath from 'constants/pagesPath';
+import constants from 'constants';
 
+const { pagesPath, iconBtnType } = constants;
 const { makeBlur, toasts, isContactsPage } = utils;
 
 const PrivateLinks = () => {

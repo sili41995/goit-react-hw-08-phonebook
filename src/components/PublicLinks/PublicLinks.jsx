@@ -1,6 +1,8 @@
 import { NavLink } from 'react-router-dom';
 import { List, ListItem } from './PublicLinks.styled';
-import pagesPath from 'constants/pagesPath';
+import constants from 'constants';
+
+const { pagesPath } = constants;
 
 const PublicLinks = () => (
   <List>

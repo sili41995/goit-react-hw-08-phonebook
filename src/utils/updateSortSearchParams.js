@@ -1,11 +1,12 @@
-import sortTypes from 'constants/sortTypes';
-
-const { DESC_SORT_TYPE, ASC_SORT_TYPE } = sortTypes;
+import constants from 'constants';
 
 const updateSortSearchParams = (searchParams, setSearchParams, key) => {
+  const { sortTypes } = constants;
   const sortSearchParam = searchParams.get(key);
-  const deskSortType = sortSearchParam === DESC_SORT_TYPE;
-  const updateSortValue = deskSortType ? ASC_SORT_TYPE : DESC_SORT_TYPE;
+  const deskSortType = sortSearchParam === sortTypes.DESC_SORT_TYPE;
+  const updateSortValue = deskSortType
+    ? sortTypes.ASC_SORT_TYPE
+    : sortTypes.DESC_SORT_TYPE;
   searchParams.set(key, updateSortValue);
   setSearchParams(searchParams);
 };

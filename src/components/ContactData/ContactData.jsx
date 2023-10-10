@@ -4,10 +4,12 @@ import { RiChat1Line } from 'react-icons/ri';
 import { InfoDesc, InfoData, Container, Field } from './ContactData.styled';
 import ActionLink from 'components/ActionLink';
 import utils from 'utils';
-import useTargetContact from 'hooks/useTargetContact';
-import iconBtnType from 'constants/iconBtnType';
+import hooks from 'hooks';
+import constants from 'constants';
 
 const { getContactInfo, getPhoneNumber } = utils;
+const { iconBtnType } = constants;
+const { useTargetContact } = hooks;
 
 const ContactData = () => {
   const targetContact = useTargetContact();

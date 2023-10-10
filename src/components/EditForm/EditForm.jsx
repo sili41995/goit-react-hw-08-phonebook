@@ -8,13 +8,14 @@ import { Buttons, Form, Title } from './EditForm.styled';
 import IconButton from 'components/IconButton';
 import Input from 'components/Input';
 import utils from 'utils';
-import useTargetContact from 'hooks/useTargetContact';
+import hooks from 'hooks';
 import { updateContact } from 'redux/contacts/operations';
 import { selectIsLoading } from 'redux/contacts/selectors';
-import iconBtnType from 'constants/iconBtnType';
-import pagesPath from 'constants/pagesPath';
+import constants from 'constants';
 
 const { getContactInfo, toasts } = utils;
+const { pagesPath, iconBtnType } = constants;
+const { useTargetContact } = hooks;
 
 const EditForm = ({ setEditContact }) => {
   const isLoading = useSelector(selectIsLoading);

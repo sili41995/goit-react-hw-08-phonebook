@@ -7,11 +7,9 @@ import { FilterContainer } from './Filter.styled';
 import utils from 'utils';
 import IconButton from 'components/IconButton';
 import Input from 'components/Input';
-import iconBtnType from 'constants/iconBtnType';
-import searchParamsKeys from 'constants/searchParamsKeys';
-import sortTypes from 'constants/sortTypes';
-import formType from 'constants/formType';
+import constants from 'constants';
 
+const { sortTypes, searchParamsKeys, formType, iconBtnType } = constants;
 const { makeBlur, updateSortSearchParams } = utils;
 
 const Filter = () => {

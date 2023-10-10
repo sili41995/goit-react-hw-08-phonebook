@@ -2,10 +2,11 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { deleteContact } from 'redux/contacts/operations';
 import utils from 'utils';
-import pagesPath from 'constants/pagesPath';
+import constants from 'constants';
 import { useEffect, useState } from 'react';
 
 const { toasts } = utils;
+const { pagesPath } = constants;
 
 const useDeleteContact = (path) => {
   const [contactId, setContactId] = useState(null);

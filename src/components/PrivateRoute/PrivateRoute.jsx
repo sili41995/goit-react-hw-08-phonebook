@@ -1,7 +1,9 @@
 import { Navigate, useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import pagesPath from 'constants/pagesPath';
+import constants from 'constants';
 import { selectIsLoggedIn, selectIsRefreshing } from 'redux/auth/selectors';
+
+const { pagesPath } = constants;
 
 const PrivateRoute = ({ element }) => {
   const isLoggedIn = useSelector(selectIsLoggedIn);

@@ -1,7 +1,8 @@
-import defaultValues from 'constants/defaultValues';
+import constants from 'constants';
 import utils from 'utils';
 
 const getUserInfo = (user) => {
+  const { defaultValues } = constants;
   const { getAvatar } = utils;
   const {
     name,

@@ -8,10 +8,11 @@ import { addContact } from 'redux/contacts/operations';
 import { selectIsLoading } from 'redux/contacts/selectors';
 import IconButton from 'components/IconButton';
 import Input from 'components/Input';
-import iconBtnType from 'constants/iconBtnType';
+import constants from 'constants';
 import { Buttons, Form, Title } from './AddContactForm.styled';
 
 const { toasts } = utils;
+const { iconBtnType } = constants;
 
 const AddContactForm = () => {
   const isLoading = useSelector(selectIsLoading);

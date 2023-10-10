@@ -1,12 +1,11 @@
 import { useSelector } from 'react-redux';
 import { AiOutlineDelete } from 'react-icons/ai';
 import { selectIsLoading } from 'redux/contacts/selectors';
-import pagesPath from 'constants/pagesPath';
-import iconBtnType from 'constants/iconBtnType';
+import constants from 'constants';
 import IconButton from 'components/IconButton';
 import LinkWithQuery from 'components/LinkWithQuery/LinkWithQuery';
 import utils from 'utils';
-import useDeleteContact from 'hooks/useDeleteContact';
+import hooks from 'hooks';
 import {
   Email,
   Image,
@@ -19,6 +18,8 @@ import {
 } from './ContactsListItem.styled';
 
 const { getContactInfo } = utils;
+const { pagesPath, iconBtnType } = constants;
+const { useDeleteContact } = hooks;
 
 const ContactsListItem = ({ contact }) => {
   const { userAvatar, name, id, role, number, email } = getContactInfo(contact);

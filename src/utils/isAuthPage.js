@@ -1,5 +1,5 @@
-import authPages from 'constants/authPages';
+import constants from 'constants';
 
-const isAuthPage = (path) => authPages.includes(path);
+const isAuthPage = (path) => constants.authPages.includes(path);
 
 export default isAuthPage;

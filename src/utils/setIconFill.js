@@ -1,6 +1,8 @@
-import iconBtnType from 'constants/iconBtnType';
+import constants from 'constants';
 
 function setIconFill({ btnType }) {
+  const { iconBtnType } = constants;
+
   switch (btnType) {
     case iconBtnType.delete:
       return '#d3232f';

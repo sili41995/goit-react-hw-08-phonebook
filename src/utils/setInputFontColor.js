@@ -1,7 +1,8 @@
-import formType from 'constants/formType';
-import theme from 'constants/theme';
+import constants from 'constants';
 
 const setInputFontColor = (inputType) => {
+  const { theme, formType } = constants;
+
   switch (inputType) {
     case formType.filter:
       return theme.secondaryFontColor;

@@ -1,15 +1,15 @@
 import { Global, css } from '@emotion/react';
 import 'modern-normalize';
-import juaFont from 'fonts/Jua/Jua-Regular.ttf';
-import interMedium from 'fonts/Inter/Inter-Medium.ttf';
-import interSemiBold from 'fonts/Inter/Inter-SemiBold.ttf';
+import fonts from 'fonts';
+
+const { juaRegular, interMedium, interSemiBold } = fonts;
 
 const GlobalStyles = () => (
   <Global
     styles={css`
       @font-face {
         font-family: 'Jua';
-        src: local('Jua'), url(${juaFont}) format('truetype');
+        src: local('Jua'), url(${juaRegular}) format('truetype');
         font-weight: 400;
       }
 

@@ -1,7 +1,8 @@
 import styled from '@emotion/styled';
-import formType from 'constants/formType';
+import constants from 'constants';
 import utils from 'utils';
 
+const { formType } = constants;
 const {
   setInputMaxWidth,
   setInputHeight,
