@@ -7,7 +7,7 @@ const setAuthPageBackgroundColor = (path) => {
 
   document.body.style.backgroundColor = isAuthPage(path)
     ? theme.colors.authPageBackgroundColor
-    : 'white';
+    : theme.colors.whiteColor;
 };
 
 export default setAuthPageBackgroundColor;

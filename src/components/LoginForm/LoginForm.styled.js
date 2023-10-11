@@ -34,7 +34,7 @@ export const Button = styled.button`
   background-color: ${({ theme }) => theme.colors.primaryLinkColor};
   border-color: transparent;
   border-radius: 4px;
-  color: ${({ theme }) => theme.colors.otherFontColor};
+  color: ${({ theme }) => theme.colors.whiteColor};
   text-align: center;
   font-family: Inter;
   font-size: 16px;

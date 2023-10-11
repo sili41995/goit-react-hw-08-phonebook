@@ -5,7 +5,7 @@ const setInputFontColor = (inputType) => {
 
   switch (inputType) {
     case formType.filter:
-      return theme.colors.otherFontColor;
+      return theme.colors.whiteColor;
 
     default:
       return theme.colors.primaryFontColor;

@@ -1,7 +1,7 @@
-import defaulUserAvatar from 'components/default-user-avatar.jpg';
+import defaultUserAvatar from 'components/default-user-avatar.jpg';
 import defaultContactAvatar from 'components/default-contact-avatar.jpg';
 
-const getUserAvatar = (avatar) => (avatar ? avatar : defaulUserAvatar);
+const getUserAvatar = (avatar) => (avatar ? avatar : defaultUserAvatar);
 
 const getContactAvatar = (avatar) => (avatar ? avatar : defaultContactAvatar);
 

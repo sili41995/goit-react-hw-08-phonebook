@@ -20,7 +20,7 @@ export const ContactName = styled.p`
 `;
 
 export const ContactDesc = styled.p`
-  color: #7c7c7c;
+  color: ${({ theme }) => theme.colors.secondaryFontColor};
   font-family: Inter;
   font-size: ${({ theme }) => theme.fontSize.primaryFontSize}px;
   font-weight: ${({ theme }) => theme.fontWeight.primaryFontWeight};
@@ -30,7 +30,6 @@ export const ContactDesc = styled.p`
 export const Navigation = styled.nav`
   padding: ${({ theme }) => theme.spacing()};
   border-radius: 10px;
-  background: #eee;
   margin-top: ${({ theme }) => theme.spacing(20)};
   margin-bottom: ${({ theme }) => theme.spacing(10)};
 `;

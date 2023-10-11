@@ -17,8 +17,9 @@ export const ListItem = styled.li`
     width: 100px;
     padding: ${({ theme }) => theme.spacing(3)};
     border-radius: 5px;
-    border: 1px solid #fff;
-    color: ${({ theme }) => theme.colors.otherFontColor};
+    border: 1px solid;
+    border-color: ${({ theme }) => theme.colors.whiteColor};
+    color: ${({ theme }) => theme.colors.whiteColor};
     font-family: Inter;
     font-size: ${({ theme }) => theme.fontSize.primaryFontSize}px;
     font-weight: ${({ theme }) => theme.fontWeight.primaryFontWeight};

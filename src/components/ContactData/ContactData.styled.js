@@ -14,7 +14,7 @@ export const Field = styled.div`
 export const InfoWrap = styled.div``;
 
 export const InfoDesc = styled.p`
-  color: #7c7c7c;
+  color: ${({ theme }) => theme.colors.secondaryFontColor};
   font-family: Inter;
   font-size: ${({ theme }) => theme.fontSize.primaryFontSize}px;
   font-weight: ${({ theme }) => theme.fontWeight.primaryFontWeight};

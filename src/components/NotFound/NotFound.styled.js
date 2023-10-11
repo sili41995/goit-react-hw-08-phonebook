@@ -7,7 +7,7 @@ export const Title = styled.p`
   font-weight: ${({ theme }) => theme.fontWeight.otherFontWeight};
 `;
 export const Message = styled.p`
-  color: #555;
+  color: ${({ theme }) => theme.colors.otherFontColor};
   font-family: Jua;
   font-size: ${({ theme }) => theme.fontSize.primaryFontSize}px;
   font-weight: ${({ theme }) => theme.fontWeight.otherFontWeight};

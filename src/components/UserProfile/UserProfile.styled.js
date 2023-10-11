@@ -35,7 +35,7 @@ export const FullName = styled.p`
 `;
 
 export const Email = styled.p`
-  color: #7c7c7c;
+  color: ${({ theme }) => theme.colors.secondaryFontColor};
   font-family: Inter;
   font-size: ${({ theme }) => theme.secondaryFontSize}px;
   font-weight: ${({ theme }) => theme.fontWeight.primaryFontWeight};
@@ -46,7 +46,7 @@ export const ContactInfo = styled.div`
   display: flex;
   align-items: center;
   gap: ${({ theme }) => theme.spacing(3)};
-  color: #7c7c7c;
+  color: ${({ theme }) => theme.colors.secondaryFontColor};
   font-family: Inter;
   font-size: ${({ theme }) => theme.fontSize.primaryFontSize}px;
   font-weight: ${({ theme }) => theme.fontWeight.primaryFontWeight};
