@@ -1,10 +1,10 @@
 import styled from '@emotion/styled';
 
 export const Title = styled.p`
-  color: ${({ theme }) => theme.primaryFontColor};
+  color: ${({ theme }) => theme.colors.primaryFontColor};
   font-family: Inter;
-  font-size: 20px;
-  font-weight: ${({ theme }) => theme.secondaryFontWeight};
+  font-size: ${({ theme }) => theme.fontSize.otherFontSize}px;
+  font-weight: ${({ theme }) => theme.fontWeight.secondaryFontWeight};
   text-align: center;
 `;
 

@@ -1,4 +1,3 @@
-import authPages from 'constants/authPages';
 import defaultValues from 'constants/defaultValues';
 import formType from 'constants/formType';
 import iconBtnType from 'constants/iconBtnType';
@@ -15,7 +14,6 @@ const constants = {
   iconBtnType: iconBtnType,
   formType: formType,
   defaultValues: defaultValues,
-  authPages: authPages,
 };
 
 export default constants;

@@ -1,21 +1,41 @@
 const theme = {
+  colors: {
+    primaryColor: '#38b6ff',
+    primaryLinkColor: '#4d5ae5',
+    secondaryLinkColor: '#404bbf',
+    primaryFontColor: '#000',
+    otherFontColor: '#fff',
+    authPageBackgroundColor: 'rgba(46, 47, 66, 0.2)',
+    authFormBackgroundColor: '#fcfcfc',
+    // #7c7c7c
+    // #eee
+    // #555
+    // #44de6f
+    // rgba(137, 137, 137, 0.43)
+    // #636363
+    // #696969
+    // #fff
+  },
+  shadows: {
+    primaryShadow: '0px 4px 4px 0px rgba(0, 0, 0, 0.25)',
+    secondaryShadow: '0px 4px 17px 0px rgba(0, 0, 0, 0.17)',
+  },
+  fontWeight: {
+    primaryFontWeight: 500,
+    secondaryFontWeight: 600,
+    otherFontWeight: 400,
+  },
+  fontSize: {
+    primaryFontSize: 15,
+    secondaryFontSize: 18,
+    otherFontSize: 20,
+  },
+  padding: {
+    paddingContainer: 16,
+    paddingAuthForm: 32,
+  },
   deskContainerWidth: 1200,
-  paddingContainer: 16,
-  paddingAuthForm: 32,
-  primaryColor: '#38b6ff',
-  authPageBackground: 'rgba(46, 47, 66, 0.2)',
   primaryGap: 20,
-  primaryFontWeight: 500,
-  secondaryFontWeight: 600,
-  otherFontWeight: 400,
-  primaryFontSize: 15,
-  secondaryFontSize: 18,
-  primaryFontColor: '#000',
-  secondaryFontColor: '#fff',
-  primaryLinkColor: '#4d5ae5',
-  secondaryLinkColor: '#404bbf',
-  primaryShadow: '0px 4px 4px 0px rgba(0, 0, 0, 0.25)',
-  secondaryShadow: '0px 4px 17px 0px rgba(0, 0, 0, 0.17)',
   transitionDurationAndFunc: '250ms cubic-bezier(0.4, 0, 0.2, 1)',
   spacing: (value = 1) => `${value * 4}px`,
 };

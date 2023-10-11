@@ -1,7 +1,13 @@
 import { HiOutlinePhone } from 'react-icons/hi';
 import { IoMdMail } from 'react-icons/io';
 import { RiChat1Line } from 'react-icons/ri';
-import { InfoDesc, InfoData, Container, Field } from './ContactData.styled';
+import {
+  InfoDesc,
+  InfoData,
+  Container,
+  Field,
+  InfoWrap,
+} from './ContactData.styled';
 import ActionLink from 'components/ActionLink';
 import utils from 'utils';
 import hooks from 'hooks';
@@ -20,28 +26,28 @@ const ContactData = () => {
   return (
     <Container>
       <Field>
-        <div>
+        <InfoWrap>
           <InfoDesc>Phone number</InfoDesc>
           <InfoData>{number}</InfoData>
-        </div>
+        </InfoWrap>
         <ActionLink link={`tel:${phoneNumber}`} btnType={iconBtnType.phone}>
           <HiOutlinePhone />
         </ActionLink>
       </Field>
       <Field>
-        <div>
+        <InfoWrap>
           <InfoDesc>Email Address</InfoDesc>
           <InfoData>{email}</InfoData>
-        </div>
+        </InfoWrap>
         <ActionLink link={`mailto:${email}`} btnType={iconBtnType.message}>
           <IoMdMail />
         </ActionLink>
       </Field>
       <Field>
-        <div>
+        <InfoWrap>
           <InfoDesc>Chat</InfoDesc>
           <InfoData>{chat}</InfoData>
-        </div>
+        </InfoWrap>
         <ActionLink
           link={`tg://resolve?domain=${chat}`}
           btnType={iconBtnType.chat}

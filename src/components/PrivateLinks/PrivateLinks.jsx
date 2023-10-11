@@ -19,6 +19,7 @@ const PrivateLinks = () => {
   const dispatch = useDispatch();
   const location = useLocation();
   const navigate = useNavigate();
+  const path = `/${pagesPath.addNewContactPath}`;
 
   const onLogoutBtnClick = ({ currentTarget }) => {
     makeBlur(currentTarget);
@@ -33,10 +34,7 @@ const PrivateLinks = () => {
   return (
     <LinkContainer>
       {isContactsPage(location.pathname) && !!contacts.length && <Filter />}
-      <LinkWithQuery
-        to={`/${pagesPath.addNewContactPath}`}
-        state={{ from: location }}
-      >
+      <LinkWithQuery to={path} state={{ from: location }}>
         <IconContainer>
           <GrAddCircle />
         </IconContainer>

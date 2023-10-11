@@ -15,7 +15,7 @@ export const Link = styled.a`
   transition: box-shadow ${({ theme }) => theme.transitionDurationAndFunc};
   &:hover,
   &:focus {
-    box-shadow: ${({ theme }) => theme.primaryShadow};
+    box-shadow: ${({ theme }) => theme.shadows.primaryShadow};
   }
   & svg {
     width: 100%;

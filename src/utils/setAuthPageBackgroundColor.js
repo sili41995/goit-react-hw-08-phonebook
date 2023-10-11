@@ -1,10 +1,12 @@
+import constants from 'constants';
 import utils from 'utils';
 
 const setAuthPageBackgroundColor = (path) => {
   const { isAuthPage } = utils;
+  const { theme } = constants;
 
   document.body.style.backgroundColor = isAuthPage(path)
-    ? 'rgba(46, 47, 66, 0.2)'
+    ? theme.colors.authPageBackgroundColor
     : 'white';
 };
 

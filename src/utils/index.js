@@ -20,6 +20,7 @@ import setInputPadding from 'utils/setInputPadding';
 import sortContactsByName from 'utils/sortContactsByName';
 import toasts from 'utils/toasts';
 import updateSortSearchParams from 'utils/updateSortSearchParams';
+import getAuthPages from 'utils/getAuthPages';
 
 const utils = {
   filterContactsByName: filterContactsByName,
@@ -44,6 +45,7 @@ const utils = {
   sortContactsByName: sortContactsByName,
   toasts: toasts,
   updateSortSearchParams: updateSortSearchParams,
+  getAuthPages: getAuthPages,
 };
 
 export default utils;

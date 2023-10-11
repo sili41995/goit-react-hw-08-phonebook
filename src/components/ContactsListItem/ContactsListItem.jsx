@@ -24,25 +24,20 @@ const { useDeleteContact } = hooks;
 const ContactsListItem = ({ contact }) => {
   const { userAvatar, name, id, role, number, email } = getContactInfo(contact);
   const isLoading = useSelector(selectIsLoading);
-  const setContactId = useDeleteContact();
+  const deleteContact = useDeleteContact();
+  const path = `${pagesPath.contactDetailsPath}/${id}/${pagesPath.contactPath}`;
 
   return (
     <Item>
-      <LinkWithQuery
-        to={`${pagesPath.contactDetailsPath}/${id}/${pagesPath.contactPath}`}
-      >
+      <LinkWithQuery to={path}>
         <Image src={userAvatar} alt={name} />
         <ContactInfo>
           <Person>
             <Name>{name}</Name>
             <Role>{role}</Role>
           </Person>
-          <div>
-            <Phone>{number}</Phone>
-          </div>
-          <div>
-            <Email>{email}</Email>
-          </div>
+          <Phone>{number}</Phone>
+          <Email>{email}</Email>
         </ContactInfo>
       </LinkWithQuery>
       <IconButton
@@ -54,7 +49,7 @@ const ContactsListItem = ({ contact }) => {
         width={44}
         height={35}
         onBtnClick={() => {
-          setContactId(id);
+          deleteContact(id);
         }}
       >
         <AiOutlineDelete />

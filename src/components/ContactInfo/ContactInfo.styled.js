@@ -12,18 +12,18 @@ export const ContactTitle = styled.div`
 `;
 
 export const ContactName = styled.p`
-  color: ${({ theme }) => theme.primaryFontColor};
+  color: ${({ theme }) => theme.colors.primaryFontColor};
   font-family: Jua;
   font-size: ${({ theme }) => theme.secondaryFontSize}px;
-  font-weight: ${({ theme }) => theme.otherFontWeight};
+  font-weight: ${({ theme }) => theme.fontWeight.otherFontWeight};
   text-align: center;
 `;
 
 export const ContactDesc = styled.p`
   color: #7c7c7c;
   font-family: Inter;
-  font-size: ${({ theme }) => theme.primaryFontSize}px;
-  font-weight: ${({ theme }) => theme.primaryFontWeight};
+  font-size: ${({ theme }) => theme.fontSize.primaryFontSize}px;
+  font-weight: ${({ theme }) => theme.fontWeight.primaryFontWeight};
   text-align: center;
 `;
 
@@ -47,8 +47,8 @@ export const ListItem = styled.li`
     border-radius: 10px;
     color: #555;
     font-family: Jua;
-    font-size: ${({ theme }) => theme.primaryFontSize}px;
-    font-weight: ${({ theme }) => theme.otherFontWeight};
+    font-size: ${({ theme }) => theme.fontSize.primaryFontSize}px;
+    font-weight: ${({ theme }) => theme.fontWeight.otherFontWeight};
     text-decoration: none;
     transition: background ${({ theme }) => theme.transitionDurationAndFunc};
     &.active,

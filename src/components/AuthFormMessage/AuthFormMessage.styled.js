@@ -1,11 +1,11 @@
 import styled from '@emotion/styled';
 
 export const Message = styled.p`
-  color: ${({ theme }) => theme.primaryFontColor};
+  color: ${({ theme }) => theme.colors.primaryFontColor};
   font-family: Inter;
   font-size: ${({ theme }) => theme.secondaryFontSize}px;
-  font-weight: ${({ theme }) => theme.primaryFontWeight};
+  font-weight: ${({ theme }) => theme.fontWeight.primaryFontWeight};
   & a {
-    color: ${({ theme }) => theme.primaryLinkColor};
+    color: ${({ theme }) => theme.colors.primaryLinkColor};
   }
 `;

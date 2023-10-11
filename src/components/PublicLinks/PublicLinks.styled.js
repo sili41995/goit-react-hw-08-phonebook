@@ -12,10 +12,10 @@ export const ListItem = styled.li`
     padding: ${({ theme }) => theme.spacing(3)};
     border-radius: 5px;
     border: 1px solid #fff;
-    color: #fff;
+    color: ${({ theme }) => theme.colors.otherFontColor};
     font-family: Inter;
-    font-size: ${({ theme }) => theme.primaryFontSize}px;
-    font-weight: ${({ theme }) => theme.primaryFontWeight};
+    font-size: ${({ theme }) => theme.fontSize.primaryFontSize}px;
+    font-weight: ${({ theme }) => theme.fontWeight.primaryFontWeight};
     text-decoration: none;
     text-align: center;
     transition: color,
@@ -23,7 +23,7 @@ export const ListItem = styled.li`
     &:hover,
     &:focus,
     &.active {
-      color: ${({ theme }) => theme.primaryColor};
+      color: ${({ theme }) => theme.colors.primaryColor};
       background-color: #fff;
     }
   }

@@ -25,13 +25,13 @@ export const StyledInput = styled.input`
   padding: ${({ inputType }) => setInputPadding(inputType)};
   font-family: Inter;
   color: ${({ inputType }) => setInputFontColor(inputType)};
-  font-weight: ${({ theme }) => theme.primaryFontWeight};
+  font-weight: ${({ theme }) => theme.fontWeight.primaryFontWeight};
   font-size: ${({ inputType }) => setInputFontSize(inputType)}px;
   letter-spacing: 0.04em;
   transition: border-color ${({ theme }) => theme.transitionDurationAndFunc};
   &:focus {
     outline: none;
     border-color: ${({ theme, inputType }) =>
-      inputType === formType.filter ? false : theme.primaryColor};
+      inputType === formType.filter ? false : theme.colors.primaryColor};
   }
 `;

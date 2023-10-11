@@ -11,10 +11,10 @@ export const Image = styled.img`
 `;
 
 export const Name = styled.p`
-  color: ${({ theme }) => theme.primaryFontColor};
+  color: ${({ theme }) => theme.colors.primaryFontColor};
   font-family: Jua;
   font-size: 35px;
-  font-weight: ${({ theme }) => theme.otherFontWeight};
+  font-weight: ${({ theme }) => theme.fontWeight.otherFontWeight};
 `;
 
 export const UserData = styled.div`
@@ -27,10 +27,10 @@ export const UserInfo = styled.div``;
 export const FullName = styled.p`
   margin-top: ${({ theme }) => theme.spacing(2)};
   margin-bottom: ${({ theme }) => theme.spacing()};
-  color: ${({ theme }) => theme.primaryFontColor};
+  color: ${({ theme }) => theme.colors.primaryFontColor};
   font-family: Jua;
   font-size: 25px;
-  font-weight: ${({ theme }) => theme.otherFontWeight};
+  font-weight: ${({ theme }) => theme.fontWeight.otherFontWeight};
   text-align: center;
 `;
 
@@ -38,7 +38,7 @@ export const Email = styled.p`
   color: #7c7c7c;
   font-family: Inter;
   font-size: ${({ theme }) => theme.secondaryFontSize}px;
-  font-weight: ${({ theme }) => theme.primaryFontWeight};
+  font-weight: ${({ theme }) => theme.fontWeight.primaryFontWeight};
   text-align: center;
 `;
 
@@ -48,8 +48,8 @@ export const ContactInfo = styled.div`
   gap: ${({ theme }) => theme.spacing(3)};
   color: #7c7c7c;
   font-family: Inter;
-  font-size: ${({ theme }) => theme.primaryFontSize}px;
-  font-weight: ${({ theme }) => theme.primaryFontWeight};
+  font-size: ${({ theme }) => theme.fontSize.primaryFontSize}px;
+  font-weight: ${({ theme }) => theme.fontWeight.primaryFontWeight};
   &:not(:last-child) {
     margin-bottom: ${({ theme }) => theme.spacing(6)};
   }

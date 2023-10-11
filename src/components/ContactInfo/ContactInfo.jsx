@@ -12,6 +12,7 @@ import {
   List,
   Navigation,
 } from './ContactInfo.styled';
+import pagesPath from 'constants/pagesPath';
 
 const { useTargetContact } = hooks;
 const { getAvatar, getContactInfo } = utils;
@@ -32,10 +33,10 @@ const ContactInfo = () => {
       <Navigation>
         <List>
           <ListItem>
-            <NavLink to="contact">Contact</NavLink>
+            <NavLink to={pagesPath.contactPath}>Contact</NavLink>
           </ListItem>
           <ListItem>
-            <NavLink to="about">About</NavLink>
+            <NavLink to={pagesPath.aboutPath}>About</NavLink>
           </ListItem>
         </List>
       </Navigation>

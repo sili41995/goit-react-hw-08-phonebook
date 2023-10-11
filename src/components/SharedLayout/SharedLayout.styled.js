@@ -5,16 +5,16 @@ export const Header = styled.header`
   min-width: 100%;
   padding-top: ${({ theme }) => theme.spacing(5)};
   padding-bottom: ${({ theme }) => theme.spacing(5)};
-  background-color: ${({ theme }) => theme.primaryColor};
+  background-color: ${({ theme }) => theme.colors.primaryColor};
 `;
 
 export const Container = styled.div`
   display: ${({ isContactsPage }) => (isContactsPage ? 'flex' : 'block')};
-  ${({ isContactsPage, theme }) =>
-    isContactsPage && `gap: ${theme.primaryGap}px`};
+  gap: ${({ isContactsPage, theme }) =>
+    isContactsPage ? theme.primaryGap : 0}px;
   width: 1200px;
-  padding-left: ${({ theme }) => theme.paddingContainer}px;
-  padding-right: ${({ theme }) => theme.paddingContainer}px;
+  padding-left: ${({ theme }) => theme.padding.paddingContainer}px;
+  padding-right: ${({ theme }) => theme.padding.paddingContainer}px;
   margin-left: auto;
   margin-right: auto;
 `;
@@ -22,6 +22,6 @@ export const Container = styled.div`
 export const Main = styled.main``;
 
 export const Section = styled.section`
-  padding-top: ${({ theme }) => theme.paddingContainer}px;
-  padding-bottom: ${({ theme }) => theme.paddingContainer}px;
+  padding-top: ${({ theme }) => theme.padding.paddingContainer}px;
+  padding-bottom: ${({ theme }) => theme.padding.paddingContainer}px;
 `;

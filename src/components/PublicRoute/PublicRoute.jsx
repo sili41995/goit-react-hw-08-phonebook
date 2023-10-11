@@ -13,14 +13,15 @@ export const PublicRoute = ({ element, restricted = false }) => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const location = useLocation();
   const shouldRedirect = isLoggedIn && restricted;
-  const goBackPath = location.state?.from ?? `/${pagesPath.contactsPath}`;
-  const showWarnToast =
+  const defaultGoBackPath = `/${pagesPath.contactsPath}`;
+  const goBackPath = location.state?.from ?? defaultGoBackPath;
+  const isShowWarnToast =
     location.state && !isLoggedIn && isFirstRenderRef.current;
 
   useEffect(() => {
-    showWarnToast && toasts.warnToast('Please, authenticate in the app');
+    isShowWarnToast && toasts.warnToast('Please, authenticate in the app');
     isFirstRenderRef.current = false;
-  }, [showWarnToast]);
+  }, [isShowWarnToast]);
 
   return shouldRedirect ? <Navigate to={goBackPath} /> : element;
 };

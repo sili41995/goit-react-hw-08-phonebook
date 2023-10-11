@@ -22,7 +22,7 @@ const ContactDetails = () => {
   const isLoading = useSelector(selectIsLoading);
   const id = useParams()[pagesPath.dynamicParam];
 
-  const setContactId = useDeleteContact();
+  const deleteContact = useDeleteContact();
 
   const setEditState = () => {
     setEditContact((editContact) => !editContact);
@@ -44,7 +44,7 @@ const ContactDetails = () => {
               width={44}
               height={35}
               onBtnClick={() => {
-                setContactId(id);
+                deleteContact(id);
               }}
             >
               <AiOutlineDelete />

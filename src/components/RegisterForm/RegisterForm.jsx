@@ -20,6 +20,7 @@ const RegisterForm = () => {
     formState: { errors },
     handleSubmit,
   } = useForm();
+  const pageLink = `/${pagesPath.loginPath}`;
 
   const onSubmit = (data) => {
     dispatch(registerUser(data))
@@ -65,7 +66,7 @@ const RegisterForm = () => {
           )}
         <AuthFormMessage
           action={'Log in'}
-          pageLink={`/${pagesPath.loginPath}`}
+          pageLink={pageLink}
           message={'if you have an account'}
         />
         <Button disabled={isLoading} type="submit">

@@ -10,9 +10,10 @@ const PrivateRoute = ({ element }) => {
   const isRefreshing = useSelector(selectIsRefreshing);
   const location = useLocation();
   const shouldRedirect = !isLoggedIn && !isRefreshing;
+  const path = `/${pagesPath.loginPath}`;
 
   return shouldRedirect ? (
-    <Navigate to={`/${pagesPath.loginPath}`} state={{ from: location }} />
+    <Navigate to={path} state={{ from: location }} />
   ) : (
     element
   );

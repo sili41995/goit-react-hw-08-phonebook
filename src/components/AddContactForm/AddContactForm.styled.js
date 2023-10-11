@@ -1,10 +1,10 @@
 import styled from '@emotion/styled';
 
 export const Title = styled.p`
-  color: ${({ theme }) => theme.primaryFontColor};
+  color: ${({ theme }) => theme.colors.primaryFontColor};
   font-family: Inter;
-  font-size: 20px;
-  font-weight: ${({ theme }) => theme.secondaryFontWeight};
+  font-size: ${({ theme }) => theme.fontSize.otherFontSize}px;
+  font-weight: ${({ theme }) => theme.fontWeight.secondaryFontWeight};
   text-align: center;
 `;
 
@@ -27,15 +27,15 @@ export const Buttons = styled.div`
     background: rgba(217, 217, 217, 0.58);
     border-radius: 8px;
     border-color: transparent;
-    color: ${({ theme }) => theme.primaryFontColor};
+    color: ${({ theme }) => theme.colors.primaryFontColor};
     font-family: Inter;
-    font-size: ${({ theme }) => theme.primaryFontSize}px;
-    font-weight: ${({ theme }) => theme.primaryFontWeight};
+    font-size: ${({ theme }) => theme.fontSize.primaryFontSize}px;
+    font-weight: ${({ theme }) => theme.fontWeight.primaryFontWeight};
     text-decoration: none;
     transition: box-shadow ${({ theme }) => theme.transitionDurationAndFunc};
     &:hover,
     &:focus {
-      box-shadow: ${({ theme }) => theme.primaryShadow};
+      box-shadow: ${({ theme }) => theme.shadows.primaryShadow};
     }
   }
 `;

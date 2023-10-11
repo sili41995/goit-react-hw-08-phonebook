@@ -1,5 +1,9 @@
-import constants from 'constants';
+import utils from 'utils';
 
-const isAuthPage = (path) => constants.authPages.includes(path);
+const isAuthPage = (path) => {
+  const authPages = utils.getAuthPages();
+
+  return authPages.includes(path);
+};
 
 export default isAuthPage;

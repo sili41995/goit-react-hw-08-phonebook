@@ -2,17 +2,17 @@ import styled from '@emotion/styled';
 
 export const Title = styled.h2`
   text-transform: uppercase;
-  color: ${({ theme }) => theme.primaryFontColor};
+  color: ${({ theme }) => theme.colors.primaryFontColor};
   font-family: Inter;
   font-size: 35px;
-  font-weight: ${({ theme }) => theme.primaryFontWeight};
+  font-weight: ${({ theme }) => theme.fontWeight.primaryFontWeight};
 `;
 
 export const Message = styled.p`
-  color: ${({ theme }) => theme.primaryFontColor};
+  color: ${({ theme }) => theme.colors.primaryFontColor};
   font-family: Inter;
   font-size: ${({ theme }) => theme.secondaryFontSize}px;
-  font-weight: ${({ theme }) => theme.primaryFontWeight};
+  font-weight: ${({ theme }) => theme.fontWeight.primaryFontWeight};
 `;
 
 export const Form = styled.form`
@@ -31,19 +31,19 @@ export const Button = styled.button`
   min-width: 170px;
   padding: ${({ theme }) => `${theme.spacing(4)} ${theme.spacing(8)}`};
   align-self: center;
-  background-color: ${({ theme }) => theme.primaryLinkColor};
+  background-color: ${({ theme }) => theme.colors.primaryLinkColor};
   border-color: transparent;
   border-radius: 4px;
-  color: #fff;
+  color: ${({ theme }) => theme.colors.otherFontColor};
   text-align: center;
   font-family: Inter;
   font-size: 16px;
-  font-weight: ${({ theme }) => theme.primaryFontWeight};
+  font-weight: ${({ theme }) => theme.fontWeight.primaryFontWeight};
   line-height: 1.5;
   letter-spacing: 0.64px;
   transition: background-color ${({ theme }) => theme.transitionDurationAndFunc};
   &:hover,
   &:focus {
-    background-color: ${({ theme }) => theme.secondaryLinkColor};
+    background-color: ${({ theme }) => theme.colors.secondaryLinkColor};
   }
 `;

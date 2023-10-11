@@ -23,6 +23,7 @@ const LoginForm = () => {
     formState: { errors },
     handleSubmit,
   } = useForm();
+  const pageLink = `/${pagesPath.registerPath}`;
 
   useEffect(() => {
     if (credentials) {
@@ -67,7 +68,7 @@ const LoginForm = () => {
           )}
         <AuthFormMessage
           action={'Sign up'}
-          pageLink={`/${pagesPath.registerPath}`}
+          pageLink={pageLink}
           message={"if you don't have an account yet"}
         />
         <Button disabled={isLoading} type="submit">

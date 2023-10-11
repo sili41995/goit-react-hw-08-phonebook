@@ -8,14 +8,14 @@ export const Item = styled.li`
   transition: box-shadow ${({ theme }) => theme.transitionDurationAndFunc};
   &:hover,
   &:focus {
-    box-shadow: ${({ theme }) => theme.primaryShadow};
+    box-shadow: ${({ theme }) => theme.shadows.primaryShadow};
   }
   & a {
     padding: ${({ theme }) => theme.spacing(3)};
     display: flex;
     gap: ${({ theme }) => theme.primaryGap}px;
     text-decoration: none;
-    color: black;
+    color: ${({ theme }) => theme.colors.primaryFontColor};
   }
 `;
 
@@ -37,26 +37,26 @@ export const ContactInfo = styled.div`
 export const Person = styled.div``;
 
 export const Name = styled.p`
-  color: ${({ theme }) => theme.primaryFontColor};
+  color: ${({ theme }) => theme.colors.primaryFontColor};
   font-family: Inter;
-  font-size: 20px;
-  font-weight: ${({ theme }) => theme.secondaryFontWeight};
+  font-size: ${({ theme }) => theme.fontSize.otherFontSize}px;
+  font-weight: ${({ theme }) => theme.fontWeight.secondaryFontWeight};
   text-align: center;
 `;
 
 export const Role = styled.p`
   color: #636363;
   font-family: Inter;
-  font-size: ${({ theme }) => theme.primaryFontSize}px;
-  font-weight: ${({ theme }) => theme.primaryFontWeight};
+  font-size: ${({ theme }) => theme.fontSize.primaryFontSize}px;
+  font-weight: ${({ theme }) => theme.fontWeight.primaryFontWeight};
   text-align: center;
 `;
 
 export const Phone = styled.p`
-  color: ${({ theme }) => theme.primaryFontColor};
+  color: ${({ theme }) => theme.colors.primaryFontColor};
   font-family: Inter;
   font-size: ${({ theme }) => theme.secondaryFontSize}px;
-  font-weight: ${({ theme }) => theme.primaryFontWeight};
+  font-weight: ${({ theme }) => theme.fontWeight.primaryFontWeight};
   text-align: center;
 `;
 
@@ -64,6 +64,6 @@ export const Email = styled.p`
   color: #696969;
   font-family: Inter;
   font-size: ${({ theme }) => theme.secondaryFontSize}px;
-  font-weight: ${({ theme }) => theme.secondaryFontWeight};
+  font-weight: ${({ theme }) => theme.fontWeight.secondaryFontWeight};
   text-align: center;
 `;

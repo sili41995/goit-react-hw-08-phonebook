@@ -12,15 +12,15 @@ export const LinkContainer = styled.div`
     border-radius: 5px;
     background: #55c875;
     padding: ${({ theme }) => theme.spacing(3)};
-    color: ${({ theme }) => theme.primaryFontColor};
+    color: ${({ theme }) => theme.colors.primaryFontColor};
     font-family: Inter;
-    font-size: ${({ theme }) => theme.primaryFontSize}px;
-    font-weight: ${({ theme }) => theme.primaryFontWeight};
+    font-size: ${({ theme }) => theme.fontSize.primaryFontSize}px;
+    font-weight: ${({ theme }) => theme.fontWeight.primaryFontWeight};
     text-decoration: none;
     transition: box-shadow ${({ theme }) => theme.transitionDurationAndFunc};
     &:hover,
     &:focus {
-      box-shadow: ${({ theme }) => theme.primaryShadow};
+      box-shadow: ${({ theme }) => theme.shadows.primaryShadow};
     }
   }
 `;
