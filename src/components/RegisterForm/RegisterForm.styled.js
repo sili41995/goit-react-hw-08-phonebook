@@ -4,7 +4,7 @@ export const Title = styled.h2`
   text-transform: uppercase;
   color: ${({ theme }) => theme.colors.primaryFontColor};
   font-family: Inter;
-  font-size: 35px;
+  font-size: ${({ theme }) => theme.fontSize.titleFontSize}px;
   font-weight: ${({ theme }) => theme.fontWeight.primaryFontWeight};
 `;
 
@@ -17,7 +17,7 @@ export const Form = styled.form`
 export const Message = styled.p`
   color: ${({ theme }) => theme.colors.primaryFontColor};
   font-family: Inter;
-  font-size: ${({ theme }) => theme.secondaryFontSize}px;
+  font-size: ${({ theme }) => theme.fontSize.secondaryFontSize}px;
   font-weight: ${({ theme }) => theme.fontWeight.primaryFontWeight};
 `;
 
@@ -32,7 +32,7 @@ export const Button = styled.button`
   color: #fff;
   text-align: center;
   font-family: Inter;
-  font-size: 16px;
+  font-size: ${({ theme }) => theme.fontSize.primaryFontSize}px;
   font-weight: ${({ theme }) => theme.fontWeight.primaryFontWeight};
   line-height: 1.5;
   letter-spacing: 0.64px;

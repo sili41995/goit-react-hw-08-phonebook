@@ -10,15 +10,17 @@ const { pagesPath } = constants;
 
 const Navigation = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
+  const contactsPagePath = `/${pagesPath.contactsPath}`;
+  const aboutPagePath = `/${pagesPath.aboutPath}`;
 
   return (
     <NavContainer>
       <List>
         <ListItem>
-          <NavLink to={`/${pagesPath.contactsPath}`}>Contacts</NavLink>
+          <NavLink to={contactsPagePath}>Contacts</NavLink>
         </ListItem>
         <ListItem>
-          <NavLink to={`/${pagesPath.aboutPath}`}>About</NavLink>
+          <NavLink to={aboutPagePath}>About</NavLink>
         </ListItem>
       </List>
       {isLoggedIn ? <PrivateLinks /> : <PublicLinks />}

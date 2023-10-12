@@ -8,7 +8,7 @@ const setInputBorderRadius = (inputType) => {
       return theme.primaryBorderRadius;
 
     default:
-      return 8;
+      return theme.secondaryBorderRadius;
   }
 };
 

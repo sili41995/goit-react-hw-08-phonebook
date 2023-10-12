@@ -5,10 +5,10 @@ const setInputFontSize = (inputType) => {
 
   switch (inputType) {
     case formType.authForm:
-      return 20;
+      return theme.fontSize.otherFontSize;
 
     default:
-      return theme.secondaryFontSize;
+      return theme.fontSize.secondaryFontSize;
   }
 };
 

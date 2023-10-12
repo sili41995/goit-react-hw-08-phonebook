@@ -4,15 +4,20 @@ import constants from 'constants';
 
 const { pagesPath } = constants;
 
-const PublicLinks = () => (
-  <List>
-    <ListItem>
-      <NavLink to={`/${pagesPath.registerPath}`}>Sign up</NavLink>
-    </ListItem>
-    <ListItem>
-      <NavLink to={`/${pagesPath.loginPath}`}>Log in</NavLink>
-    </ListItem>
-  </List>
-);
+const PublicLinks = () => {
+  const registerPagePath = `/${pagesPath.registerPath}`;
+  const loginPagePath = `/${pagesPath.loginPath}`;
+
+  return (
+    <List>
+      <ListItem>
+        <NavLink to={registerPagePath}>Sign up</NavLink>
+      </ListItem>
+      <ListItem>
+        <NavLink to={loginPagePath}>Log in</NavLink>
+      </ListItem>
+    </List>
+  );
+};
 
 export default PublicLinks;

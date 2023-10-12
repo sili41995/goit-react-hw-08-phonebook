@@ -9,6 +9,7 @@ const theme = {
     otherFontColor: '#555',
     authPageBackgroundColor: 'rgba(46, 47, 66, 0.2)',
     authFormBackgroundColor: '#fcfcfc',
+    btnBackgroundColor: 'rgba(217, 217, 217, 0.58)',
     whiteColor: '#fff',
     redBtnColor: '#ff9192',
     blueBtnColor: '#7fd1ff',
@@ -34,7 +35,9 @@ const theme = {
     otherFontWeight: 400,
   },
   fontSize: {
-    primaryFontSize: 15,
+    titleFontSize: 35,
+    subtitleFontSize: 25,
+    primaryFontSize: 16,
     secondaryFontSize: 18,
     otherFontSize: 20,
   },

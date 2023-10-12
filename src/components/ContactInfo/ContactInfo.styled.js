@@ -14,7 +14,7 @@ export const ContactTitle = styled.div`
 export const ContactName = styled.p`
   color: ${({ theme }) => theme.colors.primaryFontColor};
   font-family: Jua;
-  font-size: ${({ theme }) => theme.secondaryFontSize}px;
+  font-size: ${({ theme }) => theme.fontSize.secondaryFontSize}px;
   font-weight: ${({ theme }) => theme.fontWeight.otherFontWeight};
   text-align: center;
 `;
@@ -49,7 +49,8 @@ export const ListItem = styled.li`
     font-size: ${({ theme }) => theme.fontSize.primaryFontSize}px;
     font-weight: ${({ theme }) => theme.fontWeight.otherFontWeight};
     text-decoration: none;
-    transition: background ${({ theme }) => theme.transitionDurationAndFunc};
+    transition: background-color
+      ${({ theme }) => theme.transitionDurationAndFunc};
     &.active,
     &:hover,
     &:focus {

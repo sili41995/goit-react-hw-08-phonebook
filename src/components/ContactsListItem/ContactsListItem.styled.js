@@ -56,7 +56,7 @@ export const Role = styled.p`
 export const Phone = styled.p`
   color: ${({ theme }) => theme.colors.primaryFontColor};
   font-family: Inter;
-  font-size: ${({ theme }) => theme.secondaryFontSize}px;
+  font-size: ${({ theme }) => theme.fontSize.secondaryFontSize}px;
   font-weight: ${({ theme }) => theme.fontWeight.primaryFontWeight};
   text-align: center;
 `;
@@ -64,7 +64,7 @@ export const Phone = styled.p`
 export const Email = styled.p`
   color: ${({ theme }) => theme.colors.contactSecondaryTextColor};
   font-family: Inter;
-  font-size: ${({ theme }) => theme.secondaryFontSize}px;
+  font-size: ${({ theme }) => theme.fontSize.secondaryFontSize}px;
   font-weight: ${({ theme }) => theme.fontWeight.secondaryFontWeight};
   text-align: center;
 `;
