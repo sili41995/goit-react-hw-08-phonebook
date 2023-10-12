@@ -14,6 +14,10 @@ const {
   setInputFontSize,
 } = utils;
 
+export const Container = styled.div`
+  position: relative;
+`;
+
 export const StyledInput = styled.input`
   width: 100%;
   max-width: ${({ inputType }) => setInputMaxWidth(inputType)};

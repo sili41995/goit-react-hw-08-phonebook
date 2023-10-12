@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 export const Item = styled.li`
   position: relative;
   align-items: center;
-  border-radius: ${({ theme }) => theme.secondaryBorderRadius}px;
+  border-radius: ${({ theme }) => theme.borderRadius.secondaryBorderRadius}px;
   border: 0.5px solid;
   border-color: ${({ theme }) => theme.colors.borderColor};
   transition: box-shadow ${({ theme }) => theme.transitionDurationAndFunc};

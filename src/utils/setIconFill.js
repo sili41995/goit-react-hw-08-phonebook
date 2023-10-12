@@ -31,6 +31,9 @@ function setIconFill({ btnType }) {
     case iconBtnType.deleteTransparent:
       return theme.colors.redIconColor;
 
+    case iconBtnType.toggleShowPassword:
+      return theme.colors.primaryLinkColor;
+
     default:
       return theme.colors.lightgreyIconColor;
   }

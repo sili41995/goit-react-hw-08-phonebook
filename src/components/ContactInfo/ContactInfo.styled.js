@@ -29,7 +29,7 @@ export const ContactDesc = styled.p`
 
 export const Navigation = styled.nav`
   padding: ${({ theme }) => theme.spacing()};
-  border-radius: ${({ theme }) => theme.secondaryBorderRadius}px;
+  border-radius: ${({ theme }) => theme.borderRadius.secondaryBorderRadius}px;
   margin-top: ${({ theme }) => theme.spacing(20)};
   margin-bottom: ${({ theme }) => theme.spacing(10)};
 `;
@@ -43,7 +43,7 @@ export const ListItem = styled.li`
   & a {
     display: block;
     padding: ${({ theme }) => `${theme.spacing()} ${theme.spacing(5)}`};
-    border-radius: ${({ theme }) => theme.secondaryBorderRadius}px;
+    border-radius: ${({ theme }) => theme.borderRadius.secondaryBorderRadius}px;
     color: ${({ theme }) => theme.colors.otherFontColor};
     font-family: Jua;
     font-size: ${({ theme }) => theme.fontSize.primaryFontSize}px;

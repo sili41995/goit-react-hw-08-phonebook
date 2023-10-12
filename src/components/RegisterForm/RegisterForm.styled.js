@@ -28,7 +28,7 @@ export const Button = styled.button`
   align-self: center;
   background-color: ${({ theme }) => theme.colors.primaryLinkColor};
   border-color: transparent;
-  border-radius: ${({ theme }) => theme.primaryBorderRadius}px;
+  border-radius: ${({ theme }) => theme.borderRadius.primaryBorderRadius}px;
   color: #fff;
   text-align: center;
   font-family: Inter;

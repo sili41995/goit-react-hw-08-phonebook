@@ -5,10 +5,10 @@ const setInputBorderRadius = (inputType) => {
 
   switch (inputType) {
     case formType.filter:
-      return theme.primaryBorderRadius;
+      return theme.borderRadius.primaryBorderRadius;
 
     default:
-      return theme.secondaryBorderRadius;
+      return theme.borderRadius.secondaryBorderRadius;
   }
 };
 

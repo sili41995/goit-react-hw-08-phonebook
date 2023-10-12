@@ -45,11 +45,13 @@ const theme = {
     paddingContainer: 16,
     paddingAuthForm: 32,
   },
+  borderRadius: {
+    primaryBorderRadius: 4,
+    secondaryBorderRadius: 8,
+    otherBorderRadius: 30,
+  },
   deskContainerWidth: 1200,
   primaryGap: 20,
-  primaryBorderRadius: 4,
-  secondaryBorderRadius: 8,
-  otherBorderRadius: 30,
   transitionDurationAndFunc: '250ms cubic-bezier(0.4, 0, 0.2, 1)',
   spacing: (value = 1) => `${value * 4}px`,
 };

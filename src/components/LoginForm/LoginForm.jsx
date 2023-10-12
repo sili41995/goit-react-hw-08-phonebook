@@ -1,3 +1,4 @@
+import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
@@ -11,11 +12,12 @@ import constants from 'constants';
 import { loginUser } from 'redux/auth/operations';
 import { selectIsLoading } from 'redux/auth/selectors';
 
-const { pagesPath, formType } = constants;
+const { pagesPath, formType, iconBtnType } = constants;
 const { toasts } = utils;
 
 const LoginForm = () => {
   const [credentials, setCredentials] = useState(null);
+  const [isShowPassword, setIsShowPassword] = useState(false);
   const isLoading = useSelector(selectIsLoading);
   const dispatch = useDispatch();
   const {
@@ -24,6 +26,10 @@ const LoginForm = () => {
     handleSubmit,
   } = useForm();
   const pageLink = `/${pagesPath.registerPath}`;
+
+  const toggleIsShowPassword = () => {
+    setIsShowPassword((prevState) => !prevState);
+  };
 
   useEffect(() => {
     if (credentials) {
@@ -56,9 +62,15 @@ const LoginForm = () => {
           settings={{
             ...register('password', { required: true, minLength: 7 }),
           }}
-          type="password"
+          type={isShowPassword ? 'text' : 'password'}
           placeholder="Password"
           inputType={formType.authForm}
+          inputWrap
+          children={
+            isShowPassword ? <AiOutlineEyeInvisible /> : <AiOutlineEye />
+          }
+          btnType={iconBtnType.toggleShowPassword}
+          action={toggleIsShowPassword}
         />
         {errors.password &&
           toasts.errorToast(
