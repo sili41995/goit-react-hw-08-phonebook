@@ -6,6 +6,7 @@ import {
   fetchContacts,
   updateContact,
 } from './operations';
+import { logoutUser } from 'redux/auth/operations';
 
 const handlePending = (state) => ({
   ...state,
@@ -44,6 +45,10 @@ const contactsSlice = createSlice({
         ...state,
         isLoading: false,
         items: [...state.items.filter(({ id }) => id !== payload.id), payload],
+      }))
+      .addCase(logoutUser.fulfilled, (state) => ({
+        ...state,
+        ...initialState.contacts,
       }))
       .addMatcher(
         isAnyOf(
