@@ -8,6 +8,6 @@ export const FormContainer = styled.div`
   background-color: ${({ theme }) => theme.colors.authFormBackgroundColor};
   padding: ${({ theme }) => theme.padding.paddingAuthForm}px;
   margin: ${({ theme }) => theme.spacing(10)} auto;
-  border-radius: 30px;
+  border-radius: ${({ theme }) => theme.otherBorderRadius}px;
   box-shadow: ${({ theme }) => theme.shadows.secondaryShadow};
 `;

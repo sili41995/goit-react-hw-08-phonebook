@@ -1,41 +1,38 @@
 import constants from 'constants';
 
 function setIconFill({ btnType }) {
-  const { iconBtnType } = constants;
+  const { iconBtnType, theme } = constants;
 
   switch (btnType) {
     case iconBtnType.delete:
-      return '#d3232f';
+      return theme.colors.redIconColor;
 
     case iconBtnType.edit:
-      return '#2681ed';
+      return theme.colors.blueIconColor;
 
     case iconBtnType.phone:
-      return '#00c938';
+      return theme.colors.greenIconColor;
 
     case iconBtnType.message:
-      return '#ffb422';
+      return theme.colors.yellowIconColor;
 
     case iconBtnType.chat:
-      return '#2681ed';
-
-    case iconBtnType.filter:
-      return '#555555';
+      return theme.colors.blueIconColor;
 
     case iconBtnType.logout:
-      return '#d3232f';
+      return theme.colors.redIconColor;
 
     case iconBtnType.accept:
-      return '#00c938';
+      return theme.colors.greenIconColor;
 
     case iconBtnType.cancel:
-      return '#d3232f';
+      return theme.colors.redIconColor;
 
     case iconBtnType.deleteTransparent:
-      return '#d3232f';
+      return theme.colors.redIconColor;
 
     default:
-      return 'none';
+      return theme.colors.lightgreyIconColor;
   }
 }
 

@@ -1,11 +1,11 @@
 import constants from 'constants';
 
 const setInputBorderRadius = (inputType) => {
-  const { formType } = constants;
+  const { formType, theme } = constants;
 
   switch (inputType) {
     case formType.filter:
-      return 4;
+      return theme.primaryBorderRadius;
 
     default:
       return 8;

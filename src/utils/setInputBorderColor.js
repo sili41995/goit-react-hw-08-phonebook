@@ -8,7 +8,7 @@ const setInputBorderColor = (inputType) => {
       return theme.colors.whiteColor;
 
     default:
-      return 'rgba(33, 33, 33, 0.2)';
+      return theme.colors.borderColor;
   }
 };
 

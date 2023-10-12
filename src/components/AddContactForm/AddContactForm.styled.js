@@ -25,7 +25,7 @@ export const Buttons = styled.div`
     height: 100%;
     padding: ${({ theme }) => theme.spacing()};
     background: rgba(217, 217, 217, 0.58);
-    border-radius: 8px;
+    border-radius: ${({ theme }) => theme.secondaryBorderRadius}px;
     border-color: transparent;
     color: ${({ theme }) => theme.colors.primaryFontColor};
     font-family: Inter;

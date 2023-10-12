@@ -11,7 +11,7 @@ export const Link = styled.a`
   height: 35px;
   padding: ${({ theme }) => theme.spacing()};
   background-color: ${setButtonColor};
-  border-radius: 8px;
+  border-radius: ${({ theme }) => theme.secondaryBorderRadius}px;
   transition: box-shadow ${({ theme }) => theme.transitionDurationAndFunc};
   &:hover,
   &:focus {

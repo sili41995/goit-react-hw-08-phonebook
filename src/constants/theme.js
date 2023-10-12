@@ -3,6 +3,7 @@ const theme = {
     primaryColor: '#38b6ff',
     primaryLinkColor: '#4d5ae5',
     secondaryLinkColor: '#404bbf',
+    otherLinkColor: '#44de6f',
     primaryFontColor: '#000',
     secondaryFontColor: '#7c7c7c',
     otherFontColor: '#555',
@@ -14,16 +15,14 @@ const theme = {
     greenBtnColor: '#89f2a6',
     yellowBtnColor: '#f2e189',
     lightgreyBtnColor: '#d9d9d9',
-    // #44de6f
-    // rgba(137, 137, 137, 0.43)
-    // #636363
-    // #696969
-    // '#d3232f'
-    // '#2681ed'
-    // '#00c938'
-    // '#ffb422'
-    // '#555555'
-    // 'rgba(33, 33, 33, 0.2)'
+    redIconColor: '#d3232f',
+    blueIconColor: '#2681ed',
+    greenIconColor: '#00c938',
+    yellowIconColor: '#ffb422',
+    lightgreyIconColor: '#555555',
+    borderColor: 'rgba(137, 137, 137, 0.43)',
+    contactPrimaryTextColor: '#636363',
+    contactSecondaryTextColor: '#696969',
   },
   shadows: {
     primaryShadow: '0px 4px 4px 0px rgba(0, 0, 0, 0.25)',
@@ -45,6 +44,9 @@ const theme = {
   },
   deskContainerWidth: 1200,
   primaryGap: 20,
+  primaryBorderRadius: 4,
+  secondaryBorderRadius: 8,
+  otherBorderRadius: 30,
   transitionDurationAndFunc: '250ms cubic-bezier(0.4, 0, 0.2, 1)',
   spacing: (value = 1) => `${value * 4}px`,
 };

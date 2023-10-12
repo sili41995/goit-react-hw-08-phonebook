@@ -9,8 +9,8 @@ export const LinkContainer = styled.div`
     justify-content: space-between;
     align-items: center;
     white-space: nowrap;
-    border-radius: 5px;
-    background: #55c875;
+    border-radius: ${({ theme }) => theme.primaryBorderRadius}px;
+    background-color: ${({ theme }) => theme.colors.otherLinkColor};
     padding: ${({ theme }) => theme.spacing(3)};
     color: ${({ theme }) => theme.colors.primaryFontColor};
     font-family: Inter;

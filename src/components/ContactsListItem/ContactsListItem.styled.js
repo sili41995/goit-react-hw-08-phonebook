@@ -3,8 +3,9 @@ import styled from '@emotion/styled';
 export const Item = styled.li`
   position: relative;
   align-items: center;
-  border-radius: 10px;
-  border: 0.5px solid rgba(137, 137, 137, 0.43);
+  border-radius: ${({ theme }) => theme.secondaryBorderRadius}px;
+  border: 0.5px solid;
+  border-color: ${({ theme }) => theme.colors.borderColor};
   transition: box-shadow ${({ theme }) => theme.transitionDurationAndFunc};
   &:hover,
   &:focus {
@@ -45,7 +46,7 @@ export const Name = styled.p`
 `;
 
 export const Role = styled.p`
-  color: #636363;
+  color: ${({ theme }) => theme.colors.contactPrimaryTextColor};
   font-family: Inter;
   font-size: ${({ theme }) => theme.fontSize.primaryFontSize}px;
   font-weight: ${({ theme }) => theme.fontWeight.primaryFontWeight};
@@ -61,7 +62,7 @@ export const Phone = styled.p`
 `;
 
 export const Email = styled.p`
-  color: #696969;
+  color: ${({ theme }) => theme.colors.contactSecondaryTextColor};
   font-family: Inter;
   font-size: ${({ theme }) => theme.secondaryFontSize}px;
   font-weight: ${({ theme }) => theme.fontWeight.secondaryFontWeight};

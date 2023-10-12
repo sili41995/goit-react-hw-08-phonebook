@@ -14,7 +14,7 @@ export const Button = styled.button`
   min-width: ${({ width }) => width}px;
   height: ${({ height }) => height}px;
   padding: ${({ theme }) => theme.spacing()};
-  border-radius: 8px;
+  border-radius: ${({ theme }) => theme.secondaryBorderRadius}px;
   border-color: transparent;
   background-color: ${setButtonColor};
   color: ${({ theme }) => theme.colors.primaryFontColor};

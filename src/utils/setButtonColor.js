@@ -11,7 +11,7 @@ function setButtonColor({ btnType }) {
       return theme.colors.blueBtnColor;
 
     case iconBtnType.phone:
-      return theme.colors.redBtnColor;
+      return theme.colors.greenBtnColor;
 
     case iconBtnType.message:
       return theme.colors.yellowBtnColor;
