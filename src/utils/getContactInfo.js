@@ -1,9 +1,7 @@
-import constants from 'constants';
-import utils from 'utils';
+import { defaultValues } from 'constants';
+import { getAvatar } from 'utils';
 
 const getContactInfo = (contact = {}) => {
-  const { defaultValues } = constants;
-  const { getAvatar } = utils;
   const {
     id,
     name,

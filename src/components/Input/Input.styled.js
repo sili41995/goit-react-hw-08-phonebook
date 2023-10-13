@@ -1,9 +1,6 @@
 import styled from '@emotion/styled';
-import constants from 'constants';
-import utils from 'utils';
-
-const { formType } = constants;
-const {
+import { formType } from 'constants';
+import {
   setInputMaxWidth,
   setInputHeight,
   setInputBorderColor,
@@ -12,7 +9,7 @@ const {
   setInputPadding,
   setInputFontColor,
   setInputFontSize,
-} = utils;
+} from 'utils';
 
 export const Container = styled.div`
   position: relative;

@@ -1,7 +1,6 @@
-import constants from 'constants';
+import { sortTypes } from 'constants';
 
 const updateSortSearchParams = (searchParams, setSearchParams, key) => {
-  const { sortTypes } = constants;
   const sortSearchParam = searchParams.get(key);
   const deskSortType = sortSearchParam === sortTypes.DESC_SORT_TYPE;
   const updateSortValue = deskSortType

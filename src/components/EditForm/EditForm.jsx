@@ -7,15 +7,11 @@ import 'react-toastify/dist/ReactToastify.css';
 import { Buttons, Form, Title } from './EditForm.styled';
 import IconButton from 'components/IconButton';
 import Input from 'components/Input';
-import utils from 'utils';
-import hooks from 'hooks';
-import constants from 'constants';
+import { getContactInfo, toasts } from 'utils';
+import { useTargetContact } from 'hooks';
+import { pagesPath, iconBtnType } from 'constants';
 import { updateContact } from 'redux/contacts/operations';
 import { selectIsLoading } from 'redux/contacts/selectors';
-
-const { getContactInfo, toasts } = utils;
-const { pagesPath, iconBtnType } = constants;
-const { useTargetContact } = hooks;
 
 const EditForm = ({ setEditContact }) => {
   const isLoading = useSelector(selectIsLoading);

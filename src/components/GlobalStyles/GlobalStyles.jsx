@@ -1,8 +1,6 @@
 import { Global, css } from '@emotion/react';
 import 'modern-normalize';
-import fonts from 'fonts';
-
-const { juaRegular, interMedium, interSemiBold } = fonts;
+import { juaRegular, interMedium, interSemiBold } from 'fonts';
 
 const GlobalStyles = () => (
   <Global

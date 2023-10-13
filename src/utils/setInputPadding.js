@@ -1,8 +1,6 @@
-import constants from 'constants';
+import { theme, formType } from 'constants';
 
 const setInputPadding = (inputType) => {
-  const { theme, formType } = constants;
-
   switch (inputType) {
     case formType.filter:
       return `${theme.spacing(2)} ${theme.spacing(4)}`;

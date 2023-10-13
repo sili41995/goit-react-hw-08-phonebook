@@ -1,8 +1,6 @@
-import constants from 'constants';
+import { sortTypes } from 'constants';
 
 const sortContactsByName = (contacts, sortType) => {
-  const { sortTypes } = constants;
-
   return contacts.toSorted(({ name: prevContact }, { name: nextContact }) =>
     sortType === sortTypes.DESC_SORT_TYPE
       ? nextContact.localeCompare(prevContact)

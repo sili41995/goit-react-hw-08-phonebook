@@ -5,11 +5,8 @@ import ContactsListItem from 'components/ContactsListItem';
 import EmptyListMessage from 'components/EmptyListMessage';
 import { Container, List } from './ContactsList.styled';
 import { selectContacts } from 'redux/contacts/selectors';
-import constants from 'constants';
-import utils from 'utils';
-
-const { searchParamsKeys } = constants;
-const { filterContactsByName, sortContactsByName } = utils;
+import { searchParamsKeys } from 'constants';
+import { filterContactsByName, sortContactsByName } from 'utils';
 
 const ContactsList = () => {
   const contacts = useSelector(selectContacts);

@@ -3,10 +3,8 @@ import { NavLink } from 'react-router-dom';
 import { NavContainer, List, ListItem } from './Navigation.styled';
 import PrivateLinks from 'components/PrivateLinks';
 import PublicLinks from 'components/PublicLinks';
-import constants from 'constants';
+import { pagesPath } from 'constants';
 import { selectIsLoggedIn } from 'redux/auth/selectors';
-
-const { pagesPath } = constants;
 
 const Navigation = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);

@@ -9,13 +9,9 @@ import {
   InfoWrap,
 } from './ContactData.styled';
 import ActionLink from 'components/ActionLink';
-import utils from 'utils';
-import hooks from 'hooks';
-import constants from 'constants';
-
-const { getContactInfo, getPhoneNumber } = utils;
-const { iconBtnType } = constants;
-const { useTargetContact } = hooks;
+import { getContactInfo, getPhoneNumber } from 'utils';
+import { useTargetContact } from 'hooks';
+import { iconBtnType } from 'constants';
 
 const ContactData = () => {
   const targetContact = useTargetContact();

@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { lazy, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import constants from 'constants';
+import { pagesPath } from 'constants';
 import PublicRoute from 'components/PublicRoute';
 import Loader from 'components/Loader';
 import SharedLayout from 'components/SharedLayout';
@@ -9,8 +9,6 @@ import GlobalStyles from 'components/GlobalStyles';
 import Toast from 'components/Toast';
 import { selectIsRefreshing } from 'redux/auth/selectors';
 import { refreshUser } from 'redux/auth/operations';
-
-const { pagesPath } = constants;
 
 const RegisterPage = lazy(() => import('pages/RegisterPage'));
 const LoginPage = lazy(() => import('pages/LoginPage'));

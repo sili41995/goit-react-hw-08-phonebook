@@ -1,12 +1,9 @@
 import { useEffect, useRef } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import constants from 'constants';
-import utils from 'utils';
+import { pagesPath } from 'constants';
+import { toasts } from 'utils';
 import { selectIsLoggedIn } from 'redux/auth/selectors';
-
-const { pagesPath } = constants;
-const { toasts } = utils;
 
 export const PublicRoute = ({ element, restricted = false }) => {
   const isFirstRenderRef = useRef(true);

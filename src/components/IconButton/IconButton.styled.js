@@ -1,7 +1,5 @@
 import styled from '@emotion/styled';
-import utils from 'utils';
-
-const { setButtonColor, setIconFill } = utils;
+import { setButtonColor, setIconFill } from 'utils';
 
 export const Button = styled.button`
   position: ${({ position }) => position};

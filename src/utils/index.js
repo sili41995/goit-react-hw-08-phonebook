@@ -1,51 +1,23 @@
-import filterContactsByName from 'utils/filterContactsByName';
-import getAvatar from 'utils/getAvatar';
-import getContactInfo from 'utils/getContactInfo';
-import getPhoneNumber from 'utils/getPhoneNumber';
-import getUserInfo from 'utils/getUserInfo';
-import isAuthPage from 'utils/isAuthPage';
-import isContactsPage from 'utils/isContactsPage';
-import makeBlur from 'utils/makeBlur';
-import setAuthPageBackgroundColor from 'utils/setAuthPageBackgroundColor';
-import setButtonColor from 'utils/setButtonColor';
-import setIconFill from 'utils/setIconFill';
-import setInputBorderColor from 'utils/setInputBorderColor';
-import setInputBorderRadius from 'utils/setInputBorderRadius';
-import setInputFilter from 'utils/setInputFilter';
-import setInputFontColor from 'utils/setInputFontColor';
-import setInputFontSize from 'utils/setInputFontSize';
-import setInputHeight from 'utils/setInputHeight';
-import setInputMaxWidth from 'utils/setInputMaxWidth';
-import setInputPadding from 'utils/setInputPadding';
-import sortContactsByName from 'utils/sortContactsByName';
-import toasts from 'utils/toasts';
-import updateSortSearchParams from 'utils/updateSortSearchParams';
-import getAuthPages from 'utils/getAuthPages';
-
-const utils = {
-  filterContactsByName: filterContactsByName,
-  getAvatar: getAvatar,
-  getContactInfo: getContactInfo,
-  getPhoneNumber: getPhoneNumber,
-  getUserInfo: getUserInfo,
-  isAuthPage: isAuthPage,
-  isContactsPage: isContactsPage,
-  makeBlur: makeBlur,
-  setAuthPageBackgroundColor: setAuthPageBackgroundColor,
-  setButtonColor: setButtonColor,
-  setIconFill: setIconFill,
-  setInputBorderColor: setInputBorderColor,
-  setInputBorderRadius: setInputBorderRadius,
-  setInputFilter: setInputFilter,
-  setInputFontColor: setInputFontColor,
-  setInputFontSize: setInputFontSize,
-  setInputHeight: setInputHeight,
-  setInputMaxWidth: setInputMaxWidth,
-  setInputPadding: setInputPadding,
-  sortContactsByName: sortContactsByName,
-  toasts: toasts,
-  updateSortSearchParams: updateSortSearchParams,
-  getAuthPages: getAuthPages,
-};
-
-export default utils;
+export { default as filterContactsByName } from 'utils/filterContactsByName';
+export { default as getAvatar } from 'utils/getAvatar';
+export { default as getContactInfo } from 'utils/getContactInfo';
+export { default as getPhoneNumber } from 'utils/getPhoneNumber';
+export { default as getUserInfo } from 'utils/getUserInfo';
+export { default as isAuthPage } from 'utils/isAuthPage';
+export { default as isContactsPage } from 'utils/isContactsPage';
+export { default as makeBlur } from 'utils/makeBlur';
+export { default as setAuthPageBackgroundColor } from 'utils/setAuthPageBackgroundColor';
+export { default as setButtonColor } from 'utils/setButtonColor';
+export { default as setIconFill } from 'utils/setIconFill';
+export { default as setInputBorderColor } from 'utils/setInputBorderColor';
+export { default as setInputBorderRadius } from 'utils/setInputBorderRadius';
+export { default as setInputFilter } from 'utils/setInputFilter';
+export { default as setInputFontColor } from 'utils/setInputFontColor';
+export { default as setInputFontSize } from 'utils/setInputFontSize';
+export { default as setInputHeight } from 'utils/setInputHeight';
+export { default as setInputMaxWidth } from 'utils/setInputMaxWidth';
+export { default as setInputPadding } from 'utils/setInputPadding';
+export { default as sortContactsByName } from 'utils/sortContactsByName';
+export { default as toasts } from 'utils/toasts';
+export { default as updateSortSearchParams } from 'utils/updateSortSearchParams';
+export { default as getAuthPages } from 'utils/getAuthPages';

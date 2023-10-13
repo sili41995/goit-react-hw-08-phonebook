@@ -1,8 +1,6 @@
-import constants from 'constants';
+import { formType } from 'constants';
 
 const setInputHeight = (inputType) => {
-  const { formType } = constants;
-
   switch (inputType) {
     case formType.filter:
       return false;

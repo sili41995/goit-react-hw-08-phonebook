@@ -2,15 +2,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useForm } from 'react-hook-form';
 import 'react-toastify/dist/ReactToastify.css';
 import { Form, Button, Message, Title } from './RegisterForm.styled';
-import utils from 'utils';
+import { toasts } from 'utils';
 import AuthFormMessage from 'components/AuthFormMessage';
 import Input from 'components/Input';
-import constants from 'constants';
+import { formType, pagesPath } from 'constants';
 import { registerUser } from 'redux/auth/operations';
 import { selectIsLoading } from 'redux/auth/selectors';
-
-const { formType, pagesPath } = constants;
-const { toasts } = utils;
 
 const RegisterForm = () => {
   const isLoading = useSelector(selectIsLoading);

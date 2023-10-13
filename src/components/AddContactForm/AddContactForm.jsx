@@ -6,13 +6,10 @@ import 'react-toastify/dist/ReactToastify.css';
 import IconButton from 'components/IconButton';
 import Input from 'components/Input';
 import { Buttons, Form, Title } from './AddContactForm.styled';
-import utils from 'utils';
-import constants from 'constants';
+import { toasts } from 'utils';
+import { iconBtnType } from 'constants';
 import { selectIsLoading } from 'redux/contacts/selectors';
 import { addContact } from 'redux/contacts/operations';
-
-const { toasts } = utils;
-const { iconBtnType } = constants;
 
 const AddContactForm = () => {
   const isLoading = useSelector(selectIsLoading);

@@ -1,8 +1,6 @@
-import constants from 'constants';
+import { iconBtnType, theme } from 'constants';
 
 function setButtonColor({ btnType }) {
-  const { iconBtnType, theme } = constants;
-
   switch (btnType) {
     case iconBtnType.delete:
       return theme.colors.redBtnColor;

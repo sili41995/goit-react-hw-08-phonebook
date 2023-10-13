@@ -5,15 +5,12 @@ import { useForm } from 'react-hook-form';
 import 'react-toastify/dist/ReactToastify.css';
 import { Form, Button, Message, Title, Image } from './LoginForm.styled';
 import defaultAvatar from '../default-signin-avatar.png';
-import utils from 'utils';
+import { toasts } from 'utils';
 import AuthFormMessage from 'components/AuthFormMessage';
 import Input from 'components/Input';
-import constants from 'constants';
+import { pagesPath, formType, iconBtnType } from 'constants';
 import { loginUser } from 'redux/auth/operations';
 import { selectIsLoading } from 'redux/auth/selectors';
-
-const { pagesPath, formType, iconBtnType } = constants;
-const { toasts } = utils;
 
 const LoginForm = () => {
   const [credentials, setCredentials] = useState(null);

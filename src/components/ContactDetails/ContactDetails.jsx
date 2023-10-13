@@ -8,14 +8,10 @@ import ContactInfo from 'components/ContactInfo';
 import EditForm from 'components/EditForm';
 import ContactModalForm from 'components/ContactModalForm';
 import IconButton from 'components/IconButton';
-import utils from 'utils';
-import constants from 'constants';
-import hooks from 'hooks';
+import { makeBlur } from 'utils';
+import { iconBtnType, pagesPath } from 'constants';
+import { useDeleteContact } from 'hooks';
 import { selectIsLoading } from 'redux/contacts/selectors';
-
-const { makeBlur } = utils;
-const { iconBtnType, pagesPath } = constants;
-const { useDeleteContact } = hooks;
 
 const ContactDetails = () => {
   const [editContact, setEditContact] = useState(false);

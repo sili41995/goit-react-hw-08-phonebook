@@ -1,11 +1,3 @@
-import juaRegular from 'fonts/Jua/Jua-Regular.ttf';
-import interMedium from 'fonts/Inter/Inter-Medium.ttf';
-import interSemiBold from 'fonts/Inter/Inter-SemiBold.ttf';
-
-const fonts = {
-  interMedium: interMedium,
-  interSemiBold: interSemiBold,
-  juaRegular: juaRegular,
-};
-
-export default fonts;
+export { default as juaRegular } from 'fonts/Jua/Jua-Regular.ttf';
+export { default as interMedium } from 'fonts/Inter/Inter-Medium.ttf';
+export { default as interSemiBold } from 'fonts/Inter/Inter-SemiBold.ttf';

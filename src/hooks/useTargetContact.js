@@ -1,9 +1,7 @@
 import { useSelector } from 'react-redux';
 import { selectContacts } from 'redux/contacts/selectors';
 import { useParams } from 'react-router-dom';
-import constants from 'constants';
-
-const { pagesPath } = constants;
+import { pagesPath } from 'constants';
 
 const useTargetContact = () => {
   const id = useParams()[pagesPath.dynamicParam];

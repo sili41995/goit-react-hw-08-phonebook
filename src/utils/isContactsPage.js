@@ -1,6 +1,5 @@
-import constants from 'constants';
+import { pagesPath } from 'constants';
 
-const isContactsPage = (path) =>
-  path.includes(constants.pagesPath.contactsPath);
+const isContactsPage = (path) => path.includes(pagesPath.contactsPath);
 
 export default isContactsPage;

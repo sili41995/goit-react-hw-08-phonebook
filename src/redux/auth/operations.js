@@ -1,9 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import initialState from 'redux/initialState';
 import contactsServiceApi from 'service/contactsServiceApi';
-import utils from 'utils';
-
-const { toasts } = utils;
+import { toasts } from 'utils';
 
 export const registerUser = createAsyncThunk(
   'auth/registerUser',

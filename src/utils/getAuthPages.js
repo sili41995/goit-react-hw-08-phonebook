@@ -1,9 +1,7 @@
-import constants from 'constants';
+import { pagesPath } from 'constants';
 
 const getAuthPages = () => {
-  const {
-    pagesPath: { homePath, registerPath, loginPath },
-  } = constants;
+  const { homePath, registerPath, loginPath } = pagesPath;
 
   return [homePath, `/${registerPath}`, `/${loginPath}`];
 };

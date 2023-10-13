@@ -6,13 +6,10 @@ import IconButton from 'components/IconButton';
 import Filter from 'components/Filter';
 import LinkWithQuery from 'components/LinkWithQuery';
 import { IconContainer, LinkContainer } from './PrivateLinks.styled';
-import utils from 'utils';
-import constants from 'constants';
+import { makeBlur, toasts, isContactsPage } from 'utils';
+import { pagesPath, iconBtnType } from 'constants';
 import { selectContacts } from 'redux/contacts/selectors';
 import { logoutUser } from 'redux/auth/operations';
-
-const { pagesPath, iconBtnType } = constants;
-const { makeBlur, toasts, isContactsPage } = utils;
 
 const PrivateLinks = () => {
   const contacts = useSelector(selectContacts);

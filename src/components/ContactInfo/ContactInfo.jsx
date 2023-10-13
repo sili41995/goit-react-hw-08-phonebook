@@ -1,7 +1,7 @@
 import { Suspense } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
-import hooks from 'hooks';
-import utils from 'utils';
+import { useTargetContact } from 'hooks';
+import { getAvatar, getContactInfo } from 'utils';
 import Loader from 'components/Loader';
 import {
   ContactDesc,
@@ -13,9 +13,6 @@ import {
   Navigation,
 } from './ContactInfo.styled';
 import pagesPath from 'constants/pagesPath';
-
-const { useTargetContact } = hooks;
-const { getAvatar, getContactInfo } = utils;
 
 const ContactInfo = () => {
   const targetContact = useTargetContact();

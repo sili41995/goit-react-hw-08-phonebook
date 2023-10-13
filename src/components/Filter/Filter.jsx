@@ -4,13 +4,10 @@ import { BsSortAlphaDownAlt } from 'react-icons/bs';
 import { FiFilter } from 'react-icons/fi';
 import { useEffect, useRef, useState } from 'react';
 import { FilterContainer } from './Filter.styled';
-import utils from 'utils';
+import { makeBlur, updateSortSearchParams } from 'utils';
 import IconButton from 'components/IconButton';
 import Input from 'components/Input';
-import constants from 'constants';
-
-const { sortTypes, searchParamsKeys, formType, iconBtnType } = constants;
-const { makeBlur, updateSortSearchParams } = utils;
+import { sortTypes, searchParamsKeys, formType, iconBtnType } from 'constants';
 
 const Filter = () => {
   const [showFilter, setShowFilter] = useState(false);

@@ -1,19 +1,7 @@
-import defaultValues from 'constants/defaultValues';
-import formType from 'constants/formType';
-import iconBtnType from 'constants/iconBtnType';
-import pagesPath from 'constants/pagesPath';
-import searchParamsKeys from 'constants/searchParamsKeys';
-import sortTypes from 'constants/sortTypes';
-import theme from 'constants/theme';
-
-const constants = {
-  theme: theme,
-  sortTypes: sortTypes,
-  searchParamsKeys: searchParamsKeys,
-  pagesPath: pagesPath,
-  iconBtnType: iconBtnType,
-  formType: formType,
-  defaultValues: defaultValues,
-};
-
-export default constants;
+export { default as defaultValues } from 'constants/defaultValues';
+export { default as formType } from 'constants/formType';
+export { default as iconBtnType } from 'constants/iconBtnType';
+export { default as pagesPath } from 'constants/pagesPath';
+export { default as searchParamsKeys } from 'constants/searchParamsKeys';
+export { default as sortTypes } from 'constants/sortTypes';
+export { default as theme } from 'constants/theme';
