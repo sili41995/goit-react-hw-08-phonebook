@@ -6,11 +6,12 @@ import { toasts } from 'utils';
 import AuthFormMessage from 'components/AuthFormMessage';
 import Input from 'components/Input';
 import { formType, pagesPath } from 'constants';
-import { registerUser } from 'redux/auth/operations';
-import { selectIsLoading } from 'redux/auth/selectors';
+// import { registerUser } from 'redux/auth/operations';
+// import { selectIsLoading } from 'redux/auth/selectors';
+import { authSelectors, authOperations } from 'redux/auth';
 
 const RegisterForm = () => {
-  const isLoading = useSelector(selectIsLoading);
+  const isLoading = useSelector(authSelectors.selectIsLoading);
   const dispatch = useDispatch();
   const {
     register,
@@ -20,7 +21,7 @@ const RegisterForm = () => {
   const pageLink = `/${pagesPath.loginPath}`;
 
   const onSubmit = (data) => {
-    dispatch(registerUser(data))
+    dispatch(authOperations.registerUser(data))
       .unwrap()
       .then(() => {
         toasts.successToast('Hello, my friend!');

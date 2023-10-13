@@ -15,11 +15,11 @@ import {
   ContactInfo,
   Person,
 } from './ContactsListItem.styled';
-import { selectIsLoading } from 'redux/contacts/selectors';
+import { contactsSelectors } from 'redux/contacts';
 
 const ContactsListItem = ({ contact }) => {
   const { userAvatar, name, id, role, number, email } = getContactInfo(contact);
-  const isLoading = useSelector(selectIsLoading);
+  const isLoading = useSelector(contactsSelectors.selectIsLoading);
   const deleteContact = useDeleteContact();
   const path = `${pagesPath.contactDetailsPath}/${id}/${pagesPath.contactPath}`;
 

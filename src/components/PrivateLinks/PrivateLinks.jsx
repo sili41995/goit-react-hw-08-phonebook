@@ -8,11 +8,11 @@ import LinkWithQuery from 'components/LinkWithQuery';
 import { IconContainer, LinkContainer } from './PrivateLinks.styled';
 import { makeBlur, toasts, isContactsPage } from 'utils';
 import { pagesPath, iconBtnType } from 'constants';
-import { selectContacts } from 'redux/contacts/selectors';
-import { logoutUser } from 'redux/auth/operations';
+import { contactsSelectors } from 'redux/contacts';
+import { authOperations } from 'redux/auth';
 
 const PrivateLinks = () => {
-  const contacts = useSelector(selectContacts);
+  const contacts = useSelector(contactsSelectors.selectContacts);
   const dispatch = useDispatch();
   const location = useLocation();
   const navigate = useNavigate();
@@ -20,7 +20,7 @@ const PrivateLinks = () => {
 
   const onLogoutBtnClick = ({ currentTarget }) => {
     makeBlur(currentTarget);
-    dispatch(logoutUser())
+    dispatch(authOperations.logoutUser())
       .unwrap()
       .then(() => {
         toasts.successToast('Goodbye!');

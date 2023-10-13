@@ -3,11 +3,11 @@ import { Navigate, useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { pagesPath } from 'constants';
 import { toasts } from 'utils';
-import { selectIsLoggedIn } from 'redux/auth/selectors';
+import { authSelectors } from 'redux/auth';
 
 export const PublicRoute = ({ element, restricted = false }) => {
   const isFirstRenderRef = useRef(true);
-  const isLoggedIn = useSelector(selectIsLoggedIn);
+  const isLoggedIn = useSelector(authSelectors.selectIsLoggedIn);
   const location = useLocation();
   const shouldRedirect = isLoggedIn && restricted;
   const defaultGoBackPath = `/${pagesPath.contactsPath}`;

@@ -9,13 +9,14 @@ import { toasts } from 'utils';
 import AuthFormMessage from 'components/AuthFormMessage';
 import Input from 'components/Input';
 import { pagesPath, formType, iconBtnType } from 'constants';
-import { loginUser } from 'redux/auth/operations';
-import { selectIsLoading } from 'redux/auth/selectors';
+// import { loginUser } from 'redux/auth/operations';
+// import { selectIsLoading } from 'redux/auth/selectors';
+import { authSelectors, authOperations } from 'redux/auth';
 
 const LoginForm = () => {
   const [credentials, setCredentials] = useState(null);
   const [isShowPassword, setIsShowPassword] = useState(false);
-  const isLoading = useSelector(selectIsLoading);
+  const isLoading = useSelector(authSelectors.selectIsLoading);
   const dispatch = useDispatch();
   const {
     register,
@@ -30,7 +31,7 @@ const LoginForm = () => {
 
   useEffect(() => {
     if (credentials) {
-      const promise = dispatch(loginUser(credentials));
+      const promise = dispatch(authOperations.loginUser(credentials));
       promise.unwrap().then(() => {
         toasts.successToast('Hello, my friend!');
       });

@@ -7,8 +7,9 @@ import Loader from 'components/Loader';
 import SharedLayout from 'components/SharedLayout';
 import GlobalStyles from 'components/GlobalStyles';
 import Toast from 'components/Toast';
-import { selectIsRefreshing } from 'redux/auth/selectors';
-import { refreshUser } from 'redux/auth/operations';
+// import { selectIsRefreshing } from 'redux/auth/selectors';
+// import { refreshUser } from 'redux/auth/operations';
+import { authSelectors, authOperations } from 'redux/auth';
 
 const RegisterPage = lazy(() => import('pages/RegisterPage'));
 const LoginPage = lazy(() => import('pages/LoginPage'));
@@ -24,10 +25,10 @@ const PrivateRoute = lazy(() => import('components/PrivateRoute'));
 
 const App = () => {
   const dispatch = useDispatch();
-  const isRefreshing = useSelector(selectIsRefreshing);
+  const isRefreshing = useSelector(authSelectors.selectIsRefreshing);
 
   useEffect(() => {
-    dispatch(refreshUser());
+    dispatch(authOperations.refreshUser());
   }, [dispatch]);
 
   return isRefreshing ? (

@@ -14,10 +14,10 @@ import {
   ContactInfoIconWrap,
   UserProfileContainer,
 } from './UserProfile.styled';
-import { selectUser } from 'redux/auth/selectors';
+import { authSelectors } from 'redux/auth';
 
 const UserProfile = () => {
-  const user = useSelector(selectUser);
+  const user = useSelector(authSelectors.selectUser);
   const {
     name,
     userAvatar,

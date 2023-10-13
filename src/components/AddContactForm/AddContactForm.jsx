@@ -8,11 +8,10 @@ import Input from 'components/Input';
 import { Buttons, Form, Title } from './AddContactForm.styled';
 import { toasts } from 'utils';
 import { iconBtnType } from 'constants';
-import { selectIsLoading } from 'redux/contacts/selectors';
-import { addContact } from 'redux/contacts/operations';
+import { contactsSelectors, contactsOperations } from 'redux/contacts';
 
 const AddContactForm = () => {
-  const isLoading = useSelector(selectIsLoading);
+  const isLoading = useSelector(contactsSelectors.selectIsLoading);
   const dispatch = useDispatch();
   const {
     register,
@@ -24,7 +23,7 @@ const AddContactForm = () => {
   const goBackLink = location.state?.from || '/';
 
   const handleFormSubmit = (data) => {
-    dispatch(addContact(data))
+    dispatch(contactsOperations.addContact(data))
       .unwrap()
       .then(() => {
         toasts.successToast('Contact added successfully');

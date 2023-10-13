@@ -4,10 +4,11 @@ import { NavContainer, List, ListItem } from './Navigation.styled';
 import PrivateLinks from 'components/PrivateLinks';
 import PublicLinks from 'components/PublicLinks';
 import { pagesPath } from 'constants';
-import { selectIsLoggedIn } from 'redux/auth/selectors';
+// import { selectIsLoggedIn } from 'redux/auth/selectors';
+import { authSelectors } from 'redux/auth';
 
 const Navigation = () => {
-  const isLoggedIn = useSelector(selectIsLoggedIn);
+  const isLoggedIn = useSelector(authSelectors.selectIsLoggedIn);
   const contactsPagePath = `/${pagesPath.contactsPath}`;
   const aboutPagePath = `/${pagesPath.aboutPath}`;
 

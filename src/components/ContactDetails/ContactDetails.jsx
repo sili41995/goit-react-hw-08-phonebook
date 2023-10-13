@@ -11,11 +11,11 @@ import IconButton from 'components/IconButton';
 import { makeBlur } from 'utils';
 import { iconBtnType, pagesPath } from 'constants';
 import { useDeleteContact } from 'hooks';
-import { selectIsLoading } from 'redux/contacts/selectors';
+import { contactsSelectors } from 'redux/contacts';
 
 const ContactDetails = () => {
   const [editContact, setEditContact] = useState(false);
-  const isLoading = useSelector(selectIsLoading);
+  const isLoading = useSelector(contactsSelectors.selectIsLoading);
   const id = useParams()[pagesPath.dynamicParam];
 
   const deleteContact = useDeleteContact();

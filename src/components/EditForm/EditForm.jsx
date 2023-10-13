@@ -10,11 +10,12 @@ import Input from 'components/Input';
 import { getContactInfo, toasts } from 'utils';
 import { useTargetContact } from 'hooks';
 import { pagesPath, iconBtnType } from 'constants';
-import { updateContact } from 'redux/contacts/operations';
-import { selectIsLoading } from 'redux/contacts/selectors';
+// import { updateContact } from 'redux/contacts/operations';
+// import { selectIsLoading } from 'redux/contacts/selectors';
+import { contactsSelectors, contactsOperations } from 'redux/contacts';
 
 const EditForm = ({ setEditContact }) => {
-  const isLoading = useSelector(selectIsLoading);
+  const isLoading = useSelector(contactsSelectors.selectIsLoading);
   const dispatch = useDispatch();
   const id = useParams()[pagesPath.dynamicParam];
   const targetContact = useTargetContact();
@@ -26,7 +27,7 @@ const EditForm = ({ setEditContact }) => {
   } = useForm();
 
   const handleFormSubmit = (data) => {
-    dispatch(updateContact({ data, id }))
+    dispatch(contactsOperations.updateContact({ data, id }))
       .unwrap()
       .then(() => {
         toasts.successToast('Contact updated successfully');
