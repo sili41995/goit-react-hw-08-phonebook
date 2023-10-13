@@ -7,8 +7,6 @@ import Loader from 'components/Loader';
 import SharedLayout from 'components/SharedLayout';
 import GlobalStyles from 'components/GlobalStyles';
 import Toast from 'components/Toast';
-// import { selectIsRefreshing } from 'redux/auth/selectors';
-// import { refreshUser } from 'redux/auth/operations';
 import { authSelectors, authOperations } from 'redux/auth';
 
 const RegisterPage = lazy(() => import('pages/RegisterPage'));
