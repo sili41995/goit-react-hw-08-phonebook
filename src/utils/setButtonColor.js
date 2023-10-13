@@ -32,6 +32,9 @@ function setButtonColor({ btnType }) {
     case iconBtnType.toggleShowPassword:
       return 'transparent';
 
+    case iconBtnType.clearFilter:
+      return 'transparent';
+
     default:
       return theme.colors.lightgreyBtnColor;
   }

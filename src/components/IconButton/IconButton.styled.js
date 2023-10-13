@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { setButtonColor, setIconFill } from 'utils';
+import { setButtonColor, setIconFill, setIconHoverEffect } from 'utils';
 
 export const Button = styled.button`
   position: ${({ position }) => position};
@@ -36,7 +36,7 @@ export const Button = styled.button`
   }
   & svg:hover,
   & svg:focus {
-    color: ${({ theme, inputWrap }) =>
-      inputWrap && theme.colors.secondaryLinkColor};
+    color: ${({ btnType, inputWrap }) =>
+      inputWrap && setIconHoverEffect(btnType)};
   }
 `;

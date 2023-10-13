@@ -3,7 +3,7 @@ import { formType } from 'constants';
 const setInputHeight = (inputType) => {
   switch (inputType) {
     case formType.filter:
-      return false;
+      return '100%';
 
     case formType.authForm:
       return '60px';

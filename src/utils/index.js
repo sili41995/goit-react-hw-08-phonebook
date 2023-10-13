@@ -21,3 +21,4 @@ export { default as sortContactsByName } from 'utils/sortContactsByName';
 export { default as toasts } from 'utils/toasts';
 export { default as updateSortSearchParams } from 'utils/updateSortSearchParams';
 export { default as getAuthPages } from 'utils/getAuthPages';
+export { default as setIconHoverEffect } from 'utils/setIconHoverEffect';

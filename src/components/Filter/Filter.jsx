@@ -1,3 +1,4 @@
+import { IoMdClose } from 'react-icons/io';
 import { useSearchParams } from 'react-router-dom';
 import { BsSortAlphaDown } from 'react-icons/bs';
 import { BsSortAlphaDownAlt } from 'react-icons/bs';
@@ -49,6 +50,11 @@ const Filter = () => {
     setShowFilter((showFilter) => !showFilter);
   };
 
+  const onClearFilterBtnClick = () => {
+    searchParams.delete(FILTER_SP_KEY);
+    setSearchParams(searchParams);
+  };
+
   return (
     <FilterContainer>
       {showFilter && (
@@ -59,6 +65,11 @@ const Filter = () => {
           onChange={onFilterChange}
           inputType={formType.filter}
           autoFocus
+          inputWrap
+          children={filter && <IoMdClose />}
+          btnType={iconBtnType.clearFilter}
+          action={onClearFilterBtnClick}
+          right={0}
         />
       )}
       <IconButton

@@ -10,6 +10,7 @@ const iconBtnType = {
   cancel: 'cancel',
   deleteTransparent: 'deleteTransparent',
   toggleShowPassword: 'toggleShowPassword',
+  clearFilter: 'clearFilter',
 };
 
 export default iconBtnType;
