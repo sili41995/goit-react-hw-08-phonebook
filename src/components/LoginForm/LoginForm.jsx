@@ -1,8 +1,8 @@
+import { MdEmail } from 'react-icons/md';
 import {
+  AiFillLock,
   AiOutlineEye,
   AiOutlineEyeInvisible,
-  AiOutlineLock,
-  AiOutlineMail,
 } from 'react-icons/ai';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
@@ -58,7 +58,7 @@ const LoginForm = () => {
           inputType={formType.authForm}
           autoFocus
           inputWrap
-          fieldIcon={<AiOutlineMail />}
+          fieldIcon={<MdEmail />}
           fieldIconSize={20}
         />
         {errors.email && toasts.errorToast('Email is required')}
@@ -75,7 +75,7 @@ const LoginForm = () => {
           }
           btnType={iconBtnType.toggleShowPassword}
           action={toggleIsShowPassword}
-          fieldIcon={<AiOutlineLock />}
+          fieldIcon={<AiFillLock />}
           fieldIconSize={20}
         />
         {errors.password &&
