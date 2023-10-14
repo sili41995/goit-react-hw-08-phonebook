@@ -14,12 +14,13 @@ import { toasts } from 'utils';
 import AuthFormMessage from 'components/AuthFormMessage';
 import Input from 'components/Input';
 import { pagesPath, formType, iconBtnType } from 'constants';
-import { authSelectors, authOperations } from 'redux/auth';
+import { selectIsLoading } from 'redux/auth/selectors';
+import { loginUser } from 'redux/auth/operations';
 
 const LoginForm = () => {
   const [credentials, setCredentials] = useState(null);
   const [isShowPassword, setIsShowPassword] = useState(false);
-  const isLoading = useSelector(authSelectors.selectIsLoading);
+  const isLoading = useSelector(selectIsLoading);
   const dispatch = useDispatch();
   const {
     register,
@@ -34,7 +35,7 @@ const LoginForm = () => {
 
   useEffect(() => {
     if (credentials) {
-      const promise = dispatch(authOperations.loginUser(credentials));
+      const promise = dispatch(loginUser(credentials));
       promise.unwrap().then(() => {
         toasts.successToast('Hello, my friend!');
       });
@@ -69,12 +70,12 @@ const LoginForm = () => {
           type={isShowPassword ? 'text' : 'password'}
           placeholder="Password"
           inputType={formType.authForm}
-          inputWrap
           children={
             isShowPassword ? <AiOutlineEyeInvisible /> : <AiOutlineEye />
           }
           btnType={iconBtnType.toggleShowPassword}
           action={toggleIsShowPassword}
+          inputWrap
           fieldIcon={<AiFillLock />}
           fieldIconSize={20}
         />

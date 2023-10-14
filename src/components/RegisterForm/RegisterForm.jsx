@@ -1,3 +1,6 @@
+import { FaUser } from 'react-icons/fa';
+import { MdEmail } from 'react-icons/md';
+import { AiFillLock } from 'react-icons/ai';
 import { useDispatch, useSelector } from 'react-redux';
 import { useForm } from 'react-hook-form';
 import 'react-toastify/dist/ReactToastify.css';
@@ -6,12 +9,11 @@ import { toasts } from 'utils';
 import AuthFormMessage from 'components/AuthFormMessage';
 import Input from 'components/Input';
 import { formType, pagesPath } from 'constants';
-// import { registerUser } from 'redux/auth/operations';
-// import { selectIsLoading } from 'redux/auth/selectors';
-import { authSelectors, authOperations } from 'redux/auth';
+import { registerUser } from 'redux/auth/operations';
+import { selectIsLoading } from 'redux/auth/selectors';
 
 const RegisterForm = () => {
-  const isLoading = useSelector(authSelectors.selectIsLoading);
+  const isLoading = useSelector(selectIsLoading);
   const dispatch = useDispatch();
   const {
     register,
@@ -21,7 +23,7 @@ const RegisterForm = () => {
   const pageLink = `/${pagesPath.loginPath}`;
 
   const onSubmit = (data) => {
-    dispatch(authOperations.registerUser(data))
+    dispatch(registerUser(data))
       .unwrap()
       .then(() => {
         toasts.successToast('Hello, my friend!');
@@ -39,6 +41,9 @@ const RegisterForm = () => {
           placeholder="Username"
           inputType={formType.authForm}
           autoFocus
+          inputWrap
+          fieldIcon={<FaUser />}
+          fieldIconSize={20}
         />
         {errors.name && toasts.errorToast('Username is required')}
         <Input
@@ -46,6 +51,9 @@ const RegisterForm = () => {
           type="email"
           placeholder="Email"
           inputType={formType.authForm}
+          inputWrap
+          fieldIcon={<MdEmail />}
+          fieldIconSize={20}
         />
         {errors.email && toasts.errorToast('Email is required')}
         <Input
@@ -55,6 +63,9 @@ const RegisterForm = () => {
           type="password"
           placeholder="Password"
           inputType={formType.authForm}
+          inputWrap
+          fieldIcon={<AiFillLock />}
+          fieldIconSize={20}
         />
         {errors.password &&
           toasts.errorToast(

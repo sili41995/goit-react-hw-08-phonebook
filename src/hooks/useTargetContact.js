@@ -1,11 +1,11 @@
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { pagesPath } from 'constants';
-import { contactsSelectors } from 'redux/contacts';
+import { selectContacts } from 'redux/contacts/selectors';
 
 const useTargetContact = () => {
   const id = useParams()[pagesPath.dynamicParam];
-  const contacts = useSelector(contactsSelectors.selectContacts);
+  const contacts = useSelector(selectContacts);
   if (contacts.length) {
     return contacts.find(({ id: contactId }) => contactId === id);
   }

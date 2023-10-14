@@ -6,10 +6,10 @@ import EmptyListMessage from 'components/EmptyListMessage';
 import { Container, List } from './ContactsList.styled';
 import { searchParamsKeys } from 'constants';
 import { filterContactsByName, sortContactsByName } from 'utils';
-import { contactsSelectors } from 'redux/contacts';
+import { selectContacts } from 'redux/contacts/selectors';
 
 const ContactsList = () => {
-  const contacts = useSelector(contactsSelectors.selectContacts);
+  const contacts = useSelector(selectContacts);
   const [searchParams] = useSearchParams();
   const filter = searchParams.get(searchParamsKeys.FILTER_SP_KEY) ?? '';
   const sortType = searchParams.get(searchParamsKeys.SORT_SP_KEY) ?? '';

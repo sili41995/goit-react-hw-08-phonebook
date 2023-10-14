@@ -4,14 +4,15 @@ import { Outlet } from 'react-router-dom';
 import ContactsList from 'components/ContactsList';
 import UserProfile from 'components/UserProfile';
 import Loader from 'components/Loader';
-import { contactsSelectors, contactsOperations } from 'redux/contacts';
+import { selectIsLoaded } from 'redux/contacts/selectors';
+import { fetchContacts } from 'redux/contacts/operations';
 
 const ContactsPage = () => {
   const dispatch = useDispatch();
-  const isLoaded = useSelector(contactsSelectors.selectIsLoaded);
+  const isLoaded = useSelector(selectIsLoaded);
 
   useEffect(() => {
-    const promise = dispatch(contactsOperations.fetchContacts());
+    const promise = dispatch(fetchContacts());
 
     return () => {
       promise.abort();

@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { toasts } from 'utils';
 import { pagesPath } from 'constants';
-import { contactsOperations } from 'redux/contacts';
+import { deleteContact } from 'redux/contacts/operations';
 
 const useDeleteContact = () => {
   const [contactId, setContactId] = useState(null);
@@ -14,7 +14,7 @@ const useDeleteContact = () => {
 
   useEffect(() => {
     if (contactId) {
-      dispatch(contactsOperations.deleteContact(contactId))
+      dispatch(deleteContact(contactId))
         .unwrap()
         .then(() => {
           navigate(path);

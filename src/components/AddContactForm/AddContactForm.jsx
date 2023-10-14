@@ -1,3 +1,5 @@
+import { HiPhone } from 'react-icons/hi';
+import { FaUser } from 'react-icons/fa';
 import { Link, useLocation } from 'react-router-dom';
 import { GiCheckMark } from 'react-icons/gi';
 import { useForm } from 'react-hook-form';
@@ -8,10 +10,11 @@ import Input from 'components/Input';
 import { Buttons, Form, Title } from './AddContactForm.styled';
 import { toasts } from 'utils';
 import { iconBtnType } from 'constants';
-import { contactsSelectors, contactsOperations } from 'redux/contacts';
+import { selectIsLoading } from 'redux/contacts/selectors';
+import { addContact } from 'redux/contacts/operations';
 
 const AddContactForm = () => {
-  const isLoading = useSelector(contactsSelectors.selectIsLoading);
+  const isLoading = useSelector(selectIsLoading);
   const dispatch = useDispatch();
   const {
     register,
@@ -23,7 +26,7 @@ const AddContactForm = () => {
   const goBackLink = location.state?.from || '/';
 
   const handleFormSubmit = (data) => {
-    dispatch(contactsOperations.addContact(data))
+    dispatch(addContact(data))
       .unwrap()
       .then(() => {
         toasts.successToast('Contact added successfully');
@@ -43,12 +46,18 @@ const AddContactForm = () => {
           type="text"
           placeholder="Name"
           autoFocus
+          inputWrap
+          fieldIcon={<FaUser />}
+          fieldIconSize={18}
         />
         {errors.name && toasts.errorToast('Name is required')}
         <Input
           settings={{ ...register('number', { required: true }) }}
           type="tel"
           placeholder="Phone"
+          inputWrap
+          fieldIcon={<HiPhone />}
+          fieldIconSize={18}
         />
         {errors.number && toasts.errorToast('Phone is required')}
         <Buttons>

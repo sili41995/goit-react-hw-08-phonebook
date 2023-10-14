@@ -1,3 +1,5 @@
+import { HiPhone } from 'react-icons/hi';
+import { FaUser } from 'react-icons/fa';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { GoX } from 'react-icons/go';
@@ -10,12 +12,11 @@ import Input from 'components/Input';
 import { getContactInfo, toasts } from 'utils';
 import { useTargetContact } from 'hooks';
 import { pagesPath, iconBtnType } from 'constants';
-// import { updateContact } from 'redux/contacts/operations';
-// import { selectIsLoading } from 'redux/contacts/selectors';
-import { contactsSelectors, contactsOperations } from 'redux/contacts';
+import { updateContact } from 'redux/contacts/operations';
+import { selectIsLoading } from 'redux/contacts/selectors';
 
 const EditForm = ({ setEditContact }) => {
-  const isLoading = useSelector(contactsSelectors.selectIsLoading);
+  const isLoading = useSelector(selectIsLoading);
   const dispatch = useDispatch();
   const id = useParams()[pagesPath.dynamicParam];
   const targetContact = useTargetContact();
@@ -27,7 +28,7 @@ const EditForm = ({ setEditContact }) => {
   } = useForm();
 
   const handleFormSubmit = (data) => {
-    dispatch(contactsOperations.updateContact({ data, id }))
+    dispatch(updateContact({ data, id }))
       .unwrap()
       .then(() => {
         toasts.successToast('Contact updated successfully');
@@ -46,6 +47,9 @@ const EditForm = ({ setEditContact }) => {
           settings={{ ...register('name', { required: true }) }}
           type="text"
           placeholder="Name"
+          inputWrap
+          fieldIcon={<FaUser />}
+          fieldIconSize={18}
         />
         {errors.name && toasts.errorToast('Name is required')}
         <Input
@@ -53,6 +57,9 @@ const EditForm = ({ setEditContact }) => {
           settings={{ ...register('number', { required: true }) }}
           type="tel"
           placeholder="Phone"
+          inputWrap
+          fieldIcon={<HiPhone />}
+          fieldIconSize={18}
         />
         {errors.number && toasts.errorToast('Phone is required')}
         <Buttons>
