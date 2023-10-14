@@ -21,7 +21,7 @@ export const Container = styled.div`
     display: block;
     width: ${({ fieldIconSize }) => fieldIconSize}px;
     height: ${({ fieldIconSize }) => fieldIconSize}px;
-    color: ${({ theme }) => theme.colors.blackColor};
+    color: ${({ theme }) => theme.colors.greyColor};
   }
 `;
 

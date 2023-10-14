@@ -11,7 +11,7 @@ const theme = {
     authFormBackgroundColor: '#fcfcfc',
     btnBackgroundColor: 'rgba(217, 217, 217, 0.58)',
     whiteColor: '#fff',
-    blackColor: '#000000',
+    greyColor: '#808080',
     redBtnColor: '#ff9192',
     blueBtnColor: '#7fd1ff',
     greenBtnColor: '#89f2a6',
