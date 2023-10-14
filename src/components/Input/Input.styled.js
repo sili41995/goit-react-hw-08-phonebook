@@ -13,6 +13,15 @@ import {
 
 export const Container = styled.div`
   position: relative;
+  & > svg {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    display: block;
+    width: ${({ fieldIconSize }) => fieldIconSize}px;
+    height: ${({ fieldIconSize }) => fieldIconSize}px;
+  }
 `;
 
 export const StyledInput = styled.input`
@@ -34,5 +43,9 @@ export const StyledInput = styled.input`
     outline: none;
     border-color: ${({ theme, inputType }) =>
       inputType === formType.filter ? false : theme.colors.primaryColor};
+  }
+  &:focus + svg {
+    transition: color ${({ theme }) => theme.transitionDurationAndFunc};
+    color: ${({ theme }) => theme.colors.primaryColor};
   }
 `;

@@ -1,4 +1,9 @@
-import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
+import {
+  AiOutlineEye,
+  AiOutlineEyeInvisible,
+  AiOutlineLock,
+  AiOutlineMail,
+} from 'react-icons/ai';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
@@ -9,8 +14,6 @@ import { toasts } from 'utils';
 import AuthFormMessage from 'components/AuthFormMessage';
 import Input from 'components/Input';
 import { pagesPath, formType, iconBtnType } from 'constants';
-// import { loginUser } from 'redux/auth/operations';
-// import { selectIsLoading } from 'redux/auth/selectors';
 import { authSelectors, authOperations } from 'redux/auth';
 
 const LoginForm = () => {
@@ -54,6 +57,9 @@ const LoginForm = () => {
           placeholder="Email"
           inputType={formType.authForm}
           autoFocus
+          inputWrap
+          fieldIcon={<AiOutlineMail />}
+          fieldIconSize={20}
         />
         {errors.email && toasts.errorToast('Email is required')}
         <Input
@@ -69,6 +75,8 @@ const LoginForm = () => {
           }
           btnType={iconBtnType.toggleShowPassword}
           action={toggleIsShowPassword}
+          fieldIcon={<AiOutlineLock />}
+          fieldIconSize={20}
         />
         {errors.password &&
           toasts.errorToast(

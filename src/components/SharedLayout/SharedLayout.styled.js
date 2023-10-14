@@ -5,7 +5,7 @@ export const Header = styled.header`
   min-width: 100%;
   padding-top: ${({ theme }) => theme.spacing(5)};
   padding-bottom: ${({ theme }) => theme.spacing(5)};
-  background-color: ${({ theme }) => theme.colors.primaryColor};
+  background-color: ${({ theme }) => theme.colors.otherColor};
 `;
 
 export const Container = styled.div`

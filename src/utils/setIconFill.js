@@ -30,7 +30,7 @@ function setIconFill({ btnType }) {
       return theme.colors.redIconColor;
 
     case iconBtnType.toggleShowPassword:
-      return theme.colors.primaryLinkColor;
+      return theme.colors.primaryColor;
 
     case iconBtnType.clearFilter:
       return theme.colors.whiteColor;

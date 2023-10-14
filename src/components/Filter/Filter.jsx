@@ -69,7 +69,6 @@ const Filter = () => {
           children={filter && <IoMdClose />}
           btnType={iconBtnType.clearFilter}
           action={onClearFilterBtnClick}
-          right={0}
         />
       )}
       <IconButton

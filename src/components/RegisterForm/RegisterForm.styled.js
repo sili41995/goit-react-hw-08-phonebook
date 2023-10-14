@@ -26,7 +26,7 @@ export const Button = styled.button`
   min-width: 170px;
   padding: ${({ theme }) => `${theme.spacing(4)} ${theme.spacing(8)}`};
   align-self: center;
-  background-color: ${({ theme }) => theme.colors.primaryLinkColor};
+  background-color: ${({ theme }) => theme.colors.primaryColor};
   border-color: transparent;
   border-radius: ${({ theme }) => theme.borderRadius.primaryBorderRadius}px;
   color: #fff;
@@ -39,6 +39,6 @@ export const Button = styled.button`
   transition: background-color ${({ theme }) => theme.transitionDurationAndFunc};
   &:hover,
   &:focus {
-    background-color: ${({ theme }) => theme.colors.secondaryLinkColor};
+    background-color: ${({ theme }) => theme.colors.secondaryColor};
   }
 `;

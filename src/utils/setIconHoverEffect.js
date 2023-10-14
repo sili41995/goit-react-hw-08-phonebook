@@ -6,7 +6,7 @@ const setIconHoverEffect = (btnType) => {
       return;
 
     default:
-      return theme.colors.secondaryLinkColor;
+      return theme.colors.secondaryColor;
   }
 };
 

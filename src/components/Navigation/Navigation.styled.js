@@ -30,7 +30,7 @@ export const ListItem = styled.li`
     &:hover,
     &:focus,
     &.active {
-      color: ${({ theme }) => theme.colors.primaryColor};
+      color: ${({ theme }) => theme.colors.otherColor};
       background-color: #fff;
     }
   }

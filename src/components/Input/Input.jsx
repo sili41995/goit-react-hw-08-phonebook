@@ -5,32 +5,36 @@ import IconButton from 'components/IconButton';
 const Input = forwardRef(
   (
     {
+      fieldIcon,
       settings,
       inputWrap,
       btnType,
       children,
       action,
-      right = 10,
+      right = 0,
       ...otherProps
     },
     ref
   ) => {
     const input = <StyledInput ref={ref} {...settings} {...otherProps} />;
     const inputWithWrap = (
-      <Container>
+      <Container {...otherProps}>
         {input}
-        <IconButton
-          top="center"
-          right={right}
-          position="absolute"
-          btnType={btnType}
-          width={44}
-          height={35}
-          onBtnClick={action}
-          inputWrap
-        >
-          {children}
-        </IconButton>
+        {fieldIcon}
+        {btnType && (
+          <IconButton
+            top="center"
+            right={right}
+            position="absolute"
+            btnType={btnType}
+            width={44}
+            height={35}
+            onBtnClick={action}
+            inputWrap
+          >
+            {children}
+          </IconButton>
+        )}
       </Container>
     );
 
