@@ -1,7 +1,7 @@
 const theme = {
   colors: {
-    primaryColor: '#4d5ae5',
-    secondaryColor: '#404bbf',
+    primaryColor: '#3456FF',
+    secondaryColor: '#4d5ae5',
     otherColor: '#38b6ff',
     otherLinkColor: '#44de6f',
     primaryFontColor: '#000',
