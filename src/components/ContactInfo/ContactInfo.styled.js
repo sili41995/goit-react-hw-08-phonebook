@@ -28,8 +28,9 @@ export const ContactDesc = styled.p`
 `;
 
 export const Navigation = styled.nav`
+  background-color: ${({ theme }) => theme.colors.lightgreyColor};
   padding: ${({ theme }) => theme.spacing()};
-  border-radius: ${({ theme }) => theme.borderRadius.secondaryBorderRadius}px;
+  border-radius: ${({ theme }) => theme.borderRadius.navBarBorderRadius}px;
   margin-top: ${({ theme }) => theme.spacing(20)};
   margin-bottom: ${({ theme }) => theme.spacing(10)};
 `;
