@@ -26,7 +26,9 @@ const LoginForm = () => {
     register,
     formState: { errors },
     handleSubmit,
+    watch,
   } = useForm();
+  const watchPassword = watch('password');
   const pageLink = `/${pagesPath.registerPath}`;
 
   const toggleIsShowPassword = () => {
@@ -73,7 +75,7 @@ const LoginForm = () => {
           children={
             isShowPassword ? <AiOutlineEyeInvisible /> : <AiOutlineEye />
           }
-          btnType={iconBtnType.toggleShowPassword}
+          btnType={watchPassword && iconBtnType.toggleShowPassword}
           action={toggleIsShowPassword}
           inputWrap
           fieldIcon={<AiFillLock />}
