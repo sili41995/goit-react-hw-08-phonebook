@@ -13,6 +13,7 @@ const ContactsList = () => {
   const [searchParams] = useSearchParams();
   const filter = searchParams.get(searchParamsKeys.FILTER_SP_KEY) ?? '';
   const sortType = searchParams.get(searchParamsKeys.SORT_SP_KEY) ?? '';
+
   const filteredContacts = useMemo(() => {
     const sortedContacts = sortContactsByName(contacts, sortType);
     return filterContactsByName(sortedContacts, filter);

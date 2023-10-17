@@ -3,7 +3,8 @@ import { Message } from './AuthFormMessage.styled';
 
 export const AuthFormMessage = ({ message, pageLink, action }) => (
   <Message>
-    <Link to={pageLink}>{action}</Link> {message}
+    <Link to={pageLink}>{action}</Link>
+    {message}
   </Message>
 );
 

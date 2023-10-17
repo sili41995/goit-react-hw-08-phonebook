@@ -17,7 +17,6 @@ const ContactDetails = () => {
   const [editContact, setEditContact] = useState(false);
   const isLoading = useSelector(selectIsLoading);
   const id = useParams()[pagesPath.dynamicParam];
-
   const deleteContact = useDeleteContact();
 
   const setEditState = () => {
