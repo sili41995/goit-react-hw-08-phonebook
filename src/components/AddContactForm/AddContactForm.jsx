@@ -10,10 +10,11 @@ import Input from 'components/Input';
 import { Buttons, Form, Title } from './AddContactForm.styled';
 import { toasts } from 'utils';
 import { iconBtnType } from 'constants';
-import { selectIsLoading } from 'redux/contacts/selectors';
+import { selectContacts, selectIsLoading } from 'redux/contacts/selectors';
 import { addContact } from 'redux/contacts/operations';
 
 const AddContactForm = () => {
+  const contacts = useSelector(selectContacts);
   const isLoading = useSelector(selectIsLoading);
   const dispatch = useDispatch();
   const {
@@ -26,6 +27,12 @@ const AddContactForm = () => {
   const goBackLink = location.state?.from || '/';
 
   const handleFormSubmit = (data) => {
+    const contactName = data.name;
+    const isContact = contacts.some(({ name }) => name === contactName);
+    if (isContact) {
+      toasts.warnToast(`${contactName} is already in contacts`);
+      return;
+    }
     dispatch(addContact(data))
       .unwrap()
       .then(() => {
